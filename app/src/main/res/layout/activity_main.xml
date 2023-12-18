@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:ignore="HardcodedText">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D7D0FF"
+        android:padding="12dp"
+        tools:context=".MainActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/indexArticles">
+
+            <TextView
+                android:id="@+id/pagetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="97dp"
+
+                android:text="Find your desire health solution"
+                android:textColor="#1D212D"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+
+            <ImageButton
+                android:id="@+id/notifyb"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:contentDescription="notify"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_notifications_none_24"
+                app:tint="#000000" />
+
+
+        </RelativeLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search doctor,drugs,articles"
+            android:layout_below="@+id/indexArticles"
+            android:layout_marginTop="19dp"
+            android:textSize="20dp"
+            android:textColor="#1D212D"
+            android:textStyle="bold"
+            android:id="@+id/popularArticles"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/popularArticles"
+                android:orientation="horizontal"
+                android:layout_centerVertical="true"
+                android:id="@+id/mainbuttons">
+
+                <ImageButton
+                    android:id="@+id/Doctor"
+                    android:layout_width="82dp"
+                    android:layout_height="68dp"
+                    android:contentDescription="notify"
+                    android:layout_marginStart="8sp"
+
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/verticalscroll"
+                    android:src="@drawable/sthethoscope"
+                     />
+
+                <ImageButton
+                    android:id="@+id/article"
+                    android:layout_width="82dp"
+                    android:layout_height="68dp"
+                    android:layout_marginLeft="13dp"
+                    android:contentDescription="notify"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/verticalscroll"
+                    android:src="@drawable/articles"
+                    />
+                <ImageButton
+                    android:id="@+id/hospital"
+                    android:layout_width="82dp"
+                    android:layout_height="68dp"
+                    android:layout_marginLeft="13dp"
+                    android:contentDescription="notify"
+
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/verticalscroll"
+                    android:src="@drawable/outline_health_and_safety_24"
+                   />
+                <ImageButton
+                    android:id="@+id/ambulance"
+                    android:layout_width="82dp"
+                    android:layout_marginLeft="13dp"
+
+                    android:layout_height="68dp"
+                    android:contentDescription="notify"
+                    android:layout_alignParentEnd="true"
+
+
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/verticalscroll"
+                    android:src="@drawable/ambulance__2_"
+                     />
+
+            </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:layout_below="@+id/mainbuttons"
+            android:id="@+id/trending">
+            <ImageView
+                android:id="@+id/advertiseimg"
+                android:layout_width="1000sp"
+                android:layout_height="150dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="18sp"
+                android:src="@drawable/heal3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Doctor"
+                android:textSize="23sp"
+                android:layout_below="@id/advertiseimg"
+                android:layout_marginTop="10dp"
+                android:textColor="#1D212D"
+                android:textStyle="bold"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See all"
+                android:layout_below="@id/advertiseimg"
+                android:layout_alignParentRight="true"
+                android:textAllCaps="false"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:textColor="#83848B"
+                android:id="@+id/topdoctors"/>
+
+        </RelativeLayout>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@+id/trending"
+            android:id="@+id/scrolltrending"
+            android:layout_marginTop="19dp"
+            android:layout_height="275dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="196dp"
+                    android:layout_height="259dp"
+                    android:background="@drawable/rectangularwindow"
+                    android:orientation="vertical"
+                    >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/doctor1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:src="@drawable/dctr1"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="-33dp"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr.Marcus Horizon"
+                        android:layout_marginHorizontal="10dp"
+                        android:textColor="#1D212D"
+                        android:padding="1dp"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="-29dp"
+                        android:background="#FFFFFF"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="#1D212D"
+                        android:text="Chardiologist"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/distance"
+                        android:textSize="16dp"
+                        android:textColor="#83848B"
+                        android:text="800 km away"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="196dp"
+                    android:layout_height="259dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/rectangularwindow"
+                    android:orientation="vertical"
+                   >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/doctor2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:src="@drawable/dctr2"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="-33dp"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr.Maria Elena"
+                        android:layout_marginHorizontal="10dp"
+                        android:textColor="#1D212D"
+                        android:textSize="15sp"
+                        android:padding="1dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="-29dp"
+                       />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="#1D212D"
+                        android:text="Psychologist"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/distance2"
+                        android:textSize="16dp"
+                        android:textColor="#83848B"
+                        android:text="800 km away"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="196dp"
+                    android:layout_height="259dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/rectangularwindow"
+                    android:orientation="vertical"
+                   >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/doctor3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:src="@drawable/dctr3"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="-33dp"
+
+
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr.Steffi Jessi"
+                        android:layout_marginHorizontal="10dp"
+                        android:textColor="#1D212D"
+                        android:textSize="15sp"
+                        android:padding="1dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="-29dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="#1D212D"
+                        android:text="Orthopedist"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/distance3"
+                        android:textSize="16dp"
+                        android:textColor="#83848B"
+                        android:text="800 km away"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="196dp"
+                    android:layout_height="259dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/rectangularwindow"
+                    android:orientation="vertical"
+                   >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/doctor4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:src="@drawable/dctr4"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="-33dp"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr.Gerty Cori"
+                        android:layout_marginHorizontal="10dp"
+                        android:textColor="#1D212D"
+                        android:textSize="15sp"
+                        android:padding="1dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="-29dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="#1D212D"
+                        android:text="Orthopedist"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/distance4"
+                        android:textSize="16dp"
+                        android:textColor="#83848B"
+                        android:text="800 km away"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:layout_below="@+id/scrolltrending"
+            android:id="@+id/relatedarticles">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Health Articles"
+                android:textSize="21dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#1D212D"
+                android:textStyle="bold"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See all"
+                android:layout_alignParentRight="true"
+                android:textAllCaps="false"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:textColor="#83848B"
+                android:id="@+id/relatedarticles1"/>
+
+        </RelativeLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@+id/relatedarticles"
+            android:id="@+id/scrollbarrelated"
+            android:layout_marginTop="19dp"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:background="@drawable/verticalscroll"
+                    android:orientation="horizontal"
+                   >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="66dp"
+                        android:src="@drawable/scrollimg1"
+                        android:layout_marginTop="5dp"
+                        android:padding="3sp"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="15dp"
+
+                            android:textSize="15dp"
+                            android:text="The 25 Healthiest Fruits You Can Eat, According to a Nutritionist"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="11dp"
+                                android:textColor="#151921"
+                                android:text="June 12,2021 ."/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="11dp"
+                                android:layout_marginLeft="2dp"
+                                android:textColor="#5F48E6"
+                                android:textStyle="bold"
+                                android:text="5 min read"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:background="@drawable/verticalscroll"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="66dp"
+                        android:src="@drawable/scrollimg1"
+                        android:padding="3sp"
+                        android:layout_marginTop="5dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/verticalscroll"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#101623"
+                            android:layout_marginTop="15dp"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:text="Traditional Herbal Medicine Treatments for COVID-19"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="11dp"
+                                android:textColor="#151921"
+                                android:text="June 12,2021 ."/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="11dp"
+                                android:layout_marginLeft="2dp"
+                                android:textColor="#5F48E6"
+                                android:textStyle="bold"
+                                android:text="6 min read"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:background="@drawable/verticalscroll"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="66dp"
+                        android:src="@drawable/scrollimg1"
+                        android:padding="3sp"
+                        android:layout_marginTop="5dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/verticalscroll"
+
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#101623"
+                            android:layout_marginTop="15dp"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:text="Beauty Tips For Face: 10 Dos and Don'ts for Naturally Beautiful Skin"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="11dp"
+                                android:textColor="#151921"
+                                android:text="June 12,2021 ."/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="11dp"
+                                android:layout_marginLeft="2dp"
+                                android:textColor="#5F48E6"
+                                android:textStyle="bold"
+                                android:text="4 min read"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:background="@drawable/verticalscroll"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="66dp"
+                        android:src="@drawable/scrollimg1"
+                        android:padding="3sp"
+                        android:layout_marginTop="5dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/verticalscroll"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#101623"
+                            android:layout_marginTop="15dp"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:text="Traditional Herbal Medicine Treatments for COVID-19"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="11dp"
+                                android:textColor="#151921"
+                                android:text="June 12,2021 ."/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="11dp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="2dp"
+                                android:textColor="#5F48E6"
+                                android:text="5 min read"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+</ScrollView>
+

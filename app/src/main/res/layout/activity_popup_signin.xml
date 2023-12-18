@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pop_up"
+    android:layout_width="327dp"
+    android:layout_height="401dp"
+    android:layout_alignParentLeft="true"
+    android:layout_marginLeft="23dp"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="204dp"
+    android:background="@drawable/pop_up"
+    />
