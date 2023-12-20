@@ -11,6 +11,7 @@ import android.net.Uri;
 import androidx.core.app.NotificationCompat;
 
 public class Notification extends BroadcastReceiver {
+    //comment
     public static final int notificationID = 1;
     public static final String channelID = "channel1";
     public static final String titleExtra = "titleExtra";
