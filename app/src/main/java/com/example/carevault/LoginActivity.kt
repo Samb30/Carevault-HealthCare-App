@@ -17,7 +17,6 @@ class LoginActivity : AppCompatActivity() {
         val log_sb = findViewById<TextView>(R.id.textView5)
 
         log_sb.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
-
         backbt.setOnClickListener{startActivity(Intent(this, WelcomeActivity::class.java))}
     }
 }
