@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "871579429807",
+    "project_id": "carevault-66b75",
+    "storage_bucket": "carevault-66b75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871579429807:android:ad5eb313d4217ef8729d5a",
+        "android_client_info": {
+          "package_name": "com.example.carevault"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQoVkaGdE8vz_trE2XYPC6f1xFyBdRGhc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
