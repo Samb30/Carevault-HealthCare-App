@@ -82,7 +82,8 @@
             android:drawableStart="@drawable/email"
             android:drawablePadding="15dp"
             android:fontFamily="@font/latoregular"
-            android:hint="Country"
+            android:entries="@array/country_array"
+            android:prompt="@string/choose_country"
             android:paddingStart="25dp"
             android:paddingEnd="25dp"
             android:textAlignment="textStart"
@@ -185,7 +186,7 @@
             android:gravity="center"
             android:text="Don't have an account? Sign Up"
             android:textColor="#1D212D"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -201,22 +202,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="307dp"
-            android:layout_marginEnd="44dp"
-            android:onClick="showpass"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/passhide" />
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:constraint_referenced_ids="textView5,textView6,textView3,headline3,headline2,textView7,imageButton2,imageView5" />
+            app:constraint_referenced_ids="textView5,textView6,textView3,headline3,headline2,textView7,imageButton2" />
 
         <CheckBox
             android:id="@+id/checkBox"

@@ -12,7 +12,20 @@
           "package_name": "com.example.carevault"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "871579429807-a6sivj160hv6ha10k7le8au4nbq03m7i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.carevault",
+            "certificate_hash": "5426400e1eede31ebae75c8bb72e3f14876db954"
+          }
+        },
+        {
+          "client_id": "871579429807-ng4tb59915uqtctsrrptp9c6j0u8mdnt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBQoVkaGdE8vz_trE2XYPC6f1xFyBdRGhc"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871579429807-ng4tb59915uqtctsrrptp9c6j0u8mdnt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

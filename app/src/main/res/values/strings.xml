@@ -2,4 +2,7 @@
     <string name="app_name">CareVault</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose_country">Choose a Country</string>
+    <string name="webclientid">871579429807-ng4tb59915uqtctsrrptp9c6j0u8mdnt.apps.googleusercontent.com</string>
+
 </resources>
