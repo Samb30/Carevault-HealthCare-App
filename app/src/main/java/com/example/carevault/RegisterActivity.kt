@@ -1,7 +1,6 @@
 package com.example.carevault
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
@@ -13,8 +12,11 @@ import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.Objects
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -74,12 +76,14 @@ class RegisterActivity : AppCompatActivity() {
                             val mobileNumber = findViewById<EditText>(R.id.textView15).text.toString()
                             val country = spinner.selectedItem.toString()
 
-                            // Save additional user information to Firestore
+                            val userId = Objects.requireNonNull<FirebaseUser>(auth.currentUser).uid
+
                             val userData = hashMapOf(
                                 "Name" to name,
                                 "Email" to email,
                                 "MobileNumber" to mobileNumber,
-                                "Country" to country
+                                "Country" to country,
+                                "UserId" to userId
                             )
 
                             db.collection("Users").document(user?.uid ?: "")
