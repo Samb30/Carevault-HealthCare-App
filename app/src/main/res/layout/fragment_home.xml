@@ -29,6 +29,7 @@
                 android:textStyle="bold" />
             <ImageButton
                 android:id="@+id/notifyb"
+                android:visibility="gone"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
                 android:contentDescription="notify"

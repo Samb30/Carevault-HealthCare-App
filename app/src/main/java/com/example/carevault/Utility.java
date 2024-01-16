@@ -8,9 +8,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class Utility {
     static CollectionReference getCollectionReference(){
         FirebaseUser currentUser= FirebaseAuth.getInstance().getCurrentUser();
-        return FirebaseFirestore.getInstance().collection("notes")
-                .document(currentUser.getUid()).collection("my_notes");
+        return FirebaseFirestore.getInstance().collection("Users")
+                .document(currentUser.getUid()).collection("Appointments");
     }
+//    static CollectionReference getCollectionReferenceForHospital(){
+//        FirebaseUser currentUser= FirebaseAuth.getInstance().getCurrentUser();
+//        return FirebaseFirestore.getInstance().collection("Hospitals")
+//                .document(currentUser.getUid()).collection("Appointments");
+//    }
     static CollectionReference getCollectionReferenceForNotes() {
         FirebaseUser curr = FirebaseAuth.getInstance().getCurrentUser();
         return FirebaseFirestore.getInstance().collection("notes")

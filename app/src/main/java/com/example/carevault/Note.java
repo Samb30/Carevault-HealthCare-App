@@ -8,6 +8,7 @@ public class Note {
     String date;
     String id;
     ArrayList<Integer> arr;
+    String appoint;
     public Note(){
 
     }
@@ -47,5 +48,11 @@ public class Note {
 
     public void setArr(ArrayList<Integer> arr) {
         this.arr = arr;
+    }
+    public String getAppoint(){
+        return appoint;
+    }
+    public void setAppoint(String appoint){
+        this.appoint=appoint;
     }
 }
