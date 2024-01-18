@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-
 class Onboard1Activity : AppCompatActivity() {
 
     private lateinit var skipbutton : TextView
@@ -20,11 +19,11 @@ class Onboard1Activity : AppCompatActivity() {
 
         val onboard2 = findViewById<ImageView>(R.id.imageView4)
 
-        skipbutton.setOnClickListener { startActivity(Intent(this, WelcomeActivity::class.java)) }
+        skipbutton.setOnClickListener { startActivity(Intent(this, WelcomeActivity::class.java))
+            finish() }
 
-        onboard2.setOnClickListener{startActivity(Intent(this, Onboard2Activity::class.java))}
+        onboard2.setOnClickListener{startActivity(Intent(this, Onboard2Activity::class.java))
+            finish()}
     }
-
-
 }
 

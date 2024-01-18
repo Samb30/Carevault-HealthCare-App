@@ -18,6 +18,12 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".VerifyOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginWithNumberActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainFragment"
             android:exported="false" />
         <activity

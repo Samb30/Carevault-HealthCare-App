@@ -46,17 +46,13 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parentView: AdapterView<*>?) {
-                // Do nothing here
             }
         }
 
         val backButton: ImageButton = findViewById(R.id.imageButton2)
         backButton.setOnClickListener {
-            // Navigate to WelcomeActivity
             val intent = Intent(this@RegisterActivity, WelcomeActivity::class.java)
             startActivity(intent)
-
-            // Close the current activity
             finish()
         }
 
@@ -66,11 +62,9 @@ class RegisterActivity : AppCompatActivity() {
                 val email = findViewById<EditText>(R.id.textView11).text.toString()
                 val password = findViewById<EditText>(R.id.textView3).text.toString()
 
-                // Firebase Authentication: Create user with email and password
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            // User registration successful
                             val user = auth.currentUser
                             val name = findViewById<EditText>(R.id.textView6).text.toString()
                             val mobileNumber = findViewById<EditText>(R.id.textView15).text.toString()
@@ -89,18 +83,15 @@ class RegisterActivity : AppCompatActivity() {
                             db.collection("Users").document(user?.uid ?: "")
                                 .set(userData)
                                 .addOnSuccessListener {
-                                    // Handle success if needed
                                     Toast.makeText(
                                         applicationContext,
                                         "User registered successfully",
                                         Toast.LENGTH_SHORT
                                     ).show()
-
-                                    // Move to the next activity
                                     startActivity(Intent(this, HealthinfoActivity::class.java))
+                                    finish()
                                 }
                                 .addOnFailureListener { e ->
-                                    // Handle failure if needed
                                     Toast.makeText(
                                         applicationContext,
                                         "Error saving user data: $e",
@@ -108,7 +99,6 @@ class RegisterActivity : AppCompatActivity() {
                                     ).show()
                                 }
                         } else {
-                            // If registration fails, display a message to the user.
                             Toast.makeText(
                                 baseContext, "Registration failed. ${task.exception?.message}",
                                 Toast.LENGTH_SHORT
@@ -118,7 +108,6 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun validateInputs(): Boolean {
         val nameEditText: EditText = findViewById(R.id.textView6)
         val emailEditText: EditText = findViewById(R.id.textView11)
@@ -151,8 +140,8 @@ class RegisterActivity : AppCompatActivity() {
             return false
         }
 
-        if (password.length < 6) {
-            passwordEditText.error = "Password must be at least 6 characters long"
+        if (password.length < 8) {
+            passwordEditText.error = "Password must be at least 8 characters long"
             return false
         }
 

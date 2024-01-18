@@ -1,11 +1,10 @@
 package com.example.carevault
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -59,7 +58,6 @@ class HealthinfoActivity : AppCompatActivity() {
 
             userMedicalDetailsRef.document("details").set(medicaldata)
                 .addOnSuccessListener {
-                    // Handle success if needed
                     Toast.makeText(
                         applicationContext,
                         "Medical details saved successfully",
@@ -70,7 +68,6 @@ class HealthinfoActivity : AppCompatActivity() {
                     finish()
                 }
                 .addOnFailureListener { e ->
-                    // Handle failure if needed
                     Toast.makeText(
                         applicationContext,
                         "Error saving medical details: $e",

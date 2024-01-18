@@ -31,6 +31,8 @@ class LoginActivity : AppCompatActivity() {
         val loginButton = findViewById<TextView>(R.id.textView5)
         val emailEditText = findViewById<EditText>(R.id.textView6)
         val passwordEditText = findViewById<EditText>(R.id.textView3)
+        val signuptext = findViewById<TextView>(R.id.textView7)
+        val signinnumber = findViewById<TextView>(R.id.textView12)
 
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
@@ -41,18 +43,15 @@ class LoginActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            // Sign in success
                             Toast.makeText(
                                 applicationContext,
                                 "Login successful",
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            // Start the MainFragment activity (or any other desired activity)
                             startActivity(Intent(this, MainFragment::class.java))
-                            finish() // Finish the LoginActivity to prevent going back
+                            finish()
                         } else {
-                            // If sign in fails, display a message to the user.
                             Toast.makeText(
                                 baseContext,
                                 "Authentication failed. ${task.exception?.message}",
@@ -69,8 +68,16 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        signuptext.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
         backButton.setOnClickListener {
             startActivity(Intent(this, WelcomeActivity::class.java))
+        }
+
+        signinnumber.setOnClickListener {
+            startActivity(Intent(this, LoginWithNumberActivity::class.java))
         }
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -119,13 +126,10 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success
                     Toast.makeText(applicationContext, "Google Sign-In successful", Toast.LENGTH_SHORT).show()
-                    // Start the MainFragment activity (or any other desired activity)
                     startActivity(Intent(this, MainFragment::class.java))
-                    finish() // Finish the LoginActivity to prevent going back
+                    finish()
                 } else {
-                    // If sign in fails, display a message to the user.
                     Toast.makeText(baseContext, "Authentication failed. ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }

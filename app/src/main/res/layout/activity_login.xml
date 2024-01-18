@@ -254,13 +254,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <androidx.constraintlayout.widget.Group
             android:id="@+id/group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:constraint_referenced_ids="textView5,textView6,textView9,textView10,textView12,textView13,textView3,headline3,headline5,headline2,textView7,imageButton2,view" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>
