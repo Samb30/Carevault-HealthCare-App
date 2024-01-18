@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D7D0FF"
+    android:fillViewport="true"
+    tools:context=".LoginWithNumberActivity">
+
+    <EditText
+        android:id="@+id/textView6"
+        android:layout_width="322dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="248dp"
+        android:background="@drawable/rect3"
+        android:drawableStart="@drawable/call2"
+        android:drawablePadding="15dp"
+        android:fontFamily="@font/latoregular"
+        android:hint="Enter mobile number"
+        android:inputType="number"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:textAlignment="textStart"
+        android:textColor="#1D212D"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="317dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="352dp"
+        android:background="@drawable/rect_1"
+        android:fontFamily="@font/latobold"
+        android:gravity="center"
+        android:text="Generate OTP"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="324dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="456dp"
+        android:background="@drawable/line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headline2"
+        android:layout_width="317dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="184dp"
+        android:fontFamily="@font/latoheavy"
+        android:lineSpacingExtra="3sp"
+        android:text="Enter your Mobile Number"
+        android:textColor="#1D212D"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="356dp"
+        android:background="@drawable/backbuttom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="textView5,textView6,headline2,imageButton2,view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
