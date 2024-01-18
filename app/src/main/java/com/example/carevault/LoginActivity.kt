@@ -43,15 +43,18 @@ class LoginActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
+                            // Sign in success
                             Toast.makeText(
                                 applicationContext,
                                 "Login successful",
                                 Toast.LENGTH_SHORT
                             ).show()
 
+                            // Start the MainFragment activity (or any other desired activity)
                             startActivity(Intent(this, MainFragment::class.java))
-                            finish()
+                            finish() // Finish the LoginActivity to prevent going back
                         } else {
+                            // If sign in fails, display a message to the user.
                             Toast.makeText(
                                 baseContext,
                                 "Authentication failed. ${task.exception?.message}",
@@ -126,10 +129,13 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    // Sign in success
                     Toast.makeText(applicationContext, "Google Sign-In successful", Toast.LENGTH_SHORT).show()
+                    // Start the MainFragment activity (or any other desired activity)
                     startActivity(Intent(this, MainFragment::class.java))
-                    finish()
+                    finish() // Finish the LoginActivity to prevent going back
                 } else {
+                    // If sign in fails, display a message to the user.
                     Toast.makeText(baseContext, "Authentication failed. ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
