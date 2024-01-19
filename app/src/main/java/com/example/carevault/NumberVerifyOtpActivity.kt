@@ -17,7 +17,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.auth
 import java.util.concurrent.TimeUnit
 
-class VerifyOtpActivity : AppCompatActivity() {
+class NumberVerifyOtpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityVerifyOtpBinding
     private var storeVerificationId: String? = ""
@@ -63,7 +63,7 @@ class VerifyOtpActivity : AppCompatActivity() {
                     Log.d("Success", "signInWithCredential:success")
 
                     val user = task.result?.user
-                    val intent = Intent(this@VerifyOtpActivity, MainFragment::class.java)
+                    val intent = Intent(this@NumberVerifyOtpActivity, MainFragment::class.java)
                     startActivity(intent)
                     finish()
                 } else {
@@ -103,7 +103,7 @@ class VerifyOtpActivity : AppCompatActivity() {
             Log.d("Resend", "onCodeSent:$verificationId")
             storeVerificationId = verificationId
             resendToken = token
-            Toast.makeText(this@VerifyOtpActivity, "OTP Resent", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@NumberVerifyOtpActivity, "OTP Resent", Toast.LENGTH_SHORT).show()
         }
     }
 }

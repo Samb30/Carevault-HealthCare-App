@@ -2,6 +2,9 @@ package com.example.carevault
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
+import android.view.MotionEvent
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -21,7 +24,6 @@ class LoginActivity : AppCompatActivity() {
 
     private val auth = FirebaseAuth.getInstance()
     private lateinit var googleSignInClient: GoogleSignInClient
-
     private lateinit var googleSignInLauncher: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +35,17 @@ class LoginActivity : AppCompatActivity() {
         val passwordEditText = findViewById<EditText>(R.id.textView3)
         val signuptext = findViewById<TextView>(R.id.textView7)
         val signinnumber = findViewById<TextView>(R.id.textView12)
+
+        passwordEditText.setOnTouchListener { _, event ->
+            val DRAWABLE_RIGHT = 2
+            if (event.action == MotionEvent.ACTION_UP) {
+                if (event.rawX >= passwordEditText.right - passwordEditText.compoundDrawables[DRAWABLE_RIGHT].bounds.width()) {
+                    togglePasswordVisibility(passwordEditText)
+                    return@setOnTouchListener true
+                }
+            }
+            false
+        }
 
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
@@ -139,5 +152,14 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(baseContext, "Authentication failed. ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+    private fun togglePasswordVisibility(editText: EditText) {
+        val selection = editText.selectionEnd
+        if (editText.transformationMethod == PasswordTransformationMethod.getInstance()) {
+            editText.transformationMethod = HideReturnsTransformationMethod.getInstance()
+        } else {
+            editText.transformationMethod = PasswordTransformationMethod.getInstance()
+        }
+        editText.setSelection(selection)
     }
 }

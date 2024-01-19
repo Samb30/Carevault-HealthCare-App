@@ -31,8 +31,8 @@
 
         <EditText
             android:id="@+id/textView6"
-            android:layout_width="373dp"
-            android:layout_height="65dp"
+            android:layout_width="374dp"
+            android:layout_height="67dp"
             android:layout_marginStart="19dp"
             android:layout_marginTop="104dp"
             android:layout_marginEnd="19dp"
@@ -135,18 +135,19 @@
 
         <EditText
             android:id="@+id/textView3"
-            android:layout_width="373dp"
-            android:layout_height="65dp"
+            android:layout_width="372dp"
+            android:layout_height="68dp"
             android:layout_marginStart="19dp"
             android:layout_marginTop="195dp"
             android:background="@drawable/rect3"
             android:drawableStart="@drawable/lock"
             android:drawableEnd="@drawable/passhide"
-            android:drawablePadding="15dp"
+            android:drawablePadding="20dp"
             android:ems="10"
             android:fontFamily="@font/latoregular"
             android:hint="Enter your password"
             android:inputType="textPassword"
+            android:longClickable="false"
             android:paddingStart="25dp"
             android:paddingEnd="25dp"
             android:textAlignment="textStart"

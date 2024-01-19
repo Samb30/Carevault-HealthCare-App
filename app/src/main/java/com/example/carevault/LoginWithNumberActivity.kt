@@ -83,7 +83,7 @@ class LoginWithNumberActivity : AppCompatActivity() {
                 storedVerificationId = verificationId
                 resendToken = token
 
-                val intent = Intent(this@LoginWithNumberActivity, VerifyOtpActivity::class.java)
+                val intent = Intent(this@LoginWithNumberActivity, NumberVerifyOtpActivity::class.java)
 
 
                 intent.putExtra("storedVerificationId", storedVerificationId)

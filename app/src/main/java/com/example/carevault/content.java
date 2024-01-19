@@ -1,7 +1,5 @@
 package com.example.carevault;
 
-
-
 import static com.example.carevault.Notification.messageExtra;
 import static com.example.carevault.Notification.titleExtra;
 

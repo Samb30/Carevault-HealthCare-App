@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D7D0FF"
+        tools:context=".ProfileActivity">
+
+        <TextView
+            android:id="@+id/my_profile"
+            android:layout_width="163dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="29dp"
+            android:fontFamily="@font/latoheavy"
+            android:gravity="top"
+            android:lineSpacingExtra="-2sp"
+            android:text="My Profile"
+            android:textColor="#1D212D"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.112"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="28dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="29dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="383dp" />
+
+        <RelativeLayout
+            android:id="@+id/frame_11712"
+            android:layout_width="355dp"
+            android:layout_height="90dp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/rounded_bg"
+            android:elevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_profile">
+
+            <View
+                android:id="@+id/ellipse_90"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="12.5dp"
+                android:alpha="0.3"
+                android:background="@drawable/ellipse_90" />
+
+            <TextView
+                android:id="@+id/my_profile11"
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/latoheavy"
+                android:gravity="top"
+                android:lineSpacingExtra="-2sp"
+                android:text="Name"
+                android:textColor="#1D212D"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/my_profile13"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="271dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/rect_1"
+                android:fontFamily="@font/latoheavy"
+                android:gravity="center"
+                android:text="Edit"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/my_profile12"
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/latoregular"
+                android:gravity="top"
+                android:lineSpacingExtra="-2sp"
+                android:text="Email"
+                android:textColor="#1D212D"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/frame_117122"
+            android:layout_width="355dp"
+            android:layout_height="320dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_bg"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/my_pro13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_11712">
+
+            <View
+                android:id="@+id/ellipse_901"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:alpha="0.3"
+                android:background="@drawable/ellipse_90" />
+
+            <TextView
+                android:id="@+id/my_profil"
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/latoheavy"
+                android:gravity="top"
+                android:lineSpacingExtra="-2sp"
+                android:text="Health Records"
+                android:textColor="#1D212D"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/ellipse_11901"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="100dp"
+                android:alpha="0.3"
+                android:background="@drawable/ellipse_90" />
+
+            <TextView
+                android:id="@+id/my_profil11"
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="110dp"
+                android:fontFamily="@font/latoheavy"
+                android:gravity="top"
+                android:lineSpacingExtra="-2sp"
+                android:text="Help and Support"
+                android:textColor="#1D212D"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/ellipse_111"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="170dp"
+                android:alpha="0.3"
+                android:background="@drawable/ellipse_90" />
+
+            <TextView
+                android:id="@+id/my_profil113"
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="180dp"
+                android:fontFamily="@font/latoheavy"
+                android:gravity="top"
+                android:lineSpacingExtra="-2sp"
+                android:text="Feedback"
+                android:textColor="#1D212D"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/ellipse"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="240dp"
+                android:alpha="0.3"
+                android:background="@drawable/ellipse_90" />
+
+            <TextView
+                android:id="@+id/my_profil13"
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="250dp"
+                android:fontFamily="@font/latoheavy"
+                android:gravity="top"
+                android:lineSpacingExtra="-2sp"
+                android:text="Settings"
+                android:textColor="#1D212D"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/forwardbutton" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="104dp"
+                android:background="@drawable/forwardbutton" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="174dp"
+                android:background="@drawable/forwardbutton" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="244dp"
+                android:background="@drawable/forwardbutton" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/my_pro13"
+            android:layout_width="209dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="601dp"
+            android:layout_marginBottom="249dp"
+            android:background="@drawable/rect_1"
+            android:fontFamily="@font/latoheavy"
+            android:gravity="center"
+            android:text="Logout"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/my_profi2"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="754dp"
+            android:layout_marginBottom="141dp"
+            android:fontFamily="@font/latoregular"
+            android:gravity="center"
+            android:lineSpacingExtra="-2sp"
+            android:text="Version 1.1"
+            android:textColor="#1D212D"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

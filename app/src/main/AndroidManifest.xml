@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +18,42 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".VerifyOtpActivity"
+            android:name=".AppSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppFeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="false"
+            android:label="@string/title_activity_feedback"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpSupportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HealthRecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewPassword"
+            android:exported="false" />
+        <activity
+            android:name=".PassVerificationCode"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordResetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmergencyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NumberVerifyOtpActivity"
             android:exported="false" />
         <activity
             android:name=".LoginWithNumberActivity"
@@ -27,7 +62,7 @@
             android:name=".MainFragment"
             android:exported="false" />
         <activity
-            android:name=".HealthinfoActivity"
+            android:name=".HealthInfoInputActivity"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"

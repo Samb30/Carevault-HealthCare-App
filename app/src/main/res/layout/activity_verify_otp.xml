@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#D7D0FF"
     android:fillViewport="true"
-    tools:context=".VerifyOtpActivity">
+    tools:context=".NumberVerifyOtpActivity">
 
     <TextView
         android:id="@+id/textView23"

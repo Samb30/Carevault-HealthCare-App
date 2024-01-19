@@ -88,7 +88,7 @@ class RegisterActivity : AppCompatActivity() {
                                         "User registered successfully",
                                         Toast.LENGTH_SHORT
                                     ).show()
-                                    startActivity(Intent(this, HealthinfoActivity::class.java))
+                                    startActivity(Intent(this, HealthInfoInputActivity::class.java))
                                     finish()
                                 }
                                 .addOnFailureListener { e ->
