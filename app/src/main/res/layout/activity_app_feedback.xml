@@ -1,9 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AppFeedbackActivity">
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D7D0FF"
+        tools:context=".AppFeedbackActivity">
+
+        <ImageButton
+            android:id="@+id/imageButton112"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="356dp"
+            android:background="@drawable/backbuttom"
+            android:contentDescription="TODO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/headline2"
+            android:layout_width="317dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="34dp"
+            android:fontFamily="@font/latoheavy"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="3sp"
+            android:text="Feedback"
+            android:textColor="#1D212D"
+            android:textSize="26sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/textView11116"
+            android:layout_width="374dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="191dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="656dp"
+            android:background="@drawable/rect3"
+            android:drawablePadding="15dp"
+            android:fontFamily="@font/latoregular"
+            android:hint="Write feedback"
+            android:inputType="textEmailAddress"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:textAlignment="textStart"
+            android:textColor="#1D212D"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5ss"
+            android:layout_width="373dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="400dp"
+            android:background="@drawable/rect_1"
+            android:fontFamily="@font/latobold"
+            android:gravity="center"
+            android:text="Submit Feedback"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -123,7 +123,6 @@
                 android:text="Email"
                 android:textColor="#1D212D"
                 android:textSize="14sp" />
-
         </RelativeLayout>
 
         <RelativeLayout
@@ -294,5 +293,4 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>
