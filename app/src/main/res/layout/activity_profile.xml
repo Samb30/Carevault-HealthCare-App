@@ -96,11 +96,11 @@
 
             <TextView
                 android:id="@+id/my_profile13"
-                android:layout_width="70dp"
+                android:layout_width="60dp"
                 android:layout_height="30dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="271dp"
+                android:layout_marginLeft="280dp"
                 android:layout_marginTop="28dp"
                 android:background="@drawable/rect_1"
                 android:fontFamily="@font/latoheavy"
@@ -111,7 +111,7 @@
 
             <TextView
                 android:id="@+id/my_profile12"
-                android:layout_width="159dp"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -139,12 +139,12 @@
 
             <View
                 android:id="@+id/ellipse_901"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:alpha="0.3"
-                android:background="@drawable/ellipse_90" />
+                android:background="@drawable/docinfo" />
 
             <TextView
                 android:id="@+id/my_profil"
@@ -161,12 +161,12 @@
 
             <View
                 android:id="@+id/ellipse_11901"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="100dp"
                 android:alpha="0.3"
-                android:background="@drawable/ellipse_90" />
+                android:background="@drawable/helpicon" />
 
             <TextView
                 android:id="@+id/my_profil11"
@@ -183,12 +183,12 @@
 
             <View
                 android:id="@+id/ellipse_111"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="170dp"
                 android:alpha="0.3"
-                android:background="@drawable/ellipse_90" />
+                android:background="@drawable/feedback" />
 
             <TextView
                 android:id="@+id/my_profil113"
@@ -205,12 +205,12 @@
 
             <View
                 android:id="@+id/ellipse"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="240dp"
                 android:alpha="0.3"
-                android:background="@drawable/ellipse_90" />
+                android:background="@drawable/ssettings" />
 
             <TextView
                 android:id="@+id/my_profil13"
