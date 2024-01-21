@@ -11,11 +11,6 @@ public class Utility {
         return FirebaseFirestore.getInstance().collection("Users")
                 .document(currentUser.getUid()).collection("Appointments");
     }
-//    static CollectionReference getCollectionReferenceForHospital(){
-//        FirebaseUser currentUser= FirebaseAuth.getInstance().getCurrentUser();
-//        return FirebaseFirestore.getInstance().collection("Hospitals")
-//                .document(currentUser.getUid()).collection("Appointments");
-//    }
     static CollectionReference getCollectionReferenceForNotes() {
         FirebaseUser curr = FirebaseAuth.getInstance().getCurrentUser();
         return FirebaseFirestore.getInstance().collection("notes")

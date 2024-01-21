@@ -10,9 +10,11 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.carevault.fragments.ArticleFragment;
 import com.example.carevault.fragments.CalenderFragment;
 import com.example.carevault.fragments.DoctorsFragment;
 import com.example.carevault.fragments.HomeFragment;
+import com.example.carevault.fragments.MessageFragment;
 import com.example.carevault.fragments.UserFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -36,7 +38,7 @@ public class MainFragment extends AppCompatActivity {
                             load(new HomeFragment());
                             return true;
                         }else if(id==R.id.home2){
-                            load(new HomeFragment());
+                            load(new ArticleFragment());
                             return true;
                         }else if(id==R.id.hom3){
                             load(new CalenderFragment());

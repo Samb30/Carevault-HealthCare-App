@@ -18,6 +18,24 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".Articles.Diet"
+            android:exported="false" />
+        <activity
+            android:name=".Articles.Fitness"
+            android:exported="false" />
+        <activity
+            android:name=".Articles.Disease"
+            android:exported="false" />
+        <activity
+            android:name=".Articles.Covid"
+            android:exported="false" />
+        <activity
+            android:name=".Articles.Health"
+            android:exported="false" />
+        <activity
+            android:name=".AppointmentReminders"
+            android:exported="false" />
+        <activity
             android:name=".AppSettingsActivity"
             android:exported="false" />
         <activity
@@ -103,18 +121,6 @@
             android:exported="false" />
         <activity
             android:name=".Stopwatch"
-            android:exported="false" />
-        <activity
-            android:name=".content"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivitySar2"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivitySar"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivitySar3"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
