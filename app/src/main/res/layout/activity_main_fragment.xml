@@ -8,7 +8,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="65dp"
         android:background="#D7D0FF"
         android:id="@+id/tab"/>
     <ImageButton
@@ -23,11 +23,12 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnview"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="65dp"
         app:labelVisibilityMode="labeled"
-        android:layout_alignParentBottom="true"
         app:itemIconTint="#0BAB7C"
         app:itemTextColor="#0BAB7C"
+        android:layout_alignParentBottom="true"
+        app:itemPaddingTop="4dp"
         android:background="#FAF9F6"
         app:menu="@menu/menu" />
 </RelativeLayout>

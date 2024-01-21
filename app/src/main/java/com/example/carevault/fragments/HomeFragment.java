@@ -1,4 +1,4 @@
-package com.example.carevault;
+package com.example.carevault.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.example.carevault.MainActivity2;
+import com.example.carevault.R;
+import com.example.carevault.TopambulanceActivity;
+import com.example.carevault.TophospitalActivity;
+import com.example.carevault.booking;
+import com.example.carevault.doctordetailMainActivity3;
 
 public class HomeFragment extends Fragment {
 
