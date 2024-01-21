@@ -5,7 +5,13 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.toObject
 
 //import com.example.doctorhome.databinding.ActivityTopambulanceBinding
 //import com.google.firebase.auth.FirebaseAuth
@@ -14,13 +20,10 @@ import androidx.appcompat.app.AppCompatActivity
 //import com.google.firebase.storage.StorageReference
 
 class TopambulanceActivity : AppCompatActivity() {
-//    private  lateinit var binding:ActivityTopambulanceBinding
-//    private lateinit var dbref:DatabaseReference
-//    private lateinit var storageReference: StorageReference
-//    private lateinit var dialog:Dialog
-//    private lateinit var user: User
-//    private lateinit var uid:String
-//    private lateinit var auth:FirebaseAuth
+
+    private lateinit var rv: RecyclerView
+    private lateinit var ulist:ArrayList<User>
+    private lateinit var db: FirebaseFirestore
     private lateinit var ambulance:EditText
     private lateinit var docname:TextView
     private lateinit var doctitle:TextView
@@ -36,41 +39,36 @@ class TopambulanceActivity : AppCompatActivity() {
         val back1: ImageButton = findViewById(R.id.backbutton3)
         val searchb: ImageButton = findViewById(R.id.searchambulance)
          ambulance = findViewById(R.id.ambulancename)
-        docname=findViewById(R.id.tvname)
-        doctitle=findViewById(R.id.tvname2)
+
+        rv=findViewById(R.id.recycler)
+        rv.layoutManager=LinearLayoutManager(this)
+        ulist= arrayListOf()
+        db=FirebaseFirestore.getInstance()
+        db.collection("Hospitals").get().addOnSuccessListener{
+            if(!it.isEmpty){
+                for(data in it.documents){
+                    val user: User? =data.toObject(User::class.java)
+                    if(user!=null){
+                        ulist.add(user)
+                    }
+                }
+                rv.adapter=Myadapter(ulist)
+            }
+        }
+            .addOnFailureListener{
+                Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
+            }
 
 
 
 
         back1.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
-//        searchb.setOnClickListener {
-//            val ambuname:String=ambulance.text.toString()
-//            if(ambuname.isNotEmpty()){
-//                readdata(ambuname)
-//            }
-//        }
+
 
 
     }
 
-//    private fun readdata(ambuname: String) {
-//
-//        dbref=FirebaseDatabase.getInstance().getReference("users")
-//        dbref.child(ambuname).get().addOnSuccessListener {
-//            if (it.exists()){
-//                val name=it.child("name").value
-//                val title=it.child("title").value
-//              Toast.makeText(this,"success",Toast.LENGTH_SHORT).show()
-//                ambulance.text.clear()
-//                docname.text=name.toString()
-//                doctitle.text=title.toString()
-//
-//
-//            }
-//        }
-//
-//
-//    }
+
 
 
 }

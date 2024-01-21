@@ -1,3 +1,7 @@
 package com.example.carevault
 
-data class User(var firstname:String?=null,var lastname:String?=null)
+data class User(
+    val name :String?=null,
+    val date:String ?=null,
+    val imageUrl: String? = null
+)
