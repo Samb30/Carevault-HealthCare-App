@@ -11,15 +11,15 @@
         android:layout_marginBottom="65dp"
         android:background="#D7D0FF"
         android:id="@+id/tab"/>
-    <ImageButton
-        android:id="@+id/notifyb"
-        android:layout_width="50dp"
-        android:layout_height="35dp"
-        android:contentDescription="notify"
-        android:layout_alignParentRight="true"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/baseline_notifications_none_24"
-        />
+<!--    <ImageButton-->
+<!--        android:id="@+id/notifyb"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:contentDescription="notify"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:src="@drawable/baseline_notifications_none_24"-->
+<!--        />-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnview"
         android:layout_width="match_parent"
