@@ -22,19 +22,20 @@
                 android:id="@+id/pagetitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="97dp"
-
-                android:text="Find your desire health solution"
+                android:layout_gravity="center"
+                android:text="Find your desire                     health solution"
                 android:textColor="#1D212D"
                 android:textSize="28sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:maxLines="2" />
+
+
 
 
             <ImageButton
                 android:id="@+id/notifyb"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
                 android:contentDescription="notify"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
@@ -44,16 +45,22 @@
 
 
         </RelativeLayout>
-        <EditText
+        <androidx.appcompat.widget.SearchView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Search doctor,drugs,articles"
+            app:queryHint="Search doctor, drugs, articles..."
+            android:background="@drawable/searchview"
             android:layout_below="@+id/indexArticles"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="15dp"
             android:textSize="20dp"
-            android:textColor="#1D212D"
+            android:textColor="@color/black"
             android:textStyle="bold"
-            android:id="@+id/popularArticles"/>
+            android:id="@+id/popularArticles"
+
+            app:iconifiedByDefault="false"
+            />
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,44 +70,87 @@
                 android:layout_centerVertical="true"
                 android:id="@+id/mainbuttons">
 
-                <ImageButton
-                    android:id="@+id/Doctor"
+                <RelativeLayout
                     android:layout_width="82dp"
-                    android:layout_height="68dp"
-                    android:contentDescription="notify"
-                    android:layout_marginStart="8sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8sp">
 
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/verticalscroll"
-                    android:src="@drawable/sthethoscope"
-                     />
+                    <ImageButton
+                        android:id="@+id/Doctor"
+                        android:layout_width="82dp"
+                        android:layout_height="68dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="notify"
 
-                <ImageButton
-                    android:id="@+id/article"
+                        android:background="@drawable/verticalscroll"
+                        android:src="@drawable/sthethoscope" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Doctor"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:textStyle="bold"
+                        android:text="Doctor" />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="82dp"
-                    android:layout_height="68dp"
-                    android:layout_marginLeft="13dp"
-                    android:contentDescription="notify"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/verticalscroll"
-                    android:src="@drawable/articles"
-                    />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp">
+
+                    <ImageButton
+                        android:id="@+id/article"
+                        android:layout_width="82dp"
+                        android:layout_height="68dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="notify"
+                        android:background="@drawable/verticalscroll"
+                        android:src="@drawable/articles" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/article"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:textStyle="bold"
+                        android:text="Article" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="82dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp">
+
                 <ImageButton
                     android:id="@+id/hospital"
                     android:layout_width="82dp"
                     android:layout_height="68dp"
-                    android:layout_marginLeft="13dp"
+
                     android:contentDescription="notify"
 
                     android:layout_centerVertical="true"
                     android:background="@drawable/verticalscroll"
                     android:src="@drawable/outline_health_and_safety_24"
                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/hospital"
+                        android:layout_centerHorizontal="true"
+                        android:textStyle="bold"
+                        android:layout_marginTop="20dp"
+                        android:text="Hospital" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="82dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp">
                 <ImageButton
                     android:id="@+id/ambulance"
                     android:layout_width="82dp"
-                    android:layout_marginLeft="13dp"
+
 
                     android:layout_height="68dp"
                     android:contentDescription="notify"
@@ -111,6 +161,15 @@
                     android:background="@drawable/verticalscroll"
                     android:src="@drawable/ambulance__2_"
                      />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ambulance"
+                        android:layout_centerHorizontal="true"
+                        android:textStyle="bold"
+                        android:layout_marginTop="20dp"
+                        android:text="Ambulance" />
+                </RelativeLayout>
 
             </LinearLayout>
 
@@ -124,23 +183,26 @@
                 android:id="@+id/advertiseimg"
                 android:layout_width="1000sp"
                 android:layout_height="150dp"
-
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="18sp"
-                android:src="@drawable/heal3"/>
+
+
+                android:src="@drawable/homedocimg"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Top Doctor"
                 android:textSize="23sp"
                 android:layout_below="@id/advertiseimg"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="8sp"
                 android:textColor="#1D212D"
                 android:textStyle="bold"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="See all"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="8sp"
                 android:layout_below="@id/advertiseimg"
                 android:layout_alignParentRight="true"
                 android:textAllCaps="false"
@@ -153,7 +215,9 @@
             android:layout_width="match_parent"
             android:layout_below="@+id/trending"
             android:id="@+id/scrolltrending"
-            android:layout_marginTop="19dp"
+
+            android:layout_marginStart="8sp"
+            android:layout_marginEnd="8sp"
             android:layout_height="275dp"
             >
             <LinearLayout
@@ -199,15 +263,31 @@
                         android:textColor="#1D212D"
                         android:text="Chardiologist"/>
 
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="5dp"
-                        android:id="@+id/distance"
-                        android:textSize="16dp"
-                        android:textColor="#83848B"
-                        android:text="800 km away"/>
+                        android:layout_marginTop="15dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/location_icon"
+                            android:src="@drawable/baseline_location_on_24"
+                            android:contentDescription="Location Icon"/>
+
+                        <TextView
+                            android:id="@+id/distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/location_icon"
+                            android:layout_marginStart="5dp"
+                            android:textSize="16dp"
+                            android:textColor="#83848B"
+                            android:text="800 km away"/>
+
+                    </RelativeLayout>
+
 
                 </LinearLayout>
 
