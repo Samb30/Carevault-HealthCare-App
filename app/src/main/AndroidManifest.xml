@@ -18,6 +18,21 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".EmergencyProcedureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmergencyAmbulanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmergencyCallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmergencyLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmergencySignUpActivity"
+            android:exported="false" />
+        <activity
             android:name=".Articles.Diet"
             android:exported="false" />
         <activity

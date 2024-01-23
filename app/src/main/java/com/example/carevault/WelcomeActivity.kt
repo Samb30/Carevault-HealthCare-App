@@ -17,6 +17,6 @@ class WelcomeActivity : AppCompatActivity() {
 
         signup.setOnClickListener{startActivity(Intent(this, RegisterActivity::class.java))}
 
-        emergency.setOnClickListener{startActivity(Intent(this, EmergencyActivity::class.java))}
+        emergency.setOnClickListener{startActivity(Intent(this, EmergencyLoginActivity::class.java))}
     }
 }
