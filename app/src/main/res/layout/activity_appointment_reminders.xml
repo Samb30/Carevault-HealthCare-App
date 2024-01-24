@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".AppointmentReminders">
+
     <RelativeLayout
         android:id="@+id/titlebar"
         android:layout_width="match_parent"
@@ -52,6 +53,7 @@
         android:textColor="@color/black"
         android:layout_width="match_parent"
         android:maxLines="2"
+        android:visibility="gone"
         android:layout_below="@+id/titleET"
         android:layout_height="wrap_content"
         android:hint="Description of task" />
@@ -60,8 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/messageET"
-        android:id="@+id/ll"
-        android:layout_marginTop="20dp">
+        android:id="@+id/ll">
 
         <DatePicker
             android:id="@+id/datePicker"
@@ -116,6 +117,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:layout_below="@+id/permissions"
         android:layout_marginTop="8dp"
         android:id="@+id/permissions1">
@@ -165,12 +167,14 @@
         android:id="@+id/spinner1"
         android:layout_width="150dp"
         android:layout_marginTop="8dp"
+        android:visibility="gone"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text3"
         android:backgroundTint="@color/black"
         android:spinnerMode="dropdown"/>
     <Spinner
         android:id="@+id/spinner2"
+        android:visibility="gone"
         android:layout_width="150dp"
         android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
@@ -186,7 +190,6 @@
         android:text="Monday"
         android:textColor="@color/black"
         android:buttonTint="@color/black"
-        android:layout_marginTop="14dp"
         android:textSize="18sp" />
     <CheckBox
         android:id="@+id/checkBox2"
@@ -196,7 +199,6 @@
         android:textColor="@color/black"
         android:buttonTint="@color/black"
         android:text="Tuesday"
-        android:layout_marginTop="1dp"
         android:textSize="18sp" />
     <CheckBox
         android:id="@+id/checkBox3"
@@ -206,7 +208,6 @@
         android:text="Wednesday"
         android:textColor="@color/black"
         android:buttonTint="@color/black"
-        android:layout_marginTop="1dp"
         android:textSize="18sp" />
 
     <CheckBox
@@ -217,7 +218,6 @@
         android:text="Thrusday"
         android:textColor="@color/black"
         android:buttonTint="@color/black"
-        android:layout_marginTop="1dp"
         android:textSize="18sp" />
 
     <CheckBox
@@ -228,7 +228,6 @@
         android:text="Friday"
         android:textColor="@color/black"
         android:buttonTint="@color/black"
-        android:layout_marginTop="1dp"
         android:textSize="18sp" />
     <CheckBox
         android:id="@+id/checkBox6"
@@ -238,15 +237,13 @@
         android:textColor="@color/black"
         android:buttonTint="@color/black"
         android:textSize="18sp"
-        android:text="Saturday"
-        android:layout_marginTop="1dp"/>
+        android:text="Saturday"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_below="@id/checkBox6"
         android:layout_height="match_parent">
         <Button
             android:id="@+id/cancelButton"
-            android:visibility="gone"
             android:layout_width="wrap_content"
             android:textColor="@color/black"
             android:layout_alignParentBottom="true"
@@ -254,4 +251,5 @@
             android:layout_centerInParent="true"
             android:text="Cancel Alarms"/>
     </RelativeLayout>
+
 </RelativeLayout>
