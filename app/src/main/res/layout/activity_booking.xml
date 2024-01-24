@@ -130,7 +130,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20"
-                        android:textColor="#a4c4fe"
+                        android:textColor="#5F48E6"
                         android:layout_marginBottom="8dp"
                         android:textSize="20sp"
                         android:layout_gravity="center_horizontal"/>
@@ -141,6 +141,7 @@
                         android:layout_height="wrap_content"
                         android:text="Patient"
                         android:textColor="#b2b8c2"
+                        android:textStyle="bold"
                         android:textSize="16sp"
                         android:layout_gravity="center_horizontal"/>
 
@@ -165,7 +166,7 @@
                         android:text="10y+"
 
                         android:layout_marginBottom="8dp"
-                        android:textColor="#a4c4fe"
+                        android:textColor="#5F48E6"
                         android:textSize="20sp"
                         android:layout_gravity="center_horizontal"/>
 
@@ -173,8 +174,9 @@
                         android:id="@+id/label2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Experience"
+                        android:text="Tenure"
                         android:textColor="#b2b8c2"
+                        android:textStyle="bold"
                         android:textSize="16sp"
                         android:layout_gravity="center_horizontal"/>
 
@@ -201,7 +203,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="\u2605 4.8"
-                        android:textColor="#a4c4fe"
+                        android:textColor="#5F48E6"
                         android:layout_marginBottom="8dp"
                         android:textSize="20sp"
                         android:layout_gravity="center_horizontal"/>
@@ -210,6 +212,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rating"
+                        android:textStyle="bold"
 
                         android:textColor="#b2b8c2"
                         android:textSize="16sp"
@@ -224,13 +227,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/aboutsec"
             android:layout_below="@+id/triplebox"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
             <TextView
                 android:id="@+id/aboutMeHeading"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="About Me"
                 android:textSize="18sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
 
                 />
@@ -243,7 +247,9 @@
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et fringilla lacus. Integer euismod enim a sollicitudin ultricies. Nullam euismod tempor dui,"
                 android:layout_below="@id/aboutMeHeading"
                 android:layout_marginTop="10dp"
-                android:paddingEnd="16dp"/>
+
+                android:textColor="@color/black"
+                />
 
 
         </RelativeLayout>
