@@ -29,6 +29,9 @@
         tools:targetApi="31">
 
         <activity
+            android:name=".PatientInfo"
+            android:exported="false" />
+        <activity
             android:name=".EmergencyProcedureActivity"
             android:exported="false" />
         <activity
@@ -152,12 +155,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <receiver
             android:name=".Notification"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.example.carevault.ACTION_RECEIVE_ALARM"/>
+                <action android:name="com.example.carevault.ACTION_RECEIVE_ALARM" />
             </intent-filter>
         </receiver>
     </application>

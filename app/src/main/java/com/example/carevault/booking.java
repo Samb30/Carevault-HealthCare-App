@@ -40,7 +40,9 @@ public class booking extends AppCompatActivity {
 
 
         back1.setOnClickListener(v -> {
-            onBackPressed();
+            Intent intent = new Intent(booking.this, MainFragment.class);
+
+            startActivity(intent);
 
 
 

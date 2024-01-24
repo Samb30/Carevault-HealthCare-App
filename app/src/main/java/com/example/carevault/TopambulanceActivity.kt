@@ -62,7 +62,7 @@ class TopambulanceActivity : AppCompatActivity() {
 
 
 
-        back1.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
+        back1.setOnClickListener { startActivity(Intent(this, MainFragment::class.java)) }
 
 
 

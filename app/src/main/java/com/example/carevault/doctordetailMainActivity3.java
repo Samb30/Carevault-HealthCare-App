@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ public class doctordetailMainActivity3 extends AppCompatActivity {
     private TextView readMoreTextView;
     private boolean isExpanded = false;
     ImageButton back2;
+    Button nextbt;
 
 
     @Override
@@ -23,10 +25,20 @@ public class doctordetailMainActivity3 extends AppCompatActivity {
         descriptionTextView=findViewById(R.id.aboutdoctr);
         readMoreTextView=findViewById(R.id.textmore);
         back2=findViewById(R.id.backbutton2);
+        nextbt=findViewById(R.id.nextButton);
+        nextbt.setOnClickListener(v -> {
+            Intent intent = new Intent(doctordetailMainActivity3.this, PatientInfo.class);
+
+            startActivity(intent);
+
+
+
+        });
+
 
 
         back2.setOnClickListener(v -> {
-            Intent intent = new Intent(doctordetailMainActivity3.this, MainActivity.class);
+            Intent intent = new Intent(doctordetailMainActivity3.this, MainFragment.class);
 
             startActivity(intent);
 

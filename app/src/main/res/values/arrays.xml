@@ -9,4 +9,10 @@
         <item>China</item>
         <item>Russia</item>
     </string-array>
+    <string-array name="gender_options">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Saras</item>
+    </string-array>
 </resources>

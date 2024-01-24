@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#FFFFFF"
+    android:background="#fffcfc"
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
+
         android:padding="12dp"
         tools:context=".doctordetailMainActivity3"
         >
@@ -26,6 +26,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/baseline_arrow_back_ios_24"
             app:tint="#000000" />
+
         <TextView
             android:id="@+id/pagetitle"
             android:layout_width="wrap_content"
@@ -42,21 +43,30 @@
             android:layout_below="@+id/appointment"
             android:layout_marginTop="25dp"
             android:id="@+id/doctor_detail"
+
             android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:id="@+id/head2"
+
             android:background="@drawable/verticalscroll"
             android:orientation="horizontal"
             >
-            <ImageView
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/doctor1"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
                 android:src="@drawable/dctr1"
+                android:layout_gravity="center_horizontal|center_vertical"
+
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="5dp"
+
+
+
                 />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -96,23 +106,163 @@
         </LinearLayout>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/triplebox"
             android:layout_below="@+id/doctor_detail"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- First Box -->
+                <LinearLayout
+                    android:id="@+id/box1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:padding="15dp"
+                    android:background="@drawable/triplebox"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/value1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textColor="#a4c4fe"
+                        android:layout_marginBottom="8dp"
+                        android:textSize="20sp"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <TextView
+                        android:id="@+id/label1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Patient"
+                        android:textColor="#b2b8c2"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_horizontal"/>
+
+
+                </LinearLayout>
+
+                <!-- Second Box -->
+                <LinearLayout
+                    android:id="@+id/box2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:padding="15dp"
+                    android:background="@drawable/triplebox"
+                    android:orientation="vertical"
+                    android:layout_toEndOf="@id/box1">
+                    <TextView
+                        android:id="@+id/value2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10y+"
+
+                        android:layout_marginBottom="8dp"
+                        android:textColor="#a4c4fe"
+                        android:textSize="20sp"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <TextView
+                        android:id="@+id/label2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Experience"
+                        android:textColor="#b2b8c2"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_horizontal"/>
+
+
+                </LinearLayout>
+
+                <!-- Third Box -->
+                <LinearLayout
+                    android:id="@+id/box3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/triplebox"
+                    android:padding="15dp"
+
+                    android:orientation="vertical"
+                    android:layout_toEndOf="@id/box2">
+
+
+
+                    <TextView
+                        android:id="@+id/value3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="\u2605 4.8"
+                        android:textColor="#a4c4fe"
+                        android:layout_marginBottom="8dp"
+                        android:textSize="20sp"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:id="@+id/label3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rating"
+
+                        android:textColor="#b2b8c2"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/aboutsec"
+            android:layout_below="@+id/triplebox"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:id="@+id/aboutMeHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About Me"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                />
+
+            <!-- Information about the doctor -->
+            <TextView
+                android:id="@+id/doctorInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et fringilla lacus. Integer euismod enim a sollicitudin ultricies. Nullam euismod tempor dui,"
+                android:layout_below="@id/aboutMeHeading"
+                android:layout_marginTop="10dp"
+                android:paddingEnd="16dp"/>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/aboutsec"
             android:id="@+id/dated"
             android:layout_marginTop="20dp"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="25sp"
-                android:text="Date"
+                android:text="Working Information"
+                android:textSize="18sp"
                 android:textColor="#1D212D"
+                android:textStyle="bold"
                 android:layout_alignParentLeft="true"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="25sp"
-                android:text="Change"
-                android:layout_alignParentEnd="true"
-                />
+
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -122,61 +272,82 @@
             android:id="@+id/change_date"
             android:layout_marginTop="10dp"
             >
-            <ImageButton
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/calendar"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/change_date"
-            android:id="@+id/reason"
-            android:layout_marginTop="20dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="25sp"
-                android:text="Reason"
-                android:textStyle="bold"
-                android:textColor="#1D212D"
-                android:layout_alignParentLeft="true"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="25sp"
-                android:text="Change"
-                android:layout_alignParentEnd="true"
-                />
-        </RelativeLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/reason"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/chestpain"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            >
-            <ImageButton
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/reasonnote"
-                />
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:text="Chest pain"
-                android:textStyle="bold"
-                android:textColor="#1D212D"/>
-        </LinearLayout>
+                android:id="@+id/datecal"
+                android:orientation="horizontal">
+
+                <!-- ImageButton for Calendar -->
+                <ImageButton
+                    android:id="@+id/calendarButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/calendar"
+                    android:layout_gravity="center_vertical"/>
+
+                <!-- TextView for Day -->
+                <TextView
+                    android:id="@+id/dayText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monday-Friday"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"/>
+
+                <!-- TextView for Time -->
+                <TextView
+                    android:id="@+id/timeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM-21:00 PM"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/datecal"
+                android:layout_marginTop="10dp"
+                android:id="@+id/locate"
+                android:orientation="horizontal">
+
+                <!-- ImageButton for Calendar -->
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/location_icon"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/baseline_location_on_24"
+                    android:contentDescription="Location Icon"/>
+
+                <!-- TextView for Day -->
+                <TextView
+                    android:id="@+id/locationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Give the link of Location"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"/>
+
+                <!-- TextView for Time -->
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
         <View
             android:layout_width="match_parent"
             android:layout_height="4dp"
             android:layout_marginTop="8dp"
             android:id="@+id/line1"
-            android:layout_below="@id/chestpain"
+            android:layout_below="@id/change_date"
             android:background="#E8F3F1"/>
         <RelativeLayout
             android:layout_width="match_parent"
