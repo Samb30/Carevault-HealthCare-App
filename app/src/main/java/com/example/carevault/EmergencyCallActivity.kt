@@ -96,7 +96,7 @@ class EmergencyCallActivity : AppCompatActivity() {
                 getLastLocation()
                 val contactNumber = numberview.text.toString()
 
-                //callEmergency(contactNumber, lastKnownLocation)
+                callEmergency(contactNumber, lastKnownLocation)
 
                 //sendEmergencyText(contactNumber, lastKnownLocation)
             }
