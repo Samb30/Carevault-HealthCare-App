@@ -15,7 +15,7 @@
         android:id="@+id/doc"
         android:icon="@drawable/baseline_people_24"/>
     <item
-        android:title="Calender"
+        android:title="Alarm"
         android:id="@+id/hom3"
         android:icon="@drawable/baseline_calendar_month_24"
         />

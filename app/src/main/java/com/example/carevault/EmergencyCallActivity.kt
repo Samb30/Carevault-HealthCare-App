@@ -96,7 +96,7 @@ class EmergencyCallActivity : AppCompatActivity() {
                 getLastLocation()
                 val contactNumber = numberview.text.toString()
 
-                callEmergency(contactNumber, lastKnownLocation)
+                //callEmergency(contactNumber, lastKnownLocation)
 
                 //sendEmergencyText(contactNumber, lastKnownLocation)
             }
@@ -168,6 +168,7 @@ class EmergencyCallActivity : AppCompatActivity() {
                 Toast.makeText(this, "Failed to send emergency text", Toast.LENGTH_SHORT).show()
                 e.printStackTrace()
             }
+
     }
     private fun startLocationUpdates() {
         if (ActivityCompat.checkSelfPermission(
@@ -203,7 +204,7 @@ class EmergencyCallActivity : AppCompatActivity() {
 //            } else {
 //                Toast.makeText(this, "Permissions not granted", Toast.LENGTH_SHORT).show()
 //            }
-//        }
+//        }b
 //    }
     private fun askPermission() {
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), REQUEST_CODE)
@@ -237,14 +238,14 @@ class EmergencyCallActivity : AppCompatActivity() {
                             val temp2=addresses?.get(0)?.longitude.toString()
                             val temp3=addresses?.get(0)?.postalCode.toString()
                             val temp4=addresses?.get(0)?.adminArea.toString()
-                            val concatenatedMessage = "\n\nLocality: $greeting\nlatitude: $temp1\nlongitude: $temp2\npostalCode: $temp3\nadminArea: $temp4"
-                            sendEmergencyText1(contactNumber,concatenatedMessage  )
+                            val concatenatedMessage = "Locality: $greeting\nlatitude: $temp1\nlongitude: $temp2\npostalCode: $temp3\nadminArea: $temp4"
+                            sendEmergencyText1(contactNumber,concatenatedMessage)
                             Log.d("", "")
-//                            Toast.makeText(
-//                                this,
-//                                "${addresses?.get(0)?.url} ",
-//                                Toast.LENGTH_SHORT
-//                            ).show()
+                            Toast.makeText(
+                                this,
+                                concatenatedMessage,
+                                Toast.LENGTH_SHORT
+                            ).show()
                         } catch (e: IOException) {
                             e.printStackTrace()
                         }
@@ -259,7 +260,7 @@ class EmergencyCallActivity : AppCompatActivity() {
         try {
             val smsManager = SmsManager.getDefault()
             smsManager.sendTextMessage(contactNumber, null,
-                "Emergency situation. Please contact immediately.\n $message", null, null)
+                "Emergency situation. Please contact immediately.\n", null, null)
             Toast.makeText(this, "Emergency text sent", Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             Toast.makeText(this, "Failed to send emergency text", Toast.LENGTH_SHORT).show()

@@ -9,10 +9,10 @@ import static com.example.carevault.Notification.silentExtra;
 import static com.example.carevault.Notification.titleExtra;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -149,7 +149,7 @@ public class AppointmentReminders extends AppCompatActivity {
                 PopupMenu popupMenu = new PopupMenu(AppointmentReminders.this, textView);
 
                 // Inflating popup menu from popup_menu.xml file
-                popupMenu.getMenuInflater().inflate(R.menu.menu, popupMenu.getMenu());
+                popupMenu.getMenuInflater().inflate(R.menu.menu1, popupMenu.getMenu());
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
@@ -205,6 +205,10 @@ public class AppointmentReminders extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Notification.class);
         String title = titleET.getText().toString();
         String message = messageET.getText().toString();
+        if(title.isEmpty() || title==null){
+            titleET.setError("Please Enter description :)");
+            return;
+        }
         //String id=
         long time = getTime();
         Note1 note = new Note1();
@@ -296,9 +300,8 @@ public class AppointmentReminders extends AppCompatActivity {
 
                 if (dayOfWeek == selectedDay && nextSelectedDayTime > System.currentTimeMillis()) {
                     if(repeat){
-                        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-                                time+24*60*60*1000*(selectedDay-2),
-                                AlarmManager.INTERVAL_DAY*7,// Repeat every week
+                        alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,
+                                time, // Repeat every week
                                 pendingIntent);
                         ids2.add(String.valueOf((int)(uniqueNotificationID+7*3000)));
                         Toast.makeText(AppointmentReminders.this,"1 ",Toast.LENGTH_SHORT).show();
@@ -312,16 +315,16 @@ public class AppointmentReminders extends AppCompatActivity {
 
                 }else {
                     if(repeat){
-                        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-                                nextSelectedDayTime+24*60*60*1000*(selectedDay-2),
-                                AlarmManager.INTERVAL_DAY * 7,// Repeat every week
-                                pendingIntent);
-                        uniqueNotificationID+=10;
-                        pendingIntent=PendingIntent.getBroadcast(
-                                getApplicationContext(), (int)(uniqueNotificationID), intent,
-                                PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT
-                        );
-                        ids2.add(String.valueOf((int)(uniqueNotificationID)));
+//                        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+//                                nextSelectedDayTime+24*60*60*1000*(selectedDay-2),
+//                                AlarmManager.INTERVAL_DAY * 7,// Repeat every week
+//                                pendingIntent);
+//                        uniqueNotificationID+=10;
+//                        pendingIntent=PendingIntent.getBroadcast(
+//                                getApplicationContext(), (int)(uniqueNotificationID), intent,
+//                                PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT
+//                        );
+//                        ids2.add(String.valueOf((int)(uniqueNotificationID)));
                         alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,
                                 nextSelectedDayTime,
                                 pendingIntent);
@@ -364,6 +367,7 @@ public class AppointmentReminders extends AppCompatActivity {
                 alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,
                         time, // Repeat every week
                         pendingIntent);
+                Toast.makeText(AppointmentReminders.this,temp1 +"helloo "+ temp2,Toast.LENGTH_SHORT).show();
                 Toast.makeText(AppointmentReminders.this,temp1 +" "+ temp2,Toast.LENGTH_SHORT).show();
                 ids.add(String.valueOf(uniqueNotificationID));
                 ids2.add(String.valueOf(uniqueNotificationID));
@@ -465,7 +469,7 @@ public class AppointmentReminders extends AppCompatActivity {
                 }
             }
         });
-        Intent intent = new Intent(getApplicationContext(), Notification.class);
+        Intent intent = new Intent(getApplicationContext(),Notification.class);
         String s=getIntent().getStringExtra("id");
         ArrayList<String> al=new ArrayList<>(getIntent().getStringArrayListExtra("Mids"));
         ArrayList<String> al1=new ArrayList<>(getIntent().getStringArrayListExtra("days"));

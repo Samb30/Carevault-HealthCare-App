@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="#D7D0FF"
+    android:padding="7dp"
     tools:context=".fragments.CalenderFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:listitem="@layout/recycler"
         android:id="@+id/recyclerview"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

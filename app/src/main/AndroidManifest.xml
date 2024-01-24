@@ -58,7 +58,7 @@
             android:name=".Articles.Health"
             android:exported="false" />
         <activity
-            android:name=".AppointmentReminders"
+            android:name=".MainFragment"
             android:exported="false" />
         <activity
             android:name=".AppSettingsActivity"
@@ -97,7 +97,7 @@
             android:name=".LoginWithNumberActivity"
             android:exported="false" />
         <activity
-            android:name=".MainFragment"
+            android:name=".AppointmentReminders"
             android:exported="false" />
         <activity
             android:name=".HealthInfoInputActivity"
@@ -156,7 +156,7 @@
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.example.carevault.ACTION_RECEIVE_ALARM" />
+                <action android:name="com.example.carevault.ACTION_RECEIVE_ALARM"/>
             </intent-filter>
         </receiver>
     </application>
