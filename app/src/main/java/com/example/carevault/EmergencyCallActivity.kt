@@ -260,7 +260,7 @@ class EmergencyCallActivity : AppCompatActivity() {
         try {
             val smsManager = SmsManager.getDefault()
             smsManager.sendTextMessage(contactNumber, null,
-                "Emergency situation. Please contact immediately.\n", null, null)
+                "Emergency situation. Please contact immediately.\n $message", null, null)
             Toast.makeText(this, "Emergency text sent", Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             Toast.makeText(this, "Failed to send emergency text", Toast.LENGTH_SHORT).show()
