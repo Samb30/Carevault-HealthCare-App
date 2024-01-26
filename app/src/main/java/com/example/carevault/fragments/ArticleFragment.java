@@ -80,65 +80,51 @@ public class ArticleFragment extends Fragment {
         sample1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Replace "https://example.com" with the actual URL you want to open
                 String websiteUrl = "https://www.thehindu.com/news/national/telangana/state-records-five-new-covid-19-cases/article67759822.ece";
-
                 CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
                 CustomTabsIntent customTabsIntent = builder.build();
-
-                // Ensure you have the necessary checks for null and a browser supporting custom tabs
                 customTabsIntent.launchUrl(requireContext(), Uri.parse(websiteUrl));
             }
         });
         sample2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Replace "https://example.com" with the actual URL you want to open
                 String websiteUrl = "https://www.thehindu.com/news/national/telangana/state-records-five-new-covid-19-cases/article67759822.ece";
 
                 CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
                 CustomTabsIntent customTabsIntent = builder.build();
-
-                // Ensure you have the necessary checks for null and a browser supporting custom tabs
                 customTabsIntent.launchUrl(requireContext(), Uri.parse(websiteUrl));
             }
         });
         sample3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Replace "https://example.com" with the actual URL you want to open
                 String websiteUrl = "https://www.thehindu.com/news/national/telangana/state-records-five-new-covid-19-cases/article67759822.ece";
 
                 CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
                 CustomTabsIntent customTabsIntent = builder.build();
-
-                // Ensure you have the necessary checks for null and a browser supporting custom tabs
                 customTabsIntent.launchUrl(requireContext(), Uri.parse(websiteUrl));
             }
         });
         sample4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Replace "https://example.com" with the actual URL you want to open
                 String websiteUrl = "https://www.thehindu.com/news/national/telangana/state-records-five-new-covid-19-cases/article67759822.ece";
 
                 CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
                 CustomTabsIntent customTabsIntent = builder.build();
 
-                // Ensure you have the necessary checks for null and a browser supporting custom tabs
                 customTabsIntent.launchUrl(requireContext(), Uri.parse(websiteUrl));
             }
         });
         sample5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Replace "https://example.com" with the actual URL you want to open
                 String websiteUrl = "https://www.thehindu.com/news/national/telangana/state-records-five-new-covid-19-cases/article67759822.ece";
 
                 CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
                 CustomTabsIntent customTabsIntent = builder.build();
 
-                // Ensure you have the necessary checks for null and a browser supporting custom tabs
                 customTabsIntent.launchUrl(requireContext(), Uri.parse(websiteUrl));
             }
         });

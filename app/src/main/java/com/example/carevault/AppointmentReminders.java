@@ -18,8 +18,16 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +39,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -51,17 +60,20 @@ import java.util.Map;
 import java.util.UUID;
 
 public class AppointmentReminders extends AppCompatActivity {
+    RelativeLayout textView;
+    private boolean isYellow = true;
     Button submitButton;
-    ImageButton menu;
+    ImageButton menu,back;
     private static int MAX_REPEATS = 4;
     DatePicker datePicker;
     TimePicker timePicker;
-    TextView pageTitle, textView, textView1;
+    TextView pageTitle, textView1,temp;
     CheckBox ch4, ch1, ch2, ch3,ch5,ch6;
     EditText titleET,messageET;
     String title,content,docId,timestamp;
     String silent="true";
     Spinner spinner1,spinner2;
+    TextView temp7,temp2,temp3,temp4,temp5,temp6;
     private Map<Integer,String> map=new HashMap();
     boolean isEdit=false;
     String music="default";
@@ -86,6 +98,40 @@ public class AppointmentReminders extends AppCompatActivity {
         titleET=findViewById(R.id.titleET);
         spinner1=findViewById(R.id.spinner1);
         spinner2=findViewById(R.id.spinner2);
+        temp=findViewById(R.id.temp);
+        temp2 = findViewById(R.id.temp2);
+        temp3=findViewById(R.id.temp3);
+        temp4=findViewById(R.id.temp4);
+        temp5=findViewById(R.id.temp5);
+        temp6=findViewById(R.id.temp6);
+        temp7=findViewById(R.id.temp7);
+        back=findViewById(R.id.back);
+        // Create a ClickableSpan to handle the click event
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+                isYellow = !isYellow;
+                updateBackgroundColor(temp);
+            }
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                // Disable underline for the ClickableSpan
+                ds.setUnderlineText(false);
+            }
+        };
+        SpannableString spannableString = new SpannableString("M");
+        spannableString.setSpan(clickableSpan, 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        temp.setText(spannableString);
+
+        temp.setMovementMethod(LinkMovementMethod.getInstance());
+        setTextViewClickListener(temp2);
+        setTextViewClickListener(temp3);
+        setTextViewClickListener(temp4);
+        setTextViewClickListener(temp5);
+        setTextViewClickListener(temp6);
+        setTextViewClickListener(temp7);
         String[] items = new String[]{"None","30 minute", "1 hour", "1.30 hour","2 hour",
                 "2.30 hour", "3 hour","3.30 hour", "4 hour", "4.30 hour","5 hour","5.30 hour","6 hour","6.30 hour",
                 "7 hour","7.30 hour","8 hour"};
@@ -118,21 +164,31 @@ public class AppointmentReminders extends AppCompatActivity {
                 a[i] = checkboxList.get(i);
             }
             if(a[0]==1){
+                temp.setBackgroundTintList(ColorStateList.valueOf(Color.YELLOW));
                 ch1.setChecked(true);
             }
             if(a[1]==1){
+                temp2.setBackgroundTintList(ColorStateList.valueOf(Color.YELLOW));
                 ch2.setChecked(true);
             }
             if(a[2]==1){
+                temp3.setBackgroundTintList(ColorStateList.valueOf(Color.YELLOW));
                 ch3.setChecked(true);
             }
             if(a[3]==1){
+                temp4.setBackgroundTintList(ColorStateList.valueOf(Color.YELLOW));
                 ch4.setChecked(true);
             }
             if(a[4]==1){
+                temp5.setBackgroundTintList(ColorStateList.valueOf(Color.YELLOW));
                 ch5.setChecked(true);
             }
             if(a[5]==1){
+                temp6.setBackgroundTintList(ColorStateList.valueOf(Color.YELLOW));
+                ch6.setChecked(true);
+            }
+            if(a[6]==1){
+                temp7.setBackgroundTintList(ColorStateList.valueOf(Color.YELLOW));
                 ch6.setChecked(true);
             }
             String sessionId = getIntent().getStringExtra("text");
@@ -200,6 +256,62 @@ public class AppointmentReminders extends AppCompatActivity {
                 }
             }
         });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(AppointmentReminders.this,MainFragment.class);
+                startActivity(i);
+                finish();
+            }
+        });
+    }
+    private void setTextViewClickListener(final TextView textView) {
+        // Set the initial background color
+
+        // Create a ClickableSpan to handle the click event
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+                // Toggle the background color on each click
+                isYellow = !isYellow;
+                updateBackgroundColor(textView);
+
+                // Handle the click event here
+                // For example, you can perform some action or navigate to another screen
+            }
+
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                // Disable underline for the ClickableSpan
+                ds.setUnderlineText(false);
+            }
+        };
+        SpannableString spannableString = new SpannableString(textView.getText());
+        spannableString.setSpan(clickableSpan, 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        // Set the SpannableString to the TextView
+        textView.setText(spannableString);
+
+        // Make the TextView clickable
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+    private void updateBackgroundColor(TextView textView) {
+        // Change the background color based on the current state
+        int newColor = isYellow ? Color.YELLOW : Color.WHITE;
+        textView.setBackgroundTintList(ColorStateList.valueOf(newColor));
+    }
+    private int getFinalColor(TextView textView) {
+        // Return the final background color of the TextView
+        ColorStateList colorStateList = textView.getBackgroundTintList();
+        if (colorStateList != null) {
+            // Return the final background color of the TextView
+            return colorStateList.getDefaultColor();
+        } else {
+            // Handle the case where the colorStateList is null
+            // You can return a default color or handle it as appropriate for your application
+            return Color.TRANSPARENT; // For example, return TRANSPARENT if no color is set
+        }
     }
     private void scheduleNotification() {
         Intent intent = new Intent(getApplicationContext(), Notification.class);
@@ -236,29 +348,33 @@ public class AppointmentReminders extends AppCompatActivity {
         for(int i:a){
             a[i]=0;
         }
-        if (ch1.isChecked()) {
+        if (getFinalColor(temp)==Color.YELLOW) {
             a[0]=1;
             selectedDays.add(Calendar.MONDAY);
         }
-        if (ch2.isChecked()) {
+        if (getFinalColor(temp2)==Color.YELLOW) {
             a[1]=1;
             selectedDays.add(Calendar.TUESDAY);
         }
-        if (ch3.isChecked()) {
+        if (getFinalColor(temp3)==Color.YELLOW) {
             a[2]=1;
             selectedDays.add(Calendar.WEDNESDAY);
         }
-        if (ch4.isChecked()) {
+        if (getFinalColor(temp4)==Color.YELLOW) {
             a[3]=1;
             selectedDays.add(Calendar.THURSDAY);
         }
-        if (ch5.isChecked()) {
+        if (getFinalColor(temp5)==Color.YELLOW) {
             a[4]=1;
             selectedDays.add(Calendar.FRIDAY);
         }
-        if (ch6.isChecked()) {
+        if (getFinalColor(temp6)==Color.YELLOW) {
             a[5]=1;
             selectedDays.add(Calendar.SATURDAY);
+        }
+        if (getFinalColor(temp7)==Color.YELLOW) {
+            a[6]=1;
+            selectedDays.add(Calendar.SUNDAY);
         }
         ArrayList<Integer> arrayList = new ArrayList<>();
         for(int i:a){
@@ -461,7 +577,7 @@ public class AppointmentReminders extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(AppointmentReminders.this, "Note deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AppointmentReminders.this, "Alarm deleted", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 else{

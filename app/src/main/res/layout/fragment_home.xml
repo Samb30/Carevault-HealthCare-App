@@ -23,22 +23,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Find your desire                     health solution"
+                android:text="CareVault"
                 android:textColor="#1D212D"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                android:maxLines="2" />
-
-
-
+                android:textSize="22sp"
+                android:textStyle="bold"/>
 
             <ImageButton
                 android:id="@+id/notifyb"
-                android:layout_width="60dp"
-                android:layout_height="70dp"
+                android:layout_width="20dp"
+                android:layout_height="26dp"
                 android:contentDescription="notify"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/baseline_notifications_none_24"
                 app:tint="#000000" />
@@ -193,8 +188,6 @@
                 android:layout_width="1000sp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
-
-
                 android:src="@drawable/homedocimg"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -491,6 +484,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
+                    android:id="@+id/sample1"
                     android:background="@drawable/homepageicons"
                     android:orientation="horizontal"
                     >
@@ -538,6 +532,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
+                    android:id="@+id/sample2"
                     android:background="@drawable/homepageicons"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
@@ -586,6 +581,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
+                    android:id="@+id/sample3"
                     android:background="@drawable/homepageicons"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
@@ -635,6 +631,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
+                    android:id="@+id/sample4"
                     android:background="@drawable/homepageicons"
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal"

@@ -35,6 +35,7 @@ public class MainFragment extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         int id=item.getItemId();
                         if(id==R.id.home1){
+                            getSupportFragmentManager().popBackStack(null,FragmentManager.POP_BACK_STACK_INCLUSIVE);
                             load(new HomeFragment());
                             return true;
                         }else if(id==R.id.home2){
@@ -55,9 +56,12 @@ public class MainFragment extends AppCompatActivity {
                 });
     }
     public void load(Fragment fragment){
-        FragmentManager fragmentManager=getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.tab,fragment);
-        fragmentTransaction.commit();
+        if(!fragment.isAdded()) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.tab, fragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
     }
 }

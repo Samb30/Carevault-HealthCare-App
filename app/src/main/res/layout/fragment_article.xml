@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f5f5f5"
+    android:background="#D7D0FF"
     android:padding="12dp"
     tools:context=".fragments.ArticleFragment">
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -365,15 +368,9 @@
             android:textColor="#1D212D"/>
 
     </RelativeLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_below="@+id/relatedarticles"
-        android:id="@+id/scrollbarrelated"
-        android:layout_marginTop="19dp"
-        android:layout_height="wrap_content"
-        >
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_below="@+id/relatedarticles"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <LinearLayout
@@ -382,7 +379,7 @@
                 android:id="@+id/sample5"
                 android:background="@drawable/articlesrounded"
                 android:orientation="horizontal"
-                android:backgroundTint="#D7D0FF">
+                android:backgroundTint="#9281f1">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="66dp"
@@ -431,7 +428,7 @@
                 android:background="@drawable/articlesrounded"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#D7D0FF">
+                android:backgroundTint="#9281f1">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="66dp"
@@ -479,7 +476,7 @@
                 android:orientation="horizontal"
                 android:id="@+id/sample7"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#D7D0FF">
+                android:backgroundTint="#9281f1">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="66dp"
@@ -527,7 +524,7 @@
                 android:layout_marginTop="10dp"
                 android:id="@+id/sample8"
                 android:orientation="horizontal"
-                android:backgroundTint="#D7D0FF">
+                android:backgroundTint="#9281f1">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="66dp"
@@ -570,6 +567,5 @@
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
-
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
