@@ -9,11 +9,36 @@
     android:fillViewport="true"
     tools:context=".NumberVerifyOtpActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="28dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="29dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="383dp" />
+
     <TextView
         android:id="@+id/textView23"
-        android:layout_width="292dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="520dp"
         android:fontFamily="@font/latoregular"
         android:gravity="center"
@@ -25,8 +50,10 @@
 
     <EditText
         android:id="@+id/textView4556"
-        android:layout_width="330dp"
+        android:layout_width="355dp"
         android:layout_height="65dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="318dp"
         android:background="@drawable/rect3"
         android:drawableStart="@drawable/lock"
         android:drawablePadding="15dp"
@@ -38,23 +65,19 @@
         android:textAlignment="textStart"
         android:textColor="#1D212D"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/headline2"
-        android:layout_width="317dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="250dp"
         android:fontFamily="@font/latoheavy"
         android:lineSpacingExtra="3sp"
         android:text="Verify the One time Password"
@@ -65,10 +88,10 @@
 
     <TextView
         android:id="@+id/textView1115"
-        android:layout_width="331dp"
+        android:layout_width="355dp"
         android:layout_height="65dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="424dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="415dp"
         android:background="@drawable/rect_1"
         android:fontFamily="@font/latobold"
         android:gravity="center"
@@ -81,22 +104,22 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="324dp"
+        android:layout_width="355dp"
         android:layout_height="2dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="290dp"
         android:background="@drawable/line"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="58dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="344dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="29dp"
         android:background="@drawable/backbuttom"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Group

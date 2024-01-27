@@ -38,12 +38,12 @@ class AppFeedbackActivity : AppCompatActivity() {
             userId?.let {
                 val feedBackData = db.collection("Users").document(userId).collection("Feedback")
 
-                val feeddata = hashMapOf(
+                val feed = hashMapOf(
                     "Feedback" to editFeedButton,
                     "Timestamp" to FieldValue.serverTimestamp()
                 )
 
-                feedBackData.add(feeddata)
+                feedBackData.add(feed)
                     .addOnSuccessListener {
                         Toast.makeText(
                             applicationContext,

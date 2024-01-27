@@ -13,7 +13,6 @@
         android:background="#D7D0FF"
         tools:context=".EditProfileActivity">
 
-
         <TextView
             android:id="@+id/textView5"
             android:layout_width="355dp"
@@ -23,7 +22,7 @@
             android:background="@drawable/rect_1"
             android:fontFamily="@font/latobold"
             android:gravity="center"
-            android:text="Sign Up"
+            android:text="Update"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="23sp"

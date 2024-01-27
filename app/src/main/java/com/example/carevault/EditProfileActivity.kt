@@ -1,7 +1,9 @@
 package com.example.carevault
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +30,8 @@ class EditProfileActivity : AppCompatActivity() {
         fetchAndSetUserData()
 
         val saveButton: TextView = findViewById(R.id.textView5)
+        val backButton: ImageButton = findViewById(R.id.imageButton112)
+
         saveButton.setOnClickListener {
             val editedName = nameEditText.text.toString()
             val editedMobileNumber = mobileNumberEditText.text.toString()
@@ -35,8 +39,13 @@ class EditProfileActivity : AppCompatActivity() {
             if (isValidData(editedName, editedMobileNumber)) {
                 saveEditedData(editedName, editedMobileNumber)
             } else {
-                Toast.makeText(this@EditProfileActivity, "Invalid data. Please check your input.", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        backButton.setOnClickListener {
+            val intent = Intent(this@EditProfileActivity, ProfileActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
     private fun fetchAndSetUserData() {
@@ -99,6 +108,16 @@ class EditProfileActivity : AppCompatActivity() {
     ): Boolean {
         val isMobileNumberValid = mobileNumber.length == 10
 
-        return name.isNotEmpty() && isMobileNumberValid
+        if (name.isEmpty()) {
+            nameEditText.error = "Name is Required"
+            return false
+        }
+
+        if (!isMobileNumberValid) {
+            mobileNumberEditText.error = "Enter a valid mobile number"
+            return false
+        }
+
+        return true
     }
 }

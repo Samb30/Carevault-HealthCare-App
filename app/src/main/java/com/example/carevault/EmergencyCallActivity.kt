@@ -24,7 +24,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.io.IOException
 import java.util.Locale
-
 class EmergencyCallActivity : AppCompatActivity() {
     var greeting: String = "Hello"
     private lateinit var auth: FirebaseAuth
@@ -36,6 +35,7 @@ class EmergencyCallActivity : AppCompatActivity() {
     private lateinit var locationManager: LocationManager
     private lateinit var locationListener: LocationListener
     private lateinit var numberview: TextView
+    private lateinit var callnumber: TextView
     private var lastKnownLocation: Location = Location(LocationManager.NETWORK_PROVIDER)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,21 +49,19 @@ class EmergencyCallActivity : AppCompatActivity() {
         val backButton: ImageButton = findViewById(R.id.imageButton2)
         val call1Button: TextView = findViewById(R.id.my_profile13)
         val call2Button: TextView = findViewById(R.id.my_profi13)
+        callnumber = findViewById(R.id.textView15)
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         numberview = findViewById(R.id.my_profile12)
 
         if (currentUser != null) {
             val userId = currentUser.uid
             val userDocument = firestore.collection("Users").document(userId).collection("Health Information").document("details")
-
             userDocument.get().addOnSuccessListener { documentSnapshot ->
                 if (documentSnapshot.exists()) {
                     val name = documentSnapshot.getString("Contact Person") ?: ""
                     val number = documentSnapshot.getString("Contact Number") ?: ""
-
                     val nameTextView: TextView = findViewById(R.id.my_profile11)
                     val numberview: TextView = findViewById(R.id.my_profile12)
-
                     nameTextView.text = name
                     numberview.text = number
                 }
@@ -83,11 +81,8 @@ class EmergencyCallActivity : AppCompatActivity() {
                 lastKnownLocation = location
                 println("Location updated: ${location.latitude}, ${location.longitude}")
             }
-
             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
-
             override fun onProviderEnabled(provider: String) {}
-
             override fun onProviderDisabled(provider: String) {}
         }
 
@@ -97,8 +92,6 @@ class EmergencyCallActivity : AppCompatActivity() {
                 val contactNumber = numberview.text.toString()
 
                 callEmergency(contactNumber, lastKnownLocation)
-
-                //sendEmergencyText(contactNumber, lastKnownLocation)
             }
             else {
                 requestPermissions()
@@ -106,9 +99,15 @@ class EmergencyCallActivity : AppCompatActivity() {
         }
 
         call2Button.setOnClickListener {
-            val intent = Intent(this@EmergencyCallActivity, HelpSupportActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (checkPermissions()) {
+                getLastLocation2()
+                val contactNumber2 = callnumber.text.toString()
+
+                callEmergency(contactNumber2, lastKnownLocation)
+            }
+            else {
+                requestPermissions()
+            }
         }
     }
     private fun checkPermissions(): Boolean {
@@ -131,8 +130,8 @@ class EmergencyCallActivity : AppCompatActivity() {
     }
     private fun requestPermissions() {
         ActivityCompat.requestPermissions(
-            this,
-            arrayOf(
+        this,
+                arrayOf(
                 Manifest.permission.CALL_PHONE,
                 Manifest.permission.SEND_SMS,
                 Manifest.permission.ACCESS_FINE_LOCATION
@@ -140,11 +139,9 @@ class EmergencyCallActivity : AppCompatActivity() {
             PERMISSION_REQUEST_CODE
         )
     }
-
     private fun callEmergency(contactNumber: String, location: Location) {
         val callIntent = Intent(Intent.ACTION_CALL)
         callIntent.data = Uri.parse("tel:$contactNumber")
-
         if (ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.CALL_PHONE
@@ -154,62 +151,13 @@ class EmergencyCallActivity : AppCompatActivity() {
         }
     }
 
-    private fun sendEmergencyText(contactNumber: String, location: Location?) {
-        val message = ("Emergency situation. Please contact immediately.\n" +
-                location?.let {
-                    "\nLocation: ${it.latitude}, ${it.longitude}"
-                })
-
-            try {
-                val smsManager = SmsManager.getDefault()
-                smsManager.sendTextMessage(contactNumber, null, message, null, null)
-                Toast.makeText(this, "Emergency text sent", Toast.LENGTH_SHORT).show()
-            } catch (e: Exception) {
-                Toast.makeText(this, "Failed to send emergency text", Toast.LENGTH_SHORT).show()
-                e.printStackTrace()
-            }
-
-    }
-    private fun startLocationUpdates() {
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
-            locationManager.requestLocationUpdates(
-                LocationManager.GPS_PROVIDER,
-                0,
-                0f,
-                locationListener
-            )
-        } else {
-            requestPermissions()
-        }
-    }
     private fun stopLocationUpdates() {
         locationManager.removeUpdates(locationListener)
     }
-//    override fun onRequestPermissionsResult(
-//        requestCode: Int,
-//        permissions: Array<out String>,
-//        grantResults: IntArray
-//    ) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-//        if (requestCode == PERMISSION_REQUEST_CODE) {
-//            if (checkPermissions()) {
-//                val contactNumber = numberview.text.toString()
-//                callEmergency(contactNumber, lastKnownLocation)
-//                sendEmergencyText(contactNumber, lastKnownLocation)
-//                startLocationUpdates()
-//            } else {
-//                Toast.makeText(this, "Permissions not granted", Toast.LENGTH_SHORT).show()
-//            }
-//        }b
-//    }
+
     private fun askPermission() {
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), REQUEST_CODE)
     }
-
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         if (requestCode == REQUEST_CODE) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -256,16 +204,53 @@ class EmergencyCallActivity : AppCompatActivity() {
             askPermission()
         }
     }
+
+    private fun getLastLocation2() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+            == PackageManager.PERMISSION_GRANTED
+        ) {
+            fusedLocationProviderClient.lastLocation
+                .addOnSuccessListener { location ->
+                    if (location != null) {
+                        try {
+                            val geocoder = Geocoder(this, Locale.getDefault())
+                            val addresses = geocoder.getFromLocation(
+                                location.latitude, location.longitude, 1
+                            )
+                            val contactNumber = callnumber.text.toString()
+                            greeting = addresses?.get(0)?.locality.toString()
+                            val temp1=addresses?.get(0)?.latitude.toString()
+                            val temp2=addresses?.get(0)?.longitude.toString()
+                            val temp3=addresses?.get(0)?.postalCode.toString()
+                            val temp4=addresses?.get(0)?.adminArea.toString()
+                            val concatenatedMessage = "Locality: $greeting\nlatitude: $temp1\nlongitude: $temp2\npostalCode: $temp3\nadminArea: $temp4"
+                            sendEmergencyText1(contactNumber,concatenatedMessage)
+                            Log.d("", "")
+                            Toast.makeText(
+                                this,
+                                concatenatedMessage,
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } catch (e: IOException) {
+                            e.printStackTrace()
+                        }
+                    }
+                    Log.d("", "hhf")
+                }
+        } else {
+            askPermission()
+        }
+    }
+
     private fun sendEmergencyText1(contactNumber: String, message: String) {
         try {
             val smsManager = SmsManager.getDefault()
             smsManager.sendTextMessage(contactNumber, null,
-                "Emergency situation. Please contact immediately.\n", null, null)
+                "Emergency situation. Please contact immediately.\n $message", null, null)
             Toast.makeText(this, "Emergency text sent", Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             Toast.makeText(this, "Failed to send emergency text", Toast.LENGTH_SHORT).show()
             e.printStackTrace()
-            // Handle the exception
         }
     }
 
