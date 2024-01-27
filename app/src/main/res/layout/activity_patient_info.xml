@@ -147,7 +147,7 @@
 
         android:orientation="vertical"
 
-        android:layout_marginBottom="100dp">
+        android:layout_marginBottom="30dp">
 
         <TextView
             android:id="@+id/prob"
@@ -171,9 +171,31 @@
 
             />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/loader"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+
+        android:layout_below="@id/problemsaid"
+        android:orientation="horizontal">
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/pbar"
+            android:visibility="gone"
+
+
+
+            />
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/nextButton1"
-        android:layout_below="@id/problemsaid"
+        android:layout_below="@id/loader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/nextbutton"
