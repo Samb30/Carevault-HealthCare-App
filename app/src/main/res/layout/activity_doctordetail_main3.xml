@@ -165,21 +165,32 @@
                 android:textColor="#0bab7c" />
 
             </RelativeLayout>
-            <DatePicker
-                android:id="@+id/datePicker"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-
-
+            <Button
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:datePickerMode="spinner"
-                android:calendarViewShown="false"
-                android:layout_gravity="center"
-                android:scaleY="0.7"
-                android:scaleX="0.7"
-                android:layout_marginLeft="-30dp"
-                android:layout_marginRight="-30dp"
+                android:id="@+id/btndatettime"
+                android:text="Date"
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dt"
+                android:text="@tools:sample/date/ddmmyy"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/timer"
+                android:text="Time"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/stime"
+                android:text="hello"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
             <Button
                 android:id="@+id/nextButton"
                 android:layout_width="match_parent"

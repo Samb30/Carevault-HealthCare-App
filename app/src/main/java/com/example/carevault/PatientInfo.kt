@@ -15,6 +15,7 @@ class PatientInfo : AppCompatActivity() {
     private lateinit var eprob:EditText
     private lateinit var pbar:ProgressBar
     private  var db= Firebase.firestore
+    private lateinit var appointmentsRefPath: String
 //    private lateinit var ename:EditText
 
 
@@ -28,6 +29,10 @@ class PatientInfo : AppCompatActivity() {
         eage=findViewById(R.id.age)
         eprob=findViewById(R.id.problemgiven)
         pbar=findViewById(R.id.pbar)
+        val intent = intent
+        if (intent != null) {
+            appointmentsRefPath = intent.getStringExtra("appointmentsRefPath") ?: ""
+        }
 
         nextb.setOnClickListener {
 
@@ -36,11 +41,14 @@ class PatientInfo : AppCompatActivity() {
             val sage=eage.text.toString().trim()
             val sprob=eprob.text.toString().trim()
             val selectedGender = genderSpinner.selectedItem.toString()
+            val appointmentsRefPath1 = "Users/${FirebaseAuth.getInstance().currentUser!!.uid}/Appointments"
+
+
+
 
 
             val userid=FirebaseAuth.getInstance().currentUser!!.uid
-            val appointmentsRef = db.collection("Users").document(userid)
-                .collection("Appointments").document()
+            val appointmentsRef = db.document(appointmentsRefPath)
                 .collection("Patient Details")
             appointmentsRef.get().addOnSuccessListener { snapshot ->
                 val patientNumber = snapshot.size() + 1 // Calculate the next patient number
@@ -63,6 +71,8 @@ class PatientInfo : AppCompatActivity() {
                         eprob.text.clear()
 
                         val intent = Intent(this, booking::class.java)
+                        intent.putExtra("appointmentsRefPath", appointmentsRefPath1)
+
                         startActivity(intent)
                     }
                     .addOnFailureListener {
