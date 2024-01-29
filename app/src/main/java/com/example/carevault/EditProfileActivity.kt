@@ -44,9 +44,7 @@ class EditProfileActivity : AppCompatActivity() {
         }
 
         backButton.setOnClickListener {
-            val intent = Intent(this@EditProfileActivity, UserFragment::class.java)
-            startActivity(intent)
-            finish()
+            onBackPressed()
         }
     }
     private fun fetchAndSetUserData() {
