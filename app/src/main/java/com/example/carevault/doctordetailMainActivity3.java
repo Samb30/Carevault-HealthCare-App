@@ -1,5 +1,6 @@
 package com.example.carevault;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -16,6 +17,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.carevault.Adapters.Note2;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -134,34 +138,56 @@ public class doctordetailMainActivity3 extends AppCompatActivity {
         String sti = etime.getText().toString().trim();
 
 
-
         String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DocumentReference appointmentsRef = db.collection("Users").document(userid)
                 .collection("Appointments").document();
 
 
+        Map<String, Object> patientDetails = new HashMap<>();
+        patientDetails.put("DOA", sdat);
+        patientDetails.put("Time", sti);
 
+        Note2 note2 = new Note2();
+        note2.setTime(sti);
+        note2.setDateM(sdat);
 
-
-            Map<String, Object> patientDetails = new HashMap<>();
-            patientDetails.put("DOA", sdat);
-            patientDetails.put("Time", sti);
-
-
-        appointmentsRef.set(patientDetails)
-                .addOnSuccessListener(aVoid -> {
-
-                    Toast.makeText(doctordetailMainActivity3.this, "Added date time  info", Toast.LENGTH_SHORT).show();
+        DocumentReference documentReference;
+        {
+            documentReference = Utility.getCollectionReferenceForBooking().document();
+        }
+        documentReference.set(note2).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(doctordetailMainActivity3.this, "Note added", Toast.LENGTH_SHORT).show();
                     edate.setText("");
                     etime.setText("");
 
 
-
                     Intent intent = new Intent(doctordetailMainActivity3.this, PatientInfo.class);
-                    intent.putExtra("appointmentsRefPath", appointmentsRef.getPath());
+                    intent.putExtra("appointmentsRefPath", documentReference.getPath());
                     startActivity(intent);
-                })
-                .addOnFailureListener(e -> Toast.makeText(doctordetailMainActivity3.this, "Failed", Toast.LENGTH_SHORT).show());
+                    finish();
+                } else {
+                    Toast.makeText(doctordetailMainActivity3.this, "Failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
+//        appointmentsRef.set(patientDetails)
+//                .addOnSuccessListener(aVoid -> {
+//
+//                    Toast.makeText(doctordetailMainActivity3.this, "Added date time  info", Toast.LENGTH_SHORT).show();
+//                    edate.setText("");
+//                    etime.setText("");
+//
+//
+//
+//                    Intent intent = new Intent(doctordetailMainActivity3.this, PatientInfo.class);
+//                    intent.putExtra("appointmentsRefPath", appointmentsRef.getPath());
+//                    startActivity(intent);
+//                })
+//                .addOnFailureListener(e -> Toast.makeText(doctordetailMainActivity3.this, "Failed", Toast.LENGTH_SHORT).show());
+//    }
 
 }

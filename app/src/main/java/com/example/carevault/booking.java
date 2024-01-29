@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.carevault.Adapters.Note2;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -95,7 +96,6 @@ public class booking extends AppCompatActivity {
                 // Document exists, fetch and display data
                 String day = documentSnapshot.getString("DOA");
                 String time = documentSnapshot.getString("Time");
-
                 // Display data in TextViews
                 dayText.setText(day);
                 timeText.setText(time);

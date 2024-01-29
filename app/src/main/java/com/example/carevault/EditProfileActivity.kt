@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.carevault.fragments.UserFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -43,7 +44,7 @@ class EditProfileActivity : AppCompatActivity() {
         }
 
         backButton.setOnClickListener {
-            val intent = Intent(this@EditProfileActivity, ProfileActivity::class.java)
+            val intent = Intent(this@EditProfileActivity, UserFragment::class.java)
             startActivity(intent)
             finish()
         }

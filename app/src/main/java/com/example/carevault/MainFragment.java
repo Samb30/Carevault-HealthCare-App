@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -35,7 +36,12 @@ public class MainFragment extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         int id=item.getItemId();
                         if(id==R.id.home1){
-                            getSupportFragmentManager().popBackStack(null,FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                            getSupportFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+                                @Override
+                                public void onBackStackChanged() {
+                                    updateBottomNavigationSelectedItem();
+                                }
+                            });
                             load(new HomeFragment());
                             return true;
                         }else if(id==R.id.home2){
@@ -62,6 +68,28 @@ public class MainFragment extends AppCompatActivity {
             fragmentTransaction.replace(R.id.tab, fragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
+        }
+    }
+    private void updateBottomNavigationSelectedItem() {
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.bnview);
+        if (currentFragment instanceof HomeFragment)
+            bottomNavigationView.setSelectedItemId(R.id.home1);
+        else if (currentFragment instanceof ArticleFragment)
+            bottomNavigationView.setSelectedItemId(R.id.home2);
+        else if (currentFragment instanceof CalenderFragment)
+            bottomNavigationView.setSelectedItemId(R.id.hom3);
+        else if (currentFragment instanceof UserFragment)
+            bottomNavigationView.setSelectedItemId(R.id.memo);
+        else if (currentFragment instanceof DoctorsFragment)
+            bottomNavigationView.setSelectedItemId(R.id.doc);
+    }
+    @Override
+    public void onBackPressed() {
+        if (bottomNavigationView.getSelectedItemId() == R.id.home1) {
+            super.onBackPressed();
+            finish();
+        } else {
+            bottomNavigationView.setSelectedItemId(R.id.home1);
         }
     }
 }

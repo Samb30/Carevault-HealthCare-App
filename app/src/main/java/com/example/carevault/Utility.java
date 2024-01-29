@@ -3,10 +3,11 @@ package com.example.carevault;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Utility {
-    static CollectionReference getCollectionReference(){
+    public static CollectionReference getCollectionReferenceForBooking(){
         FirebaseUser currentUser= FirebaseAuth.getInstance().getCurrentUser();
         return FirebaseFirestore.getInstance().collection("Users")
                 .document(currentUser.getUid()).collection("Appointments");
@@ -16,4 +17,5 @@ public class Utility {
         return FirebaseFirestore.getInstance().collection("Alarms")
                 .document(curr.getUid()).collection("myalarms");
     }
+
 }
