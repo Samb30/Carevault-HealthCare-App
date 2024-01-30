@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#D7D0FF"
     android:fillViewport="true"
-    tools:context=".LoginWithNumberActivity">
+    tools:context=".authentication.LoginWithNumberActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

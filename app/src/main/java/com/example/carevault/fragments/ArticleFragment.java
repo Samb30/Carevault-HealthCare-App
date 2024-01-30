@@ -18,7 +18,6 @@ import com.example.carevault.Articles.Diet;
 import com.example.carevault.Articles.Disease;
 import com.example.carevault.Articles.Fitness;
 import com.example.carevault.Articles.Health;
-import com.example.carevault.EditProfileActivity;
 import com.example.carevault.R;
 
 public class ArticleFragment extends Fragment {

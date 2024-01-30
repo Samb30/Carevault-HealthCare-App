@@ -1,4 +1,4 @@
-package com.example.carevault
+package com.example.carevault.authentication
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import com.example.carevault.MainFragment
+import com.example.carevault.R
 import com.example.carevault.databinding.ActivityLoginWithNumberBinding
 import com.google.firebase.Firebase
 import com.google.firebase.FirebaseException

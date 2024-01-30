@@ -1,7 +1,8 @@
-package com.example.carevault
+package com.example.carevault.Emergency
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.carevault.R
 
 class EmergencyAmbulanceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

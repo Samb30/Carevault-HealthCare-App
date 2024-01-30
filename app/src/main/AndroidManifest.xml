@@ -28,25 +28,25 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".EmergencyActivityCopy"
+            android:name=".Emergency.EmergencyActivityCopy"
             android:exported="false" />
         <activity
             android:name=".PatientInfo"
             android:exported="false" />
         <activity
-            android:name=".EmergencyProcedureActivity"
+            android:name=".Emergency.EmergencyProcedureActivity"
             android:exported="false" />
         <activity
-            android:name=".EmergencyAmbulanceActivity"
+            android:name=".Emergency.EmergencyAmbulanceActivity"
             android:exported="false" />
         <activity
-            android:name=".EmergencyCallActivity"
+            android:name=".Emergency.EmergencyCallActivity"
             android:exported="false" />
         <activity
-            android:name=".EmergencyLoginActivity"
+            android:name=".Emergency.EmergencyLoginActivity"
             android:exported="false" />
         <activity
-            android:name=".EmergencySignUpActivity"
+            android:name=".Emergency.EmergencySignUpActivity"
             android:exported="false" />
         <activity
             android:name=".Articles.Diet"
@@ -67,46 +67,46 @@
             android:name=".MainFragment"
             android:exported="false" />
         <activity
-            android:name=".AppSettingsActivity"
+            android:name=".Profile.AppSettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".AppFeedbackActivity"
+            android:name=".Profile.AppFeedbackActivity"
             android:exported="false" />
         <activity
-            android:name=".EditProfileActivity"
+            android:name=".Profile.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".HelpSupportActivity"
+            android:name=".Profile.HelpSupportActivity"
             android:exported="false" />
         <activity
-            android:name=".HealthRecordActivity"
+            android:name=".Profile.HealthRecordActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".NewPassword"
+            android:name=".authentication.NewPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".PassVerificationCode"
+            android:name=".authentication.PassVerificationCode"
             android:exported="false" />
         <activity
-            android:name=".PasswordResetActivity"
+            android:name=".authentication.PasswordResetActivity"
             android:exported="false" />
         <activity
-            android:name=".EmergencyActivity"
+            android:name=".Emergency.EmergencyActivity"
             android:exported="false" />
         <activity
-            android:name=".NumberVerifyOtpActivity"
+            android:name=".authentication.NumberVerifyOtpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginWithNumberActivity"
+            android:name=".authentication.LoginWithNumberActivity"
             android:exported="false" />
         <activity
             android:name=".AppointmentReminders"
             android:exported="false" />
         <activity
-            android:name=".HealthInfoInputActivity"
+            android:name=".authentication.HealthInfoInputActivity"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
@@ -118,10 +118,10 @@
             android:name=".Onboard1Activity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".authentication.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".authentication.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity

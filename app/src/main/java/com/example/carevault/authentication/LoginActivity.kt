@@ -1,4 +1,4 @@
-package com.example.carevault
+package com.example.carevault.authentication
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,9 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.carevault.MainFragment
+import com.example.carevault.R
+import com.example.carevault.WelcomeActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient

@@ -1,13 +1,12 @@
-package com.example.carevault
+package com.example.carevault.Profile
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.carevault.fragments.UserFragment
+import com.example.carevault.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore

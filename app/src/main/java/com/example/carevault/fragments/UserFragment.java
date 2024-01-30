@@ -11,16 +11,14 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.carevault.AppFeedbackActivity;
-import com.example.carevault.AppSettingsActivity;
-import com.example.carevault.EditProfileActivity;
-import com.example.carevault.HealthRecordActivity;
-import com.example.carevault.HelpSupportActivity;
-import com.example.carevault.LoginActivity;
-import com.example.carevault.ProfileActivity;
+import com.example.carevault.Profile.AppFeedbackActivity;
+import com.example.carevault.Profile.AppSettingsActivity;
+import com.example.carevault.Profile.EditProfileActivity;
+import com.example.carevault.Profile.HealthRecordActivity;
+import com.example.carevault.Profile.HelpSupportActivity;
+import com.example.carevault.authentication.LoginActivity;
 import com.example.carevault.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 

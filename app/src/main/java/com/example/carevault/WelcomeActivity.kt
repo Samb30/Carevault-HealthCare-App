@@ -4,6 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.carevault.authentication.LoginActivity
+import com.example.carevault.authentication.RegisterActivity
+import com.example.carevault.Emergency.EmergencyLoginActivity
+
 class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

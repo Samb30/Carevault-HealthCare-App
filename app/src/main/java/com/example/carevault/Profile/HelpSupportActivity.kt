@@ -1,11 +1,12 @@
-package com.example.carevault
+package com.example.carevault.Profile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.carevault.R
 
-class NewPassword : AppCompatActivity() {
+class HelpSupportActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_password)
+        setContentView(R.layout.activity_help_support)
     }
 }

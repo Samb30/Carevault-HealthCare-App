@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#D7D0FF"
-        tools:context=".ProfileActivity">
+        tools:context=".Profile.ProfileActivity">
 
         <TextView
             android:id="@+id/my_profile"

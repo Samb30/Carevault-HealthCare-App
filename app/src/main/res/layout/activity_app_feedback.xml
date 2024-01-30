@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#D7D0FF"
-        tools:context=".AppFeedbackActivity">
+        tools:context=".Profile.AppFeedbackActivity">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"

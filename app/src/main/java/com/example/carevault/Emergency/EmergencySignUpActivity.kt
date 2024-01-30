@@ -1,62 +1,37 @@
-package com.example.carevault
+package com.example.carevault.Emergency
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.carevault.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Objects
 
-class RegisterActivity : AppCompatActivity() {
+class EmergencySignUpActivity : AppCompatActivity() {
 
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
-
-        val spinner: Spinner = findViewById(R.id.textView14)
-        val adapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.country_array,
-            android.R.layout.simple_spinner_item
-        )
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = adapter
-
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parentView: AdapterView<*>?,
-                selectedItemView: View?,
-                position: Int,
-                id: Long
-            ) {
-            }
-
-            override fun onNothingSelected(parentView: AdapterView<*>?) {
-            }
-        }
+        setContentView(R.layout.activity_emergency_sign_up)
 
         val backButton: ImageButton = findViewById(R.id.imageButton2)
+
         backButton.setOnClickListener {
-            val intent = Intent(this@RegisterActivity, WelcomeActivity::class.java)
+            val intent = Intent(this@EmergencySignUpActivity, EmergencyLoginActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         val signUpButton: TextView = findViewById(R.id.textView5)
+
         signUpButton.setOnClickListener {
             if (validateInputs()) {
                 val email = findViewById<EditText>(R.id.textView11).text.toString()
@@ -68,7 +43,6 @@ class RegisterActivity : AppCompatActivity() {
                             val user = auth.currentUser
                             val name = findViewById<EditText>(R.id.textView6).text.toString()
                             val mobileNumber = findViewById<EditText>(R.id.textView15).text.toString()
-                            val country = spinner.selectedItem.toString()
 
                             val userId = Objects.requireNonNull<FirebaseUser>(auth.currentUser).uid
 
@@ -76,7 +50,6 @@ class RegisterActivity : AppCompatActivity() {
                                 "Name" to name,
                                 "Email" to email,
                                 "MobileNumber" to mobileNumber,
-                                "Country" to country,
                                 "UserId" to userId
                             )
 
@@ -88,7 +61,7 @@ class RegisterActivity : AppCompatActivity() {
                                         "User registered successfully",
                                         Toast.LENGTH_SHORT
                                     ).show()
-                                    startActivity(Intent(this, HealthInfoInputActivity::class.java))
+                                    startActivity(Intent(this, EmergencyLoginActivity::class.java))
                                     finish()
                                 }
                                 .addOnFailureListener { e ->
@@ -113,7 +86,6 @@ class RegisterActivity : AppCompatActivity() {
         val emailEditText: EditText = findViewById(R.id.textView11)
         val passwordEditText: EditText = findViewById(R.id.textView3)
         val mobileNumberEditText: EditText = findViewById(R.id.textView15)
-        val checkBox: CheckBox = findViewById(R.id.checkBox)
 
         val name = nameEditText.text.toString().trim()
         val email = emailEditText.text.toString().trim()
@@ -152,12 +124,6 @@ class RegisterActivity : AppCompatActivity() {
 
         if (!Patterns.PHONE.matcher(mobileNumber).matches()) {
             mobileNumberEditText.error = "Enter a valid mobile number"
-            return false
-        }
-
-        if (!checkBox.isChecked) {
-            Toast.makeText(applicationContext, "Please agree to the terms", Toast.LENGTH_SHORT)
-                .show()
             return false
         }
 
