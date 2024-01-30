@@ -28,25 +28,25 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".Emergency.EmergencyActivityCopy"
+            android:name=".emergency.EmergencyActivityCopy"
             android:exported="false" />
         <activity
             android:name=".PatientInfo"
             android:exported="false" />
         <activity
-            android:name=".Emergency.EmergencyProcedureActivity"
+            android:name=".emergency.EmergencyProcedureActivity"
             android:exported="false" />
         <activity
-            android:name=".Emergency.EmergencyAmbulanceActivity"
+            android:name=".emergency.EmergencyAmbulanceActivity"
             android:exported="false" />
         <activity
-            android:name=".Emergency.EmergencyCallActivity"
+            android:name=".emergency.EmergencyCallActivity"
             android:exported="false" />
         <activity
-            android:name=".Emergency.EmergencyLoginActivity"
+            android:name=".emergency.EmergencyLoginActivity"
             android:exported="false" />
         <activity
-            android:name=".Emergency.EmergencySignUpActivity"
+            android:name=".emergency.EmergencySignUpActivity"
             android:exported="false" />
         <activity
             android:name=".Articles.Diet"
@@ -67,22 +67,22 @@
             android:name=".MainFragment"
             android:exported="false" />
         <activity
-            android:name=".Profile.AppSettingsActivity"
+            android:name=".profile.AppSettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.AppFeedbackActivity"
+            android:name=".profile.AppFeedbackActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.EditProfileActivity"
+            android:name=".profile.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.HelpSupportActivity"
+            android:name=".profile.HelpSupportActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.HealthRecordActivity"
+            android:name=".profile.HealthRecordActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.ProfileActivity"
+            android:name=".profile.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".authentication.NewPasswordActivity"
@@ -94,7 +94,7 @@
             android:name=".authentication.PasswordResetActivity"
             android:exported="false" />
         <activity
-            android:name=".Emergency.EmergencyActivity"
+            android:name=".emergency.EmergencyActivity"
             android:exported="false" />
         <activity
             android:name=".authentication.NumberVerifyOtpActivity"

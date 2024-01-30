@@ -11,11 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.carevault.Profile.AppFeedbackActivity;
-import com.example.carevault.Profile.AppSettingsActivity;
-import com.example.carevault.Profile.EditProfileActivity;
-import com.example.carevault.Profile.HealthRecordActivity;
-import com.example.carevault.Profile.HelpSupportActivity;
+import com.example.carevault.profile.AppFeedbackActivity;
+import com.example.carevault.profile.AppSettingsActivity;
+import com.example.carevault.profile.EditProfileActivity;
+import com.example.carevault.profile.HealthRecordActivity;
+import com.example.carevault.profile.HelpSupportActivity;
 import com.example.carevault.authentication.LoginActivity;
 import com.example.carevault.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -109,6 +109,7 @@ public class UserFragment extends Fragment {
             public void onClick(View view) {
                 auth.signOut();
                 Intent intent = new Intent(requireContext(), LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });

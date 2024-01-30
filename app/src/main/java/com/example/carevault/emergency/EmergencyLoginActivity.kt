@@ -1,4 +1,4 @@
-package com.example.carevault.Emergency
+package com.example.carevault.emergency
 
 import android.content.Intent
 import android.os.Bundle

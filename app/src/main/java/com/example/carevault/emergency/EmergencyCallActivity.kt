@@ -1,4 +1,4 @@
-package com.example.carevault.Emergency
+package com.example.carevault.emergency
 
 import android.Manifest
 import android.content.Context

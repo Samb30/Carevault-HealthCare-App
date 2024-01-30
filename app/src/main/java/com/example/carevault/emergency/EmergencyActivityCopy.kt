@@ -1,6 +1,7 @@
-package com.example.carevault.Emergency
+package com.example.carevault.emergency
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
@@ -12,7 +13,7 @@ import com.example.carevault.R
 import com.example.carevault.WelcomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
-class EmergencyActivity : AppCompatActivity() {
+class EmergencyActivityCopy : AppCompatActivity() {
 
     companion object {
         private const val SHORTCUT_ID = "shortcut_emergency_activity"
@@ -22,7 +23,7 @@ class EmergencyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_emergency)
+        setContentView(R.layout.activity_emergency_copy)
 
         if (!isUserLoggedIn()) {
             val loginIntent = Intent(this, EmergencyLoginActivity::class.java)
@@ -42,60 +43,64 @@ class EmergencyActivity : AppCompatActivity() {
         val exitButton: TextView = findViewById(R.id.my_pro13)
 
         forButton11.setOnClickListener {
-            val intent = Intent(this@EmergencyActivity, EmergencyCallActivity::class.java)
+            val intent = Intent(this@EmergencyActivityCopy, EmergencyCallActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         forButton12.setOnClickListener {
-            val intent = Intent(this@EmergencyActivity, EmergencyCallActivity::class.java)
+            val intent = Intent(this@EmergencyActivityCopy, EmergencyCallActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         forButton21.setOnClickListener {
-            val intent = Intent(this@EmergencyActivity, EmergencyAmbulanceActivity::class.java)
+            val intent = Intent(this@EmergencyActivityCopy, EmergencyAmbulanceActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         forButton22.setOnClickListener {
-            val intent = Intent(this@EmergencyActivity, EmergencyAmbulanceActivity::class.java)
+            val intent = Intent(this@EmergencyActivityCopy, EmergencyAmbulanceActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         forButton31.setOnClickListener {
-            val intent = Intent(this@EmergencyActivity, EmergencyProcedureActivity::class.java)
+            val intent = Intent(this@EmergencyActivityCopy, EmergencyProcedureActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         forButton32.setOnClickListener {
-            val intent = Intent(this@EmergencyActivity, EmergencyProcedureActivity::class.java)
+            val intent = Intent(this@EmergencyActivityCopy, EmergencyProcedureActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         exitButton.setOnClickListener {
-            val intent = Intent(this@EmergencyActivity, WelcomeActivity::class.java)
+            val intent = Intent(this@EmergencyActivityCopy, WelcomeActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
 
     private fun createShortcut() {
-        val shortcutInfo = ShortcutInfoCompat.Builder(this, SHORTCUT_ID)
-            .setShortLabel(getString(R.string.shortcut_label))
-            .setIcon(IconCompat.createWithResource(this, R.mipmap.ic_shortcut))
-            .setIntent(Intent(this, EmergencyActivity::class.java).apply {
-                action = Intent.ACTION_MAIN
-            })
-            .build()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val shortcutInfo = ShortcutInfoCompat.Builder(this, SHORTCUT_ID)
+                .setShortLabel(getString(R.string.shortcut_label))
+                .setIcon(IconCompat.createWithResource(this, R.mipmap.ic_shortcut))
+                .setIntent(Intent(this, EmergencyActivity::class.java).apply {
+                    action = Intent.ACTION_MAIN
+                })
+                .build()
 
-        val shortcuts = ShortcutManagerCompat.getDynamicShortcuts(this)
-        val shortcutExists = shortcuts.any { it.id == SHORTCUT_ID }
+            val shortcuts = ShortcutManagerCompat.getDynamicShortcuts(this)
+            val shortcutExists = shortcuts.any { it.id == SHORTCUT_ID }
 
-        if (!shortcutExists) {
-            ShortcutManagerCompat.requestPinShortcut(this, shortcutInfo, null)
+            if (!shortcutExists) {
+                ShortcutManagerCompat.requestPinShortcut(this, shortcutInfo, null)
+            }
         }
     }
 

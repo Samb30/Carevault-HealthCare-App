@@ -1,12 +1,12 @@
-package com.example.carevault.Emergency
+package com.example.carevault.profile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.carevault.R
 
-class EmergencyAmbulanceActivity : AppCompatActivity() {
+class HealthRecordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_emergency_ambulance)
+        setContentView(R.layout.activity_health_record)
     }
 }

@@ -1,4 +1,4 @@
-package com.example.carevault.Profile
+package com.example.carevault.profile
 
 import android.content.Intent
 import android.os.Bundle
