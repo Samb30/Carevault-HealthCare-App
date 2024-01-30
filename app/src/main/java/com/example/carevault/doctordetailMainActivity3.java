@@ -24,8 +24,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class doctordetailMainActivity3 extends AppCompatActivity {
@@ -61,6 +64,15 @@ public class doctordetailMainActivity3 extends AppCompatActivity {
         stim=findViewById(R.id.stime);
         edate=findViewById(R.id.dt);
         etime=findViewById(R.id.stime);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        String currentDate = dateFormat.format(new Date());
+        textdt.setText(currentDate);
+
+        // Set the current time in the TextView
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        String currentTime = timeFormat.format(new Date());
+        stim.setText(currentTime);
+
 
 
 
@@ -115,22 +127,34 @@ public class doctordetailMainActivity3 extends AppCompatActivity {
     }
 
     private void datetime(){
+        Calendar calendar = Calendar.getInstance();
+        int currentYear = calendar.get(Calendar.YEAR);
+        int currentMonth = calendar.get(Calendar.MONTH);
+        int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
         DatePickerDialog  dia=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int yr, int month, int day) {
-                textdt.setText(String.valueOf(yr)+"."+String.valueOf(month+1)+"."+String.valueOf(day));
+                textdt.setText(String.format("%02d/%02d/%04d", day, month + 1, yr));
 
             }
-        }, 2024, 0, 0);
+        }, currentYear, currentMonth, currentDay);
         dia.show();
     }
     private void timershow(){
+        Calendar calendar = Calendar.getInstance();
+        int currentHour = calendar.get(Calendar.HOUR_OF_DAY);
+        int currentMinute = calendar.get(Calendar.MINUTE);
         TimePickerDialog dialog=new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int hr, int min) {
-                stim.setText(String.valueOf(hr)+"."+String.valueOf(min));
+                SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+                Calendar selectedTime = Calendar.getInstance();
+                selectedTime.set(Calendar.HOUR_OF_DAY, hr);
+                selectedTime.set(Calendar.MINUTE, min);
+                stim.setText(timeFormat.format(selectedTime.getTime()));
             }
-        }, 15, 00, true);
+        }, currentHour, currentMinute, false);
+
         dialog.show();
     }
     private void savedatetimeinfo() {
@@ -166,6 +190,8 @@ public class doctordetailMainActivity3 extends AppCompatActivity {
 
                     Intent intent = new Intent(doctordetailMainActivity3.this, PatientInfo.class);
                     intent.putExtra("appointmentsRefPath", documentReference.getPath());
+                    intent.putExtra("date", sdat);
+                    intent.putExtra("time", sti);
                     startActivity(intent);
                     finish();
                 } else {

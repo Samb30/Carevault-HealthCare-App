@@ -46,6 +46,12 @@ public class booking extends AppCompatActivity {
             if (appointmentsRefPath == null) {
                 appointmentsRefPath = "";
             }
+            String date = inte.getStringExtra("date");
+            String time = inte.getStringExtra("time");
+
+            // Set date and time in TextViews
+            dayText.setText("Date: " + date);
+            timeText.setText("Time: " + time);
         }
 
 //        fetchAndDisplayAppointments();

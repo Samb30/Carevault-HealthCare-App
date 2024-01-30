@@ -15,6 +15,8 @@ class PatientInfo : AppCompatActivity() {
     private lateinit var eprob:EditText
     private lateinit var pbar:ProgressBar
     private  var db= Firebase.firestore
+    private lateinit var date: String
+    private lateinit var time: String
     private lateinit var appointmentsRefPath: String
 //    private lateinit var ename:EditText
 
@@ -32,6 +34,8 @@ class PatientInfo : AppCompatActivity() {
         val intent = intent
         if (intent != null) {
             appointmentsRefPath = intent.getStringExtra("appointmentsRefPath") ?: ""
+            date = intent.getStringExtra("date") ?: ""
+            time = intent.getStringExtra("time") ?: ""
         }
 
         nextb.setOnClickListener {
@@ -72,6 +76,8 @@ class PatientInfo : AppCompatActivity() {
 
                         val intent = Intent(this, booking::class.java)
                         intent.putExtra("appointmentsRefPath", appointmentsRefPath1)
+                        intent.putExtra("date", date)
+                        intent.putExtra("time", time)
 
                         startActivity(intent)
                     }
