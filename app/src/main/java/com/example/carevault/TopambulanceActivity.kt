@@ -9,9 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.toObject
 
 //import com.example.doctorhome.databinding.ActivityTopambulanceBinding
 //import com.google.firebase.auth.FirebaseAuth
@@ -52,15 +50,12 @@ class TopambulanceActivity : AppCompatActivity() {
                         ulist.add(user)
                     }
                 }
-                rv.adapter=Myadapter(ulist)
+                rv.adapter=Myadapter1(ulist)
             }
         }
             .addOnFailureListener{
                 Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
             }
-
-
-
 
         back1.setOnClickListener { startActivity(Intent(this, MainFragment::class.java)) }
 

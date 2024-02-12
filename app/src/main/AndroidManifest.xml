@@ -28,25 +28,40 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".emergency.EmergencyActivityCopy"
+            android:name=".DateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Categories"
+            android:exported="false" />
+        <activity
+            android:name=".PatientDetails"
+            android:exported="false" />
+        <activity
+            android:name=".temp"
+            android:exported="false" />
+        <activity
+            android:name=".EmergencyActivityCopy"
             android:exported="false" />
         <activity
             android:name=".PatientInfo"
             android:exported="false" />
         <activity
-            android:name=".emergency.EmergencyProcedureActivity"
+            android:name=".EmergencyProcedureActivity"
             android:exported="false" />
         <activity
-            android:name=".emergency.EmergencyAmbulanceActivity"
+            android:name=".EmergencyAmbulanceActivity"
             android:exported="false" />
         <activity
-            android:name=".emergency.EmergencyCallActivity"
+            android:name=".EmergencyCallActivity"
             android:exported="false" />
         <activity
-            android:name=".emergency.EmergencyLoginActivity"
+            android:name=".EmergencyLoginActivity"
             android:exported="false" />
         <activity
-            android:name=".emergency.EmergencySignUpActivity"
+            android:name=".EmergencySignUpActivity"
             android:exported="false" />
         <activity
             android:name=".Articles.Diet"
@@ -64,49 +79,49 @@
             android:name=".Articles.Health"
             android:exported="false" />
         <activity
-            android:name=".MainFragment"
+            android:name=".SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".profile.AppSettingsActivity"
+            android:name=".AppSettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".profile.AppFeedbackActivity"
+            android:name=".AppFeedbackActivity"
             android:exported="false" />
         <activity
-            android:name=".profile.EditProfileActivity"
+            android:name=".EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".profile.HelpSupportActivity"
+            android:name=".HelpSupportActivity"
             android:exported="false" />
         <activity
-            android:name=".profile.HealthRecordActivity"
+            android:name=".HealthRecordActivity"
             android:exported="false" />
         <activity
-            android:name=".profile.ProfileActivity"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".authentication.NewPasswordActivity"
+            android:name=".NewPassword"
             android:exported="false" />
         <activity
-            android:name=".authentication.PassVerificationCode"
+            android:name=".PassVerificationCode"
             android:exported="false" />
         <activity
-            android:name=".authentication.PasswordResetActivity"
+            android:name=".PasswordResetActivity"
             android:exported="false" />
         <activity
-            android:name=".emergency.EmergencyActivity"
+            android:name=".EmergencyActivity"
             android:exported="false" />
         <activity
-            android:name=".authentication.NumberVerifyOtpActivity"
+            android:name=".NumberVerifyOtpActivity"
             android:exported="false" />
         <activity
-            android:name=".authentication.LoginWithNumberActivity"
+            android:name=".LoginWithNumberActivity"
             android:exported="false" />
         <activity
             android:name=".AppointmentReminders"
             android:exported="false" />
         <activity
-            android:name=".authentication.HealthInfoInputActivity"
+            android:name=".HealthInfoInputActivity"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
@@ -118,10 +133,10 @@
             android:name=".Onboard1Activity"
             android:exported="false" />
         <activity
-            android:name=".authentication.RegisterActivity"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".authentication.LoginActivity"
+            android:name=".LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -149,7 +164,7 @@
             android:name=".Stopwatch"
             android:exported="false" />
         <activity
-                android:name=".SplashActivity"
+            android:name=".MainFragment"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

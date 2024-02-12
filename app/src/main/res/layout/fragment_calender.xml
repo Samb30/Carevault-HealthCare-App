@@ -3,13 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#D7D0FF"
-    android:padding="7dp"
+    android:padding="8dp"
     tools:context=".fragments.CalenderFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/indexArticles">
+
+        <TextView
+            android:id="@+id/pagetitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:text="Alarms"
+            android:textColor="#1D212D"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
         android:layout_height="match_parent"
+        android:layout_below="@+id/indexArticles"
         tools:listitem="@layout/recycler"
         android:id="@+id/recyclerview"/>
 
@@ -21,5 +40,15 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:src="@drawable/baseline_add_24"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
+        app.lottie_autoplay="true"
+        app.lottie_loop="true"
+        android:layout_width="383dp"
+        android:visibility="gone"
+        android:layout_height="383dp"
+        android:layout_centerInParent="true"
+        app:lottie_rawRes="@raw/empty"/>
 
 </RelativeLayout>

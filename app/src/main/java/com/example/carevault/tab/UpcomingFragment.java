@@ -15,14 +15,15 @@ import com.example.carevault.Adapters.Adapter;
 import com.example.carevault.Adapters.Note1;
 import com.example.carevault.Adapters.Note2;
 import com.example.carevault.Adapters.UpcomingAdapter;
+import com.example.carevault.Adapters.modelPatient;
 import com.example.carevault.R;
 import com.example.carevault.Utility;
+import com.example.carevault.booking;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.Query;
 
 public class UpcomingFragment extends Fragment {
-    FloatingActionButton plus;
     RecyclerView recyclerView;
     ImageButton menu;
     UpcomingAdapter noteAdapter;
@@ -38,8 +39,8 @@ public class UpcomingFragment extends Fragment {
     }
     void setupRecyclerView(){
         Query query= Utility.getCollectionReferenceForBooking();
-        FirestoreRecyclerOptions<Note2> options=new FirestoreRecyclerOptions.Builder<Note2>()
-                .setQuery(query,Note2.class).build();
+        FirestoreRecyclerOptions<modelPatient> options=new FirestoreRecyclerOptions.Builder<modelPatient>()
+                .setQuery(query, modelPatient.class).build();
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         noteAdapter =new UpcomingAdapter(options,requireContext());
         recyclerView.setAdapter(noteAdapter);

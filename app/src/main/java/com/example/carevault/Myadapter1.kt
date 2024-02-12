@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class Myadapter(private val userlist:ArrayList<User>):RecyclerView.Adapter<Myadapter.Myholder>() {
+class Myadapter1(private val userlist:ArrayList<User>):RecyclerView.Adapter<Myadapter1.Myholder>() {
     class Myholder(itemView: View):RecyclerView.ViewHolder(itemView){
         val Name:TextView=itemView.findViewById(R.id.tvname)
         val Date:TextView=itemView.findViewById(R.id.tvname2)

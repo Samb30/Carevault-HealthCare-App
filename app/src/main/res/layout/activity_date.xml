@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D7D0FF"
+    android:padding="12dp"
+    tools:context=".DateActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="Book Appointement"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:id="@+id/text"/>
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="55dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="notify"
+        android:layout_alignParentStart="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        app:tint="#000000" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:backgroundTint="#E6E6F9"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="20dp"
+        android:id="@+id/profile"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/baseline_supervised_user_circle_24"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="DR Willium Smith"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/docName"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="Dentist"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/textViewName"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/profile"
+        android:id="@+id/written">
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="About"
+            android:textColor="#1D212D"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/aboutdoctr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:maxLines="3"
+            android:text="I tend to shy away from restaurant chains, but wherever I go, PF Changs has solidly good food and, like Starbucks, thee reliable. We were staying in Boston for a week and after a long day and blah blah blah blah "
+
+            android:maxLength="500"
+            android:ellipsize="end"
+            android:textColor="#83848B"
+            android:textSize="18sp"
+            />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="Select Day"
+        android:id="@+id/date"
+        android:layout_below="@+id/written"
+        android:textColor="@color/black"
+        android:padding="1dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="18dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btndatettime"
+        android:layout_below="@id/date"
+        android:text="Select Date"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="Available time slots for:"
+        android:id="@+id/time"
+        android:layout_below="@+id/btndatettime"
+        android:textColor="@color/black"
+        android:padding="1dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"/>
+    <GridView
+        android:id="@+id/grid_view"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/time"
+        android:background="@drawable/rounded"
+        android:backgroundTint="#E6E6F9"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:numColumns="3"
+        android:horizontalSpacing="8dp"
+        android:verticalSpacing="8dp"/>
+</RelativeLayout>

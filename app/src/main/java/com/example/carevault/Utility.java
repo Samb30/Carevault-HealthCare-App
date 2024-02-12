@@ -17,5 +17,13 @@ public class Utility {
         return FirebaseFirestore.getInstance().collection("Alarms")
                 .document(curr.getUid()).collection("myalarms");
     }
-
+    public static CollectionReference getDoctorDetails(){
+        FirebaseUser curr = FirebaseAuth.getInstance().getCurrentUser();
+        return FirebaseFirestore.getInstance().collection("Doctors");
+    }
+    public static CollectionReference getDateDetails(){
+        FirebaseUser curr = FirebaseAuth.getInstance().getCurrentUser();
+        return FirebaseFirestore.getInstance().collection("Doctors")
+                .document("7aUnHURTlw6cGoqUM2Ny").collection("Date");
+    }
 }

@@ -7,7 +7,7 @@
     android:padding="12dp"
     android:fillViewport="true"
     android:background="#FFFFFF"
-    tools:context=".PatientInfo">
+    tools:context=".PatientDetails">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,30 +23,47 @@
             android:src="@drawable/baseline_arrow_back_ios_24"
             app:tint="#000000" />
 
-
         <TextView
             android:id="@+id/pagetitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-
             android:layout_centerInParent="true"
             android:text="Patient Detail"
             android:textColor="#1D212D"
             android:textSize="25sp"
             android:textStyle="bold" />
-
-
-
     </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head"
+        android:id="@+id/temp"
+        android:orientation="horizontal">
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:switchMinWidth="56dp"
+            android:checked="true"
+            android:textOff="OFF"
+            style="@style/SwitchTheme"
+            android:textOn="ON"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="For Self"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/containerFullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/head"
+        android:layout_below="@id/temp"
         android:background="@drawable/patientdetailbox"
-
-
         android:orientation="vertical"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp">
@@ -64,14 +81,14 @@
             android:id="@+id/editTextFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Saman Bhoyar"
+            android:hint="Enter Name"
             android:layout_margin="3dp"
             android:textColor="#000000"
             android:textSize="16sp"
             android:padding="10dp"
             android:backgroundTint="@android:color/transparent"
 
-        />
+            />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/agebox"
@@ -79,10 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/containerFullName"
         android:background="@drawable/patientdetailbox"
-
-
         android:orientation="vertical"
-
         android:layout_marginBottom="15dp">
 
         <TextView
@@ -92,6 +106,7 @@
             android:text="Your Age"
             android:layout_margin="10dp"
             android:textColor="#000000"
+            android:inputType="number"
             android:textSize="16sp"/>
 
         <EditText
@@ -132,7 +147,6 @@
             android:layout_margin="3dp"
             android:textColor="@color/black"
             android:entries="@array/gender_options"
-
             android:textSize="16sp"
             android:padding="10dp"
             />
@@ -143,10 +157,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/genderLayout"
         android:background="@drawable/patientdetailbox"
-
-
         android:orientation="vertical"
-
         android:layout_marginBottom="30dp">
 
         <TextView
@@ -162,7 +173,7 @@
             android:id="@+id/problemgiven"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="I am having glossophobia so I lack public speaking skills in front of my teachers and friends.I am roll no 100 and 13"
+            android:hint="I am having glossophobia "
             android:layout_margin="3dp"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -180,12 +191,14 @@
         android:layout_marginBottom="30dp"
         android:layout_below="@id/problemsaid"
         android:orientation="horizontal">
+
         <ProgressBar
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/pbar"
             android:visibility="gone"
             />
+
     </LinearLayout>
 
     <Button
@@ -193,7 +206,7 @@
         android:layout_below="@id/loader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/nextbutton"
+        android:background="#D7D0FF"
         android:text="Next"/>
 
 </RelativeLayout>

@@ -1,13 +1,18 @@
 package com.example.carevault;
 
+import static com.google.firebase.appcheck.internal.util.Logger.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -15,9 +20,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.carevault.Adapters.Note2;
+import com.example.carevault.Adapters.modelPatient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class booking extends AppCompatActivity {
     ImageButton back1;
@@ -46,36 +61,122 @@ public class booking extends AppCompatActivity {
             if (appointmentsRefPath == null) {
                 appointmentsRefPath = "";
             }
-            String date = inte.getStringExtra("date");
-            String time = inte.getStringExtra("time");
-
-            // Set date and time in TextViews
-            dayText.setText("Date: " + date);
-            timeText.setText("Time: " + time);
         }
 
 //        fetchAndDisplayAppointments();
         booker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-              showAlertdialog(R.layout.popup);
+                String date = getIntent().getStringExtra("date");
+                String slot = getIntent().getStringExtra("slot");
+                String Pname = getIntent().getStringExtra("Pname");
+                String Page = getIntent().getStringExtra("Page");
+                String Pproblem = getIntent().getStringExtra("Pproblem");
+                String dname=getIntent().getStringExtra("dname");
+                String temp=getIntent().getStringExtra("docId");
+                String category=getIntent().getStringExtra("category");
+                modelPatient modelPatient=new modelPatient();
+                modelPatient.setName(Pname);
+                modelPatient.setAge(Page);
+                modelPatient.setProblem(Pproblem);
+                modelPatient.setTime(slot);
+                modelPatient.setDate(date);
+                modelPatient.setCategory(category);
+                modelPatient.setDname(dname);
+                modelPatient.setDocid(temp);
+                func(slot,date,temp);
+                DocumentReference documentReference;
+                documentReference=Utility.getCollectionReferenceForBooking().document();
+                documentReference.set(modelPatient).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            ProgressDialog Dialog = new ProgressDialog(booking.this);
+                            Dialog.setMessage("please wait a moment..");
+                            Dialog.show();
+                        }
+                        else{
+                            Toast.makeText(booking.this, "Failed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
-
-
-
-
-
         back1.setOnClickListener(v -> {
             Intent intent = new Intent(booking.this, MainFragment.class);
-
             startActivity(intent);
-
-
-
         });
 
+    }
+    private  void func(String s,String te,String temp){
+        FirebaseFirestore.getInstance().collection("Doctors")
+                .document(temp).collection("Date")
+                .whereEqualTo("date", te) // Replace "field" with your field name and value with the value you're looking for
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                ProgressDialog Dialog = new ProgressDialog(booking.this);
+                                Dialog.setMessage("please wait a moment..");
+                                Dialog.show();
+                                String documentId = document.getId();
+                                updateDocumentField(documentId,s,temp); // position is the position of grid item clicked
+                            }
+                        } else {
+                            // Handle errors
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+    }
+    private void updateDocumentField(String docId,String selectedSeat,String temp) {
+
+        Toast.makeText(this, ""+docId, Toast.LENGTH_SHORT).show();
+        FirebaseUser curr = FirebaseAuth.getInstance().getCurrentUser();
+        DocumentReference docRef = FirebaseFirestore.getInstance().collection("Doctors")
+                .document(temp).collection("Date").document(docId);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    ProgressDialog Dialog = new ProgressDialog(booking.this);
+                    Dialog.setMessage("please wait a moment..");
+                    Dialog.show();
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Map<String, Object> data = new HashMap<>();
+                        Map<String, Boolean> times = (Map<String, Boolean>) document.get("times");
+                        if (times != null) {
+                            String selectedTime = "17:00"; // Implement this method
+                            //Toast.makeText(temp.this, "="+selectedTime, Toast.LENGTH_SHORT).show();
+                            times.put(selectedSeat, false);
+                            data.put("times", times);
+
+                            // Update Firestore document
+                            docRef.update(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        showAlertdialog(R.layout.popup);
+                                    } else {
+                                        // Handle errors
+                                        Toast.makeText(booking.this, "Failed to update time", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                        }
+                    } else {
+                        // Document does not exist
+                        Toast.makeText(booking.this, "Document does not exist", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Task failed with an exception
+                    Toast.makeText(booking.this, "Failed to fetch document", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
     public void showAlertdialog(int mylayout){
        builddialog =new AlertDialog.Builder(this);
@@ -89,29 +190,12 @@ public class booking extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                alertDialog.dismiss();
+               Intent intent = new Intent(booking.this, MainFragment.class);
+               intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+               finish();
            }
        });
 
-    }
-    private void fetchAndDisplayAppointments() {
-        String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DocumentReference appointmentsRef = db.document(appointmentsRefPath);
-
-        appointmentsRef.get().addOnSuccessListener(documentSnapshot -> {
-            if (documentSnapshot.exists()) {
-                // Document exists, fetch and display data
-                String day = documentSnapshot.getString("DOA");
-                String time = documentSnapshot.getString("Time");
-                // Display data in TextViews
-                dayText.setText(day);
-                timeText.setText(time);
-            } else {
-                // Document does not exist
-                Toast.makeText(this, "No appointments found", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(e -> {
-            // Handle failure
-            Toast.makeText(this, "Failed to fetch appointments", Toast.LENGTH_SHORT).show();
-        });
     }
 }

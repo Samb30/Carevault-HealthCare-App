@@ -18,7 +18,6 @@ class PatientInfo : AppCompatActivity() {
     private lateinit var date: String
     private lateinit var time: String
     private lateinit var appointmentsRefPath: String
-//    private lateinit var ename:EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
