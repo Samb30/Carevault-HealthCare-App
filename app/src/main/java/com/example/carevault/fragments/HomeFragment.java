@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.fragment.app.Fragment;
 
@@ -15,30 +14,19 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.example.carevault.Adapters.ModelCategory;
 import com.example.carevault.Articles.Health;
 import com.example.carevault.Categories;
 import com.example.carevault.MainActivity2;
-import com.example.carevault.ModelDoc;
 import com.example.carevault.R;
 import com.example.carevault.TopambulanceActivity;
 import com.example.carevault.TophospitalActivity;
-import com.example.carevault.Utility;
-import com.example.carevault.booking;
-import com.example.carevault.doctordetailMainActivity3;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-
-import java.util.HashMap;
 
 public class HomeFragment extends Fragment {
 
     Button dctrall,relatedarticles1;
-    ImageButton expanddoc,dummy;
-    ImageButton notificat;
+    ImageButton expanddoc;
+    ImageView notificat;
     ImageView advertiseimg;
     ImageButton hosp;
     ImageButton ambulance;
@@ -53,7 +41,6 @@ public class HomeFragment extends Fragment {
         dctrall=view.findViewById(R.id.topdoctors);
         expanddoc=view.findViewById(R.id.Doctor);
         notificat=view.findViewById(R.id.notifyb);
-        dummy=view.findViewById(R.id.dummy);
         hosp=view.findViewById(R.id.hospital);
         ambulance=view.findViewById(R.id.ambulance);
         articles=view.findViewById(R.id.article);
@@ -71,7 +58,7 @@ public class HomeFragment extends Fragment {
             }
         });
         expanddoc.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), doctordetailMainActivity3.class);
+            Intent intent = new Intent(getContext(), Categories.class);
             startActivity(intent);
         });
 
@@ -99,12 +86,12 @@ public class HomeFragment extends Fragment {
 
 
         });
-        articles.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), Categories.class);
-
-            startActivity(intent);
-
-        });
+//        articles.setOnClickListener(v -> {
+//            Intent intent = new Intent(getContext(), .class);
+//
+//            startActivity(intent);
+//
+//        });
         sample1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
