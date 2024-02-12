@@ -51,7 +51,7 @@ public class booking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
         back1=findViewById(R.id.backbutton2);
-        booker=findViewById(R.id.bookbuttton);
+        booker=findViewById(R.id.textView5);
         db = FirebaseFirestore.getInstance();
         dayText = findViewById(R.id.dayText);
         timeText = findViewById(R.id.timeText);
