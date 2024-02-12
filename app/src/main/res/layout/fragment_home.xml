@@ -14,32 +14,51 @@
         tools:context=".MainActivity">
 
         <RelativeLayout
+            android:id="@+id/indexArticles"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/indexArticles">
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="5dp">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                app:srcCompat="@drawable/hamburger" />
 
             <TextView
                 android:id="@+id/pagetitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical"
+                android:layout_marginStart="50dp"
                 android:text="CareVault"
                 android:textColor="#1D212D"
                 android:textSize="22sp"
-                android:textStyle="bold"/>
+                android:fontFamily="@font/latoheavy"/>
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/notifyb"
-                android:layout_width="20dp"
-                android:layout_height="26dp"
-                android:contentDescription="notify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/baseline_notifications_none_24"
-                app:tint="#000000" />
+                android:layout_marginEnd="5dp"
+                android:contentDescription="notify"
+                android:src="@drawable/redemergency"
+                android:backgroundTint="#D7D0FF"/>
 
 
         </RelativeLayout>
+
         <androidx.appcompat.widget.SearchView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,6 +66,8 @@
             android:background="@drawable/searchview"
             android:layout_below="@+id/indexArticles"
             android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:textStyle="bold"

@@ -2,15 +2,12 @@ package com.example.carevault.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import com.example.carevault.profile.AppFeedbackActivity;
 import com.example.carevault.profile.AppSettingsActivity;
 import com.example.carevault.profile.EditProfileActivity;
@@ -22,13 +19,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Objects;
+
 public class UserFragment extends Fragment {
     private FirebaseAuth auth;
     private FirebaseFirestore firestore;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view =inflater.inflate(R.layout.fragment_user, container, false);
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
@@ -44,9 +43,8 @@ public class UserFragment extends Fragment {
 
         FirebaseAuth currentUser = auth;
         if (currentUser != null) {
-            String userId = currentUser.getCurrentUser().getUid();
+            String userId = Objects.requireNonNull(currentUser.getCurrentUser()).getUid();
             DocumentReference documentReference=FirebaseFirestore.getInstance().collection("Users").document(userId);
-           // FirebaseFirestore userDocument = firestore.collection("Users").document(userId);
 
             documentReference.get().addOnSuccessListener(documentSnapshot -> {
                 if (documentSnapshot.exists()) {
@@ -60,58 +58,39 @@ public class UserFragment extends Fragment {
                     emailTextView.setText(email);
                 }
             }).addOnFailureListener(e -> {
-                // Handle failure
             });
         }
 
-        EditButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(requireContext(), EditProfileActivity.class);
-                startActivity(intent);
-            }
+        EditButton.setOnClickListener(view1 -> {
+            Intent intent = new Intent(requireContext(), EditProfileActivity.class);
+            startActivity(intent);
         });
 
-        forButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(requireContext(), HealthRecordActivity.class);
-                startActivity(intent);
-            }
+        forButton1.setOnClickListener(view12 -> {
+            Intent intent = new Intent(requireContext(), HealthRecordActivity.class);
+            startActivity(intent);
         });
 
-        forButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(requireContext(), HelpSupportActivity.class);
-                startActivity(intent);
-            }
+        forButton2.setOnClickListener(view13 -> {
+            Intent intent = new Intent(requireContext(), HelpSupportActivity.class);
+            startActivity(intent);
         });
 
-        forButton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(requireContext(), AppFeedbackActivity.class);
-                startActivity(intent);
-            }
+        forButton3.setOnClickListener(view14 -> {
+            Intent intent = new Intent(requireContext(), AppFeedbackActivity.class);
+            startActivity(intent);
         });
 
-        forButton4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(requireContext(), AppSettingsActivity.class);
-                startActivity(intent);
-            }
+        forButton4.setOnClickListener(view15 -> {
+            Intent intent = new Intent(requireContext(), AppSettingsActivity.class);
+            startActivity(intent);
         });
 
-        LogoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                auth.signOut();
-                Intent intent = new Intent(requireContext(), LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
+        LogoutButton.setOnClickListener(view16 -> {
+            auth.signOut();
+            Intent intent = new Intent(requireContext(), LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         });
         return view;
     }

@@ -66,11 +66,9 @@ class LoginActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            // Start the MainFragment activity (or any other desired activity)
                             startActivity(Intent(this, MainFragment::class.java))
-                            finish() // Finish the LoginActivity to prevent going back
+                            finish()
                         } else {
-                            // If sign in fails, display a message to the user.
                             Toast.makeText(
                                 baseContext,
                                 "Authentication failed. ${task.exception?.message}",

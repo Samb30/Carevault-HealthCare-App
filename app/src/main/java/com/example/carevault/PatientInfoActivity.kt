@@ -1,15 +1,20 @@
 package com.example.carevault
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.EditText
+import android.widget.ProgressBar
+import android.widget.Spinner
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.firestore
 
-class PatientInfo : AppCompatActivity() {
+class PatientInfoActivity : AppCompatActivity() {
     private lateinit var ename:EditText
     private lateinit var eage:EditText
     private lateinit var eprob:EditText
@@ -24,7 +29,7 @@ class PatientInfo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_info)
         val back1 = findViewById<View>(R.id.backpatient)
-        val nextb = findViewById<View>(R.id.nextButton1)
+        val nextb = findViewById<View>(R.id.textView5)
         val genderSpinner: Spinner = findViewById(R.id.genderSpinner)
         ename=findViewById(R.id.editTextFullName)
         eage=findViewById(R.id.age)
