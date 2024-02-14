@@ -1,15 +1,14 @@
-package com.example.carevault;
+package com.example.carevault.Alarms;
 
-import static com.example.carevault.Notification.channelID;
-import static com.example.carevault.Notification.messageExtra;
-import static com.example.carevault.Notification.musicExtra;
-import static com.example.carevault.Notification.notificationID;
-import static com.example.carevault.Notification.repeatExtra;
-import static com.example.carevault.Notification.silentExtra;
-import static com.example.carevault.Notification.titleExtra;
+import static com.example.carevault.Alarms.Notification.channelID;
+import static com.example.carevault.Alarms.Notification.messageExtra;
+import static com.example.carevault.Alarms.Notification.musicExtra;
+import static com.example.carevault.Alarms.Notification.notificationID;
+import static com.example.carevault.Alarms.Notification.repeatExtra;
+import static com.example.carevault.Alarms.Notification.silentExtra;
+import static com.example.carevault.Alarms.Notification.titleExtra;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
@@ -20,7 +19,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -47,6 +45,9 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.carevault.Adapters.Note1;
+import com.example.carevault.MainFragment;
+import com.example.carevault.R;
+import com.example.carevault.Utility;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -57,7 +58,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 public class AppointmentReminders extends AppCompatActivity {
     RelativeLayout textView;
@@ -236,7 +236,7 @@ public class AppointmentReminders extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // The toggle is enabled
-                    Intent i=new Intent(getApplicationContext(),Notification.class);
+                    Intent i=new Intent(getApplicationContext(), Notification.class);
                     i.putExtra("check",true);
                 } else {
                     // The toggle is disabled
@@ -259,7 +259,7 @@ public class AppointmentReminders extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(AppointmentReminders.this,MainFragment.class);
+                Intent i=new Intent(AppointmentReminders.this, MainFragment.class);
                 startActivity(i);
                 finish();
             }
@@ -522,7 +522,7 @@ public class AppointmentReminders extends AppCompatActivity {
         DocumentReference documentReference;
         if(isEdit){
             cancelScheduledAlarms();
-            documentReference=Utility.getCollectionReferenceForNotes().document();
+            documentReference= Utility.getCollectionReferenceForNotes().document();
         }
         else{
             documentReference=Utility.getCollectionReferenceForNotes().document();

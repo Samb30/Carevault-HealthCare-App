@@ -1,4 +1,4 @@
-package com.example.carevault;
+package com.example.carevault.Booking;
 
 import static com.google.firebase.appcheck.internal.util.Logger.TAG;
 
@@ -22,7 +22,11 @@ import android.widget.Toast;
 
 import com.example.carevault.Adapters.DoctorAdapter;
 import com.example.carevault.Adapters.ModelCategory;
-import com.example.carevault.Adapters.UpcomingAdapter;
+import com.example.carevault.MainFragment;
+import com.example.carevault.Adapters.ModelDoc;
+import com.example.carevault.R;
+import com.example.carevault.Adapters.SeatAdapter;
+import com.example.carevault.Utility;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

@@ -1,10 +1,7 @@
 package com.example.carevault.fragments;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -13,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.example.carevault.PageAdapter;
+import com.example.carevault.Adapters.PageAdapter;
 import com.example.carevault.R;
 import com.google.android.material.tabs.TabLayout;
 

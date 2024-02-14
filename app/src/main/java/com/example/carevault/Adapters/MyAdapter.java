@@ -1,4 +1,4 @@
-package com.example.carevault;
+package com.example.carevault.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.carevault.R;
 
 public class MyAdapter extends BaseAdapter {
 

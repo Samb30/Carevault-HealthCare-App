@@ -28,19 +28,19 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".DateActivity"
+            android:name=".Booking.DateActivity"
             android:exported="false" />
         <activity
             android:name=".DoctorsActivity"
             android:exported="false" />
         <activity
-            android:name=".Categories"
+            android:name=".Booking.Categories"
             android:exported="false" />
         <activity
-            android:name=".PatientDetails"
+            android:name=".Booking.PatientDetails"
             android:exported="false" />
         <activity
-            android:name=".temp"
+            android:name=".Booking.temp"
             android:exported="false" />
         <activity
             android:name=".emergency.EmergencyActivityCopy"
@@ -118,7 +118,7 @@
             android:name=".authentication.LoginWithNumberActivity"
             android:exported="false" />
         <activity
-            android:name=".AppointmentReminders"
+            android:name=".Alarms.AppointmentReminders"
             android:exported="false" />
         <activity
             android:name=".authentication.HealthInfoInputActivity"
@@ -146,19 +146,13 @@
             android:name=".doctordetailMainActivity3"
             android:exported="false" />
         <activity
-            android:name=".booking"
+            android:name=".Booking.booking"
             android:exported="false" />
         <activity
             android:name=".TophospitalActivity"
             android:exported="false" />
         <activity
             android:name=".TopambulanceActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Timer"
-            android:exported="false" />
-        <activity
-            android:name=".Stopwatch"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
@@ -171,7 +165,7 @@
         </activity>
 
         <receiver
-            android:name=".Notification"
+            android:name=".Alarms.Notification"
             android:enabled="true"
             android:exported="false">
             <intent-filter>

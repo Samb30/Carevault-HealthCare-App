@@ -1,4 +1,4 @@
-package com.example.carevault;
+package com.example.carevault.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

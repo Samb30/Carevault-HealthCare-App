@@ -9,6 +9,7 @@ public class modelPatient {
     String dName;
     String category;
     String docId;
+    long sTime;
     public modelPatient(){
     }
     public String getName(){
@@ -58,5 +59,11 @@ public class modelPatient {
     }
     public void setDocid(String docId){
         this.docId=docId;
+    }
+    public long getStime(){
+        return sTime;
+    }
+    public void setStime(long sTime){
+        this.sTime=sTime;
     }
 }

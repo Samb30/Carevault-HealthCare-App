@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D7D0FF"
+    android:background="@color/white"
     android:padding="12dp"
-    tools:context=".DateActivity">
+    tools:context=".Booking.DateActivity">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="25dp"
@@ -20,7 +20,7 @@
 
     <ImageButton
         android:id="@+id/back"
-        android:layout_width="55dp"
+        android:layout_width="35dp"
         android:layout_height="25dp"
         android:layout_marginTop="10dp"
         android:contentDescription="notify"
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text"
-        android:backgroundTint="#E6E6F9"
+        android:backgroundTint="#EFF7FE"
         android:background="@drawable/rounded"
         android:layout_marginTop="20dp"
         android:id="@+id/profile"
@@ -45,7 +45,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
@@ -60,77 +60,89 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:text="Dentist"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:textSize="15sp"
                     android:layout_marginLeft="10dp"
                     android:id="@+id/textViewName"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="AIIMS"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/hospital"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/baseline_location_on_24"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Dentist"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="4dp"
+                    android:id="@+id/location"/>
 
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginTop="18dp"
         android:layout_below="@+id/profile"
         android:id="@+id/written">
 
         <TextView
-            android:id="@+id/about"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="About"
-            android:textColor="#1D212D"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/aboutdoctr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:maxLines="3"
-            android:text="I tend to shy away from restaurant chains, but wherever I go, PF Changs has solidly good food and, like Starbucks, thee reliable. We were staying in Boston for a week and after a long day and blah blah blah blah "
-
-            android:maxLength="500"
-            android:ellipsize="end"
-            android:textColor="#83848B"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="Select Day"
+            android:id="@+id/date"
+            android:textColor="@color/black"
+            android:padding="1dp"
+            android:textStyle="bold"
             android:textSize="18sp"
-            />
-    </RelativeLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:text="Select Day"
-        android:id="@+id/date"
-        android:layout_below="@+id/written"
-        android:textColor="@color/black"
-        android:padding="1dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginTop="18dp"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/btndatettime"
-        android:layout_below="@id/date"
-        android:text="Select Date"
-        />
+            android:layout_marginTop="18dp"/>
+        <CalendarView
+            android:id="@+id/calender"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/rounded"
+            android:theme="@style/CalenderViewCustom"
+            android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+            android:backgroundTint="#EFF7FE"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:firstDayOfWeek="2"/>
+    </LinearLayout>
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:id="@+id/btndatettime"-->
+<!--        android:layout_below="@id/written"-->
+<!--        android:text="Select Date"-->
+<!--        />-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:text="Available time slots for:"
         android:id="@+id/time"
-        android:layout_below="@+id/btndatettime"
+        android:layout_below="@+id/written"
         android:textColor="@color/black"
         android:padding="1dp"
         android:textStyle="bold"

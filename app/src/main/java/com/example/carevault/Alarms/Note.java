@@ -1,4 +1,4 @@
-package com.example.carevault;
+package com.example.carevault.Alarms;
 
 import java.util.ArrayList;
 

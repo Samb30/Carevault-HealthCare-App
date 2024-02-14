@@ -19,7 +19,7 @@ import android.widget.ImageButton;
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.carevault.Adapters.Adapter;
 import com.example.carevault.Adapters.Note1;
-import com.example.carevault.AppointmentReminders;
+import com.example.carevault.Alarms.AppointmentReminders;
 import com.example.carevault.R;
 import com.example.carevault.Utility;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;

@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.carevault.Articles.Health;
-import com.example.carevault.Categories;
+import com.example.carevault.Booking.Categories;
 import com.example.carevault.MainActivity2;
 import com.example.carevault.R;
 import com.example.carevault.TopambulanceActivity;

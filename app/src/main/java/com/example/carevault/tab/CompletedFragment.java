@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.carevault.Adapters.CompletedAdapter;
 import com.example.carevault.Adapters.UpcomingAdapter;
 import com.example.carevault.Adapters.modelPatient;
 import com.example.carevault.R;
@@ -37,7 +38,7 @@ import java.util.Locale;
 public class CompletedFragment extends Fragment {
     RecyclerView recyclerView;
     ImageButton menu;
-    UpcomingAdapter noteAdapter;
+    CompletedAdapter noteAdapter;
     LottieAnimationView lottie;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,23 +51,15 @@ public class CompletedFragment extends Fragment {
         return view;
     }
     void setupRecyclerView(){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-d", Locale.getDefault());
-        String currentDate = dateFormat.format(new Date());
-        Query query= Utility.getCollectionReferenceForBooking().whereLessThanOrEqualTo("date","2024-2-14");
+        Calendar calendar1 = Calendar.getInstance();
+        long time=calendar1.getTimeInMillis();
+        System.out.println(time);
+        Query query= Utility.getCollectionReferenceForBooking().whereLessThan("stime",time);
         query.get().addOnSuccessListener(queryDocumentSnapshots -> {
             ArrayList<String> al1=new ArrayList<>();
             for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
                 String s2=(String)document.get("time");
-                Calendar calendar = Calendar.getInstance();
-                int currentHour = calendar.get(Calendar.HOUR_OF_DAY); // Get current hour (0-23)
-                String temp=currentHour+":00";   // Get current minute (0-59)
-                if(currentHour<10)
-                    temp="0"+temp;
-                s2="17:00";
-                temp="05:00";
-                if((s2.charAt(0)=='0' && temp.charAt(0)=='1') || !(s2.charAt(0)=='1' && temp.charAt(0)=='0') || s2.compareTo(temp)>0)
-                    al1.add(s2);
-                System.out.println(al1);
+                al1.add(s2);
             }
             if(al1!=null && !al1.isEmpty()){
                 lottie.setVisibility(View.INVISIBLE);
@@ -95,9 +88,7 @@ public class CompletedFragment extends Fragment {
                         // Animation repeated
                     }
                 });
-
                 lottie.playAnimation();
-                System.out.println(al1);
             }
         }).addOnFailureListener(e -> {
             Log.w(TAG, "Error getting documents.", e);
@@ -105,7 +96,7 @@ public class CompletedFragment extends Fragment {
         FirestoreRecyclerOptions<modelPatient> options=new FirestoreRecyclerOptions.Builder<modelPatient>()
                 .setQuery(query, modelPatient.class).build();
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        noteAdapter =new UpcomingAdapter(options,requireContext());
+        noteAdapter =new CompletedAdapter(options,requireContext());
         recyclerView.setAdapter(noteAdapter);
     }
     @Override

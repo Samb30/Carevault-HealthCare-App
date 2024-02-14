@@ -1,4 +1,4 @@
-package com.example.carevault;
+package com.example.carevault.Alarms;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 import static androidx.core.content.ContextCompat.getSystemService;
@@ -22,6 +22,8 @@ import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
+import com.example.carevault.MainFragment;
+import com.example.carevault.R;
 import com.google.android.gms.common.internal.Constants;
 
 import java.time.LocalDate;

@@ -11,17 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.example.carevault.Adapters.Adapter;
-import com.example.carevault.Adapters.Note1;
-import com.example.carevault.Adapters.Note2;
 import com.example.carevault.Adapters.UpcomingAdapter;
 import com.example.carevault.Adapters.modelPatient;
 import com.example.carevault.R;
 import com.example.carevault.Utility;
-import com.example.carevault.booking;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.Query;
+
+import java.util.Calendar;
 
 public class UpcomingFragment extends Fragment {
     RecyclerView recyclerView;
@@ -31,14 +28,22 @@ public class UpcomingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_upcoming, container, false);
         recyclerView=view.findViewById(R.id.recyclerview);
         setupRecyclerView();
         return view;
     }
     void setupRecyclerView(){
-        Query query= Utility.getCollectionReferenceForBooking();
+//        int year = 2024;
+//        int month = 1;
+//        int day = 13;
+//        int hour=18;
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.set(year, month, day, hour, 0, 0);
+//        long milliseconds = calendar.getTimeInMillis();
+        Calendar calendar1 = Calendar.getInstance();
+        long time=calendar1.getTimeInMillis();
+        Query query= Utility.getCollectionReferenceForBooking().whereGreaterThan("stime",time);
         FirestoreRecyclerOptions<modelPatient> options=new FirestoreRecyclerOptions.Builder<modelPatient>()
                 .setQuery(query, modelPatient.class).build();
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));

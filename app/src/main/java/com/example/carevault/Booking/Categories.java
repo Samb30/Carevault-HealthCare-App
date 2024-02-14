@@ -1,4 +1,4 @@
-package com.example.carevault;
+package com.example.carevault.Booking;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,14 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.carevault.Adapters.Adapter;
-import com.example.carevault.Adapters.ModelCategory;
+import com.example.carevault.DoctorsActivity;
+import com.example.carevault.Adapters.ModelDoc;
+import com.example.carevault.Adapters.MyAdapter;
+import com.example.carevault.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -66,8 +67,10 @@ public class Categories extends AppCompatActivity {
 //            public void onClick(View view) {
 //                ModelCategory modelCategory=new ModelCategory();
 //                for(int i=0;i<mNames.length;i++){
-//                    modelCategory.setName("Matt Henry");
+//                    modelCategory.setName("Will Smith");
 //                    modelCategory.setCategory(mNames[i]);
+//                    modelCategory.setHospital("Asan Medical Center (AMC)");
+//                    modelCategory.setLocation("Seoul");
 //                    DocumentReference documentReference;
 //                    String s=mNames[i];
 //                    documentReference=Utility.getDoctorDetails().document();
@@ -90,9 +93,9 @@ public class Categories extends AppCompatActivity {
     }
     void solve(String docId,String category){
         ModelDoc modelDoc=new ModelDoc();
-        modelDoc.setName("Will");
-        modelDoc.setDate("2024-2-14");
-        modelDoc.setClinic("XYZ");
+        modelDoc.setName("Matt Henry");
+        modelDoc.setDate("2024-2-25");
+        modelDoc.setClinic("Asan Medical Center (AMC)");
         modelDoc.setCategory(category);
         HashMap<String, Boolean> timeSlotsMap = new HashMap<>();
 

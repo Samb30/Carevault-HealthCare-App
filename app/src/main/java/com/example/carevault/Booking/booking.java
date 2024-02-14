@@ -1,4 +1,4 @@
-package com.example.carevault;
+package com.example.carevault.Booking;
 
 import static com.google.firebase.appcheck.internal.util.Logger.TAG;
 
@@ -19,8 +19,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.carevault.Adapters.Note2;
 import com.example.carevault.Adapters.modelPatient;
+import com.example.carevault.MainFragment;
+import com.example.carevault.R;
+import com.example.carevault.Utility;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +33,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -85,21 +88,6 @@ public class booking extends AppCompatActivity {
                 modelPatient.setDname(dname);
                 modelPatient.setDocid(temp);
                 func(slot,date,temp);
-                DocumentReference documentReference;
-                documentReference=Utility.getCollectionReferenceForBooking().document();
-                documentReference.set(modelPatient).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            ProgressDialog Dialog = new ProgressDialog(booking.this);
-                            Dialog.setMessage("please wait a moment..");
-                            Dialog.show();
-                        }
-                        else{
-                            Toast.makeText(booking.this, "Failed", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
             }
         });
         back1.setOnClickListener(v -> {
@@ -151,14 +139,31 @@ public class booking extends AppCompatActivity {
                         if (times != null) {
                             String selectedTime = "17:00"; // Implement this method
                             //Toast.makeText(temp.this, "="+selectedTime, Toast.LENGTH_SHORT).show();
+                            boolean flag=times.get(selectedSeat);
+                            if(flag==false){
+                                showAlertdialog(R.layout.popup2);
+                                return;
+                            }
                             times.put(selectedSeat, false);
                             data.put("times", times);
-
-                            // Update Firestore document
                             docRef.update(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
+                                        modelPatient modelPatient=new modelPatient();
+                                        solve(modelPatient);
+                                        DocumentReference documentReference;
+                                        documentReference= Utility.getCollectionReferenceForBooking().document();
+                                        documentReference.set(modelPatient).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if(task.isSuccessful()){
+                                                }
+                                                else{
+                                                    Toast.makeText(booking.this, "Failed", Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        });
                                         showAlertdialog(R.layout.popup);
                                     } else {
                                         // Handle errors
@@ -171,6 +176,7 @@ public class booking extends AppCompatActivity {
                         // Document does not exist
                         Toast.makeText(booking.this, "Document does not exist", Toast.LENGTH_SHORT).show();
                     }
+                    Dialog.dismiss();
                 } else {
                     // Task failed with an exception
                     Toast.makeText(booking.this, "Failed to fetch document", Toast.LENGTH_SHORT).show();
@@ -196,6 +202,33 @@ public class booking extends AppCompatActivity {
                finish();
            }
        });
-
+    }
+    void solve(modelPatient modelPatient){
+        String date = getIntent().getStringExtra("date");
+        String slot = getIntent().getStringExtra("slot");
+        String[] dateComponents = date.split("-");
+        int year = Integer.parseInt(dateComponents[0]);
+        int month = Integer.parseInt(dateComponents[1]) - 1;
+        int day = Integer.parseInt(dateComponents[2]);
+        int hour=Integer.parseInt(slot.substring(0,2));
+        // Create a Calendar object with the parsed date
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, day, hour, 0, 0);
+        long milliseconds = calendar.getTimeInMillis();
+        String Pname = getIntent().getStringExtra("Pname");
+        String Page = getIntent().getStringExtra("Page");
+        String Pproblem = getIntent().getStringExtra("Pproblem");
+        String dname=getIntent().getStringExtra("dname");
+        String temp=getIntent().getStringExtra("docId");
+        String category=getIntent().getStringExtra("category");
+        modelPatient.setName(Pname);
+        modelPatient.setAge(Page);
+        modelPatient.setProblem(Pproblem);
+        modelPatient.setTime(slot);
+        modelPatient.setDate(date);
+        modelPatient.setCategory(category);
+        modelPatient.setDname(dname);
+        modelPatient.setDocid(temp);
+        modelPatient.setStime(milliseconds);
     }
 }

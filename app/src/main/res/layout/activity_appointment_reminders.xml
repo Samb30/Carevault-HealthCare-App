@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#E6E6F9"
     android:padding="12dp"
-    tools:context=".AppointmentReminders">
+    tools:context=".Alarms.AppointmentReminders">
 
     <RelativeLayout
         android:id="@+id/titlebar"

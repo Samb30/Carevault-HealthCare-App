@@ -18,18 +18,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.carevault.AppointmentReminders;
 import com.example.carevault.R;
 import com.example.carevault.Utility;
-import com.example.carevault.booking;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -115,9 +109,6 @@ public class UpcomingAdapter extends FirestoreRecyclerAdapter<modelPatient,Upcom
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    ProgressDialog Dialog = new ProgressDialog(context);
-                    Dialog.setMessage("please wait a moment..");
-                    Dialog.show();
                     func(time,s,docId2);
                 }
                 else{
@@ -148,6 +139,7 @@ public class UpcomingAdapter extends FirestoreRecyclerAdapter<modelPatient,Upcom
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
+                                        Dialog.dismiss();
                                     } else {
                                         Toast.makeText(context, "Failed to update time", Toast.LENGTH_SHORT).show();
                                     }
