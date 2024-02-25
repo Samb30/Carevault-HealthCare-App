@@ -54,8 +54,8 @@
         android:layout_height="65dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="318dp"
-        android:background="@drawable/rect3"
-        android:drawableStart="@drawable/lock"
+        android:background="@drawable/signinrect"
+        android:drawableStart="@drawable/lockicon"
         android:drawablePadding="15dp"
         android:fontFamily="@font/latoregular"
         android:hint="Enter OTP"
@@ -92,7 +92,7 @@
         android:layout_height="65dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="415dp"
-        android:background="@drawable/rect_1"
+        android:background="@drawable/welcome_solidrect_1"
         android:fontFamily="@font/latobold"
         android:gravity="center"
         android:text="Verify OTP"
@@ -118,7 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="29dp"
-        android:background="@drawable/backbuttom"
+        android:background="@drawable/backbutton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

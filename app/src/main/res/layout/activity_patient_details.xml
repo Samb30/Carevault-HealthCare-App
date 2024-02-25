@@ -20,7 +20,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:src="@drawable/backbutton"
             app:tint="#000000" />
 
         <TextView
@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Patient Detail"
+            android:fontFamily="@font/latoheavy"
             android:textColor="#1D212D"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -53,6 +54,7 @@
             android:layout_height="20dp"
             android:text="For Self"
             android:textSize="18sp"
+            android:fontFamily="@font/latobold"
             android:textColor="@color/black"
             android:layout_marginLeft="10dp"
             android:textStyle="bold"
@@ -63,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/temp"
-        android:background="@drawable/patientdetailbox"
+        android:background="@drawable/logintextareafield"
         android:orientation="vertical"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp">
@@ -73,6 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Full Name"
+            android:fontFamily="@font/latobold"
             android:layout_margin="10dp"
             android:textColor="#000000"
             android:textSize="16sp"/>
@@ -83,6 +86,7 @@
             android:layout_height="wrap_content"
             android:hint="Enter Name"
             android:layout_margin="3dp"
+            android:fontFamily="@font/latoregular"
             android:textColor="#000000"
             android:textSize="16sp"
             android:padding="10dp"
@@ -95,7 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/containerFullName"
-        android:background="@drawable/patientdetailbox"
+        android:background="@drawable/logintextareafield"
         android:orientation="vertical"
         android:layout_marginBottom="15dp">
 
@@ -106,6 +110,7 @@
             android:text="Your Age"
             android:layout_margin="10dp"
             android:textColor="#000000"
+            android:fontFamily="@font/latobold"
             android:inputType="number"
             android:textSize="16sp"/>
 
@@ -113,6 +118,7 @@
             android:id="@+id/age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/latoregular"
             android:hint="20"
             android:layout_margin="3dp"
             android:textColor="#000000"
@@ -127,7 +133,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/agebox"
-        android:background="@drawable/patientdetailbox"
+        android:background="@drawable/logintextareafield"
         android:orientation="vertical"
         android:layout_marginBottom="15dp">
 
@@ -136,6 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gender"
+            android:fontFamily="@font/latobold"
             android:layout_margin="10dp"
             android:textColor="#000000"
             android:textSize="16sp"/>
@@ -156,7 +163,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/genderLayout"
-        android:background="@drawable/patientdetailbox"
+        android:background="@drawable/logintextareafield"
         android:orientation="vertical"
         android:layout_marginBottom="30dp">
 
@@ -167,6 +174,7 @@
             android:text="Your Problem"
             android:layout_margin="10dp"
             android:textColor="#000000"
+            android:fontFamily="@font/latobold"
             android:textSize="16sp"/>
 
         <EditText
@@ -175,6 +183,7 @@
             android:layout_height="wrap_content"
             android:hint="I am having glossophobia "
             android:layout_margin="3dp"
+            android:fontFamily="@font/latoregular"
             android:textColor="#000000"
             android:textSize="16sp"
             android:padding="10dp"
@@ -205,8 +214,9 @@
         android:id="@+id/nextButton1"
         android:layout_below="@id/loader"
         android:layout_width="match_parent"
+        android:fontFamily="@font/latoheavy"
         android:layout_height="wrap_content"
-        android:background="#D7D0FF"
+        android:background="@drawable/selected_background"
         android:text="Next"/>
 
 </RelativeLayout>

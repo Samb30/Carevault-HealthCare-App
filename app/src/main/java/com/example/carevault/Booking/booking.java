@@ -87,6 +87,7 @@ public class booking extends AppCompatActivity {
                 modelPatient.setCategory(category);
                 modelPatient.setDname(dname);
                 modelPatient.setDocid(temp);
+                Toast.makeText(booking.this, date, Toast.LENGTH_SHORT).show();
                 func(slot,date,temp);
             }
         });
@@ -107,6 +108,7 @@ public class booking extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 ProgressDialog Dialog = new ProgressDialog(booking.this);
+                                Toast.makeText(booking.this, "Booked2", Toast.LENGTH_SHORT).show();
                                 Dialog.setMessage("please wait a moment..");
                                 Dialog.show();
                                 String documentId = document.getId();

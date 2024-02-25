@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D7D0FF"
+        android:background="#ffffff"
         tools:context=".emergency.EmergencyLoginActivity">
 
         <androidx.constraintlayout.widget.Guideline
@@ -44,7 +44,7 @@
             android:layout_height="65dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="315dp"
-            android:background="@drawable/rect_1"
+            android:background="@drawable/loginsolidrect"
             android:fontFamily="@font/latobold"
             android:gravity="center"
             android:text="Login"
@@ -57,11 +57,11 @@
         <EditText
             android:id="@+id/textView6"
             android:layout_width="355dp"
-            android:layout_height="67dp"
+            android:layout_height="65dp"
             android:layout_marginTop="115dp"
             android:layout_marginBottom="732dp"
-            android:background="@drawable/rect3"
-            android:drawableStart="@drawable/email"
+            android:background="@drawable/logintextareafield"
+            android:drawableStart="@drawable/emailicon"
             android:drawablePadding="15dp"
             android:fontFamily="@font/latoregular"
             android:hint="Enter your email"
@@ -79,12 +79,12 @@
         <EditText
             android:id="@+id/textView3"
             android:layout_width="355dp"
-            android:layout_height="68dp"
+            android:layout_height="65dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="200dp"
-            android:background="@drawable/rect3"
-            android:drawableStart="@drawable/lock"
-            android:drawableEnd="@drawable/passhide"
+            android:background="@drawable/logintextareafield"
+            android:drawableStart="@drawable/lockicon"
+            android:drawableEnd="@drawable/passhideicon"
             android:drawablePadding="20dp"
             android:ems="10"
             android:fontFamily="@font/latoregular"
@@ -157,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="29dp"
-            android:background="@drawable/backbuttom"
+            android:background="@drawable/backbutton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

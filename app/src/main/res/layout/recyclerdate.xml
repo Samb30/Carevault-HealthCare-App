@@ -5,8 +5,7 @@
     android:padding="12dp"
     android:layout_marginVertical="4dp"
     android:layout_marginHorizontal="4dp"
-    android:backgroundTint="#9281f1"
-    android:background="@drawable/rounded"
+    android:background="@drawable/selected_background"
     android:id="@+id/recyclerdate"
     android:layout_height="wrap_content">
     <LinearLayout

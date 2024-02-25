@@ -5,8 +5,7 @@
     android:padding="12dp"
     android:layout_marginVertical="4dp"
     android:layout_marginHorizontal="4dp"
-    android:backgroundTint="#9281f1"
-    android:background="@drawable/rounded"
+    android:background="@drawable/selected_background"
     android:id="@+id/recycle"
     android:layout_height="wrap_content">
     <LinearLayout
@@ -17,6 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="add note"
+            android:fontFamily="@font/latobold"
             android:textColor="@color/white"
             android:id="@+id/contenttext"
             android:textSize="18sp"/>
@@ -37,9 +37,10 @@
         android:text="date"
         android:gravity="left"
         android:textColor="@color/black"
+        android:fontFamily="@font/latobold"
         android:layout_marginTop="5dp"
         android:textStyle="bold"
-        android:textSize="17sp"
+        android:textSize="18sp"
         android:layout_marginVertical="4sp"
         android:id="@+id/titletext"/>
 
@@ -50,9 +51,10 @@
         android:maxLines="4"
         android:gravity="right"
         android:id="@+id/timeStamp"
+        android:fontFamily="@font/latobold"
         android:ellipsize="end"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:layout_marginVertical="4dp"/>
 
 </LinearLayout>

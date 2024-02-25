@@ -10,11 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
-        android:textSize="19dp"
+        android:textSize="20sp"
         android:layout_marginTop="12dp"
         android:layout_marginHorizontal="8dp"
         android:textStyle="bold"
-
+        android:fontFamily="@font/latobold"
         android:textColor="#0536C8"
         android:text="Fitness"
         android:gravity="center"

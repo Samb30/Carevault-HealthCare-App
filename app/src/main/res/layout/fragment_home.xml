@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#fafaff"
     android:fillViewport="true"
     tools:ignore="HardcodedText">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#D7D0FF"
-        android:padding="12dp"
-        tools:context=".MainActivity">
 
-        <RelativeLayout
+            <RelativeLayout
             android:id="@+id/indexArticles"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginStart="3dp" android:padding="12dp"
+            android:background="#e9edff"
             android:layout_marginEnd="5dp">
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                app:srcCompat="@drawable/hamburger" />
+<!--                <ImageButton-->
+<!--                android:id="@+id/imageView3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_marginStart="0dp"-->
+<!--                android:layout_marginTop="0dp"-->
+<!--                app:srcCompat="@drawable/hamburger"-->
+<!--                android:background="#e9edff"-->
+<!--                android:contentDescription="Sidebar" />-->
 
-            <TextView
+                <TextView
                 android:id="@+id/pagetitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,664 +45,460 @@
                 android:textSize="22sp"
                 android:fontFamily="@font/latoheavy"/>
 
-            <ImageView
+                <ImageView
                 android:id="@+id/notifyb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/pagete"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="-31dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="59dp"
+                android:layout_toStartOf="@+id/pagete"
                 android:contentDescription="notify"
-                android:src="@drawable/redemergency"
-                android:backgroundTint="#D7D0FF"/>
-
-
-        </RelativeLayout>
-
-        <androidx.appcompat.widget.SearchView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:queryHint="Search doctor, drugs, articles..."
-            android:background="@drawable/searchview"
-            android:layout_below="@+id/indexArticles"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:textSize="20dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:id="@+id/popularArticles"
-
-
-            app:iconifiedByDefault="false"
-            />
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/popularArticles"
-            android:orientation="horizontal"
-            android:layout_centerVertical="true"
-            android:id="@+id/mainbuttons">
-
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8sp">
-
-                <ImageButton
-                    android:id="@+id/Doctor"
-                    android:layout_width="75dp"
-
-                    android:layout_height="60dp"
-                    android:layout_centerVertical="true"
-                    android:contentDescription="notify"
-
-                    android:background="@drawable/homepageicons"
-                    android:src="@drawable/sthethoscope" />
+                android:src="@drawable/locationpin" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/Doctor"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:text="Doctor" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="13dp">
-
-                <ImageButton
-                    android:id="@+id/article"
-                    android:layout_width="75dp"
-
-                    android:layout_height="60dp"
-                    android:layout_centerVertical="true"
-                    android:contentDescription="notify"
-                    android:background="@drawable/homepageicons"
-                    android:src="@drawable/articles" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/article"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:text="Article" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="13dp">
-
-                <ImageButton
-                    android:id="@+id/hospital"
-                    android:layout_width="75dp"
-
-                    android:layout_height="60dp"
-
-                    android:contentDescription="notify"
-
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/homepageicons"
-                    android:src="@drawable/outline_health_and_safety_24"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/hospital"
-                    android:layout_centerHorizontal="true"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="20dp"
-                    android:text="Hospital" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="13dp"
-                android:layout_marginRight="13dp"
-                >
-                <ImageButton
-                    android:id="@+id/ambulance"
-                    android:layout_width="75dp"
-
-                    android:layout_height="60dp"
-                    android:contentDescription="notify"
-                    android:layout_alignParentEnd="true"
-
-
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/homepageicons"
-                    android:src="@drawable/ambulance__2_"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/ambulance"
-                    android:layout_centerHorizontal="true"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="20dp"
-                    android:text="Medicar" />
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
-            android:layout_below="@+id/mainbuttons"
-            android:id="@+id/trending">
-            <ImageView
-                android:id="@+id/advertiseimg"
-                android:layout_width="1000sp"
-                android:layout_height="150dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/homedocimg"/>
-            <TextView
+                android:id="@+id/pagete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Top Doctor"
-                android:textSize="18sp"
-                android:layout_below="@id/advertiseimg"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="8sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="187dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/latoheavy"
+                android:text="Nagpur"
                 android:textColor="#1D212D"
-                android:textStyle="bold"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="See all"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="8sp"
-                android:layout_below="@id/advertiseimg"
-                android:layout_alignParentRight="true"
-                android:textAllCaps="false"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:textColor="#83848B"
-                android:id="@+id/topdoctors"/>
+                android:textSize="15sp" />
 
-        </RelativeLayout>
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_below="@+id/trending"
-            android:id="@+id/scrolltrending"
+            </RelativeLayout>
 
-            android:layout_marginStart="8sp"
-            android:layout_marginEnd="8sp"
-            android:layout_height="275dp"
-            >
-            <LinearLayout
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="196dp"
-                    android:layout_height="259dp"
-                    android:background="@drawable/rectangularwindow"
-                    android:orientation="vertical"
-                    >
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/doctor1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="200dp"
-                        android:src="@drawable/dctr1"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="-33dp"
-
-
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr.Marcus Horizon"
-                        android:layout_marginHorizontal="10dp"
-                        android:textColor="#1D212D"
-                        android:padding="1dp"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="-29dp"
-                        android:background="#FFFFFF"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="6dp"
-                        android:textColor="#1D212D"
-                        android:text="Chardiologist"/>
-
+                android:layout_marginTop="8dp"
+                android:padding="12dp"
+                android:layout_below="@+id/indexArticles">
                     <RelativeLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="15dp">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginEnd="3dp">
+                            <androidx.appcompat.widget.SearchView
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/location_icon"
-                            android:src="@drawable/baseline_location_on_24"
-                            android:contentDescription="Location Icon"/>
-
-                        <TextView
-                            android:id="@+id/distance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@+id/location_icon"
+                            app:queryHint="Search doctor, drugs, articles..."
+                            android:background="@drawable/searchview"
+                            android:layout_marginTop="18dp"
                             android:layout_marginStart="5dp"
-                            android:textSize="16dp"
-                            android:textColor="#83848B"
-                            android:text="800 km away"/>
+                            android:layout_marginEnd="5dp"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:id="@+id/popularArticles"
+                            app:iconifiedByDefault="false" />
+
+                            <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/popularArticles"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/mainbuttons">
+
+                            <RelativeLayout
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content">
+
+                                <ImageButton
+                                    android:id="@+id/Doctor"
+                                    android:layout_width="80dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerVertical="true"
+                                    android:contentDescription="notify"
+                                    android:background="@drawable/homepageicons"
+                                    android:src="@drawable/stethoscope" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/Doctor"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="23dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:text="Doctors" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="19dp">
+
+                                <ImageButton
+                                    android:id="@+id/article"
+                                    android:layout_width="80dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerVertical="true"
+                                    android:contentDescription="notify"
+                                    android:background="@drawable/homepageicons"
+                                    android:src="@drawable/outline_health_and_safety_24" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/article"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="23dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:text="Hospitals" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="19dp">
+
+                                <ImageButton
+                                    android:id="@+id/hospital"
+                                    android:layout_width="80dp"
+                                    android:layout_height="65dp"
+                                    android:contentDescription="notify"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/homepageicons"
+                                    android:src="@drawable/ambulancecar" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/hospital"
+                                    android:layout_centerHorizontal="true"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:layout_marginTop="23dp"
+                                    android:text="MediCar" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="18dp"
+                                android:layout_marginEnd="5dp">
+
+                                <ImageButton
+                                    android:id="@+id/ambulance"
+                                    android:layout_width="80dp"
+                                    android:layout_height="65dp"
+                                    android:contentDescription="notify"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/homepageicons"
+                                    android:src="@drawable/redemergency" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ambulance"
+                                    android:layout_centerHorizontal="true"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:layout_marginTop="23dp"
+                                    android:text="Emergency" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                            <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/mainbuttons"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:id="@+id/trending">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Upcoming Appointment"
+                                android:textSize="20sp"
+                                android:textColor="#1D212D"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/related1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="2dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:fontFamily="@font/latobold"
+                                android:gravity="bottom"
+                                android:text="SEE ALL"
+                                android:textColor="#1D212D"
+                                android:textSize="15sp" />
+                        </RelativeLayout>
+
+                            <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:id="@+id/head2"
+                            android:layout_below="@id/trending"
+                            android:background="@drawable/selected_background"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="65dp"
+                                android:layout_height="65dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@drawable/circle_home" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginStart="110dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/latobold"
+                                    android:text="Dr.Marcus Horizon"
+                                    android:textColor="@color/white"
+                                    android:textSize="19sp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Dentist"
+                                        android:textColor="#ffffff"
+                                        android:textSize="14sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=" | "
+                                        android:textColor="#ffffff"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="2dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:text="Royal Hospital"
+                                        android:textColor="#ffffff"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:elevation="10dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="95dp"
+                                android:background="@drawable/homepagebox2"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="6dp"
+                                    android:background="@drawable/calendarsvg" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:fontFamily="@font/latobold"
+                                    android:text="Sept 10, 2023"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:elevation="10dp"
+                                android:layout_marginStart="160dp"
+                                android:layout_marginTop="95dp"
+                                android:background="@drawable/homepagebox2"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="6dp"
+                                    android:background="@drawable/clock" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:fontFamily="@font/latobold"
+                                    android:text="05:00 pm"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                            <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/head2"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:id="@+id/relatedarticles">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Doctor Speciality"
+                                android:textSize="20sp"
+                                android:textColor="#1D212D"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SEE ALL"
+                                android:layout_marginTop="5dp"
+                                android:layout_alignParentEnd="true"
+                                android:textSize="15sp"
+                                android:gravity="bottom"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:textColor="#1D212D"
+                                android:fontFamily="@font/latobold"
+                                android:id="@+id/relatedarticles1"/>
+                        </RelativeLayout>
+
+                            <GridView
+                            android:id="@+id/gridView"
+                            android:layout_width="match_parent"
+                            android:layout_height="230dp"
+                            android:layout_below="@id/relatedarticles"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="5dp"
+                            android:gravity="center"
+                            android:horizontalSpacing="15dp"
+                            android:numColumns="4"
+                            android:verticalSpacing="10dp" />
+
+                            <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/gridView"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:id="@+id/relatedarti">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Top Doctors"
+                                android:textSize="20sp"
+                                android:textColor="#1D212D"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SEE ALL"
+                                android:layout_marginTop="5dp"
+                                android:layout_alignParentEnd="true"
+                                android:textSize="15sp"
+                                android:gravity="bottom"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:textColor="#1D212D"
+                                android:fontFamily="@font/latobold"
+                                android:id="@+id/rela1"/>
+                        </RelativeLayout>
+
+                            <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_below="@id/relatedarti"
+                            android:orientation="vertical"
+                            android:scrollbars="none">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:gravity="center"
+                                    android:weightSum="6">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="All"
+                                        android:gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"
+                                        android:background="@drawable/selected_background"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:text="General"
+                                        android:gravity="center"
+                                        android:textColor="#94a9fd"
+                                        android:textStyle="bold"                        android:background="@drawable/tab_background"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:text="Dentist"
+                                        android:gravity="center"
+                                        android:textColor="#94a9fd"
+                                        android:textStyle="bold"
+                                        android:background="@drawable/tab_background"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Otology"
+                                        android:gravity="center"
+                                        android:textColor="#94a9fd"
+                                        android:textStyle="bold"
+                                        android:layout_marginStart="10dp"
+                                        android:background="@drawable/tab_background"/>
+                                </LinearLayout>
+                            </HorizontalScrollView>
+
 
                     </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
 
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="196dp"
-                    android:layout_height="259dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/rectangularwindow"
-                    android:orientation="vertical"
-                    >
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/doctor2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="200dp"
-                        android:src="@drawable/dctr2"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="-33dp"
-
-
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr.Maria Elena"
-                        android:layout_marginHorizontal="10dp"
-                        android:textColor="#1D212D"
-                        android:textSize="15sp"
-                        android:padding="1dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="-29dp"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="6dp"
-                        android:textColor="#1D212D"
-                        android:text="Psychologist"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="5dp"
-                        android:id="@+id/distance2"
-                        android:textSize="16dp"
-                        android:textColor="#83848B"
-                        android:text="800 km away"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="196dp"
-                    android:layout_height="259dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/rectangularwindow"
-                    android:orientation="vertical"
-                    >
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/doctor3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="200dp"
-                        android:src="@drawable/dctr3"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="-33dp"
-
-
-                        />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr.Steffi Jessi"
-                        android:layout_marginHorizontal="10dp"
-                        android:textColor="#1D212D"
-                        android:textSize="15sp"
-                        android:padding="1dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="-29dp"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="6dp"
-                        android:textColor="#1D212D"
-                        android:text="Orthopedist"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="5dp"
-                        android:id="@+id/distance3"
-                        android:textSize="16dp"
-                        android:textColor="#83848B"
-                        android:text="800 km away"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="196dp"
-                    android:layout_height="259dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/rectangularwindow"
-                    android:orientation="vertical"
-                    >
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/doctor4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="200dp"
-                        android:src="@drawable/dctr4"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="-33dp"
-
-
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr.Gerty Cori"
-                        android:layout_marginHorizontal="10dp"
-                        android:textColor="#1D212D"
-                        android:textSize="15sp"
-                        android:padding="1dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="-29dp"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="6dp"
-                        android:textColor="#1D212D"
-                        android:text="Orthopedist"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="5dp"
-                        android:id="@+id/distance4"
-                        android:textSize="16dp"
-                        android:textColor="#83848B"
-                        android:text="800 km away"/>
-                </LinearLayout>
-
-            </LinearLayout>
-        </HorizontalScrollView>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
-            android:layout_below="@+id/scrolltrending"
-            android:id="@+id/relatedarticles">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health Articles"
-                android:textSize="21dp"
-                android:layout_marginTop="10dp"
-                android:textColor="#1D212D"
-                android:textStyle="bold"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="See all"
-                android:layout_alignParentRight="true"
-                android:textAllCaps="false"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:textColor="#83848B"
-                android:id="@+id/relatedarticles1"/>
-
-        </RelativeLayout>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_below="@+id/relatedarticles"
-            android:id="@+id/scrollbarrelated"
-            android:layout_marginTop="19dp"
-            android:layout_height="wrap_content"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="75dp"
-                    android:id="@+id/sample1"
-                    android:background="@drawable/homepageicons"
-                    android:orientation="horizontal"
-                    >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="66dp"
-                        android:src="@drawable/scrollimg1"
-                        android:layout_marginTop="5dp"
-                        android:padding="3sp"
-                        />
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:layout_marginTop="15dp"
-
-                            android:textSize="15dp"
-                            android:text="The 25 Healthiest Fruits You Can Eat, According to a Nutritionist"/>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:textColor="#151921"
-                                android:text="June 12,2021 ."/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:layout_marginLeft="2dp"
-                                android:textColor="#5F48E6"
-                                android:textStyle="bold"
-                                android:text="5 min read"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="75dp"
-                    android:id="@+id/sample2"
-                    android:background="@drawable/homepageicons"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="66dp"
-                        android:src="@drawable/scrollimg1"
-                        android:padding="3sp"
-                        android:layout_marginTop="5dp"
-                        />
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/homepageicons"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#101623"
-                            android:layout_marginTop="15dp"
-                            android:textStyle="bold"
-                            android:textSize="15dp"
-                            android:text="Traditional Herbal Medicine Treatments for COVID-19"/>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:textColor="#151921"
-                                android:text="June 12,2021 ."/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:layout_marginLeft="2dp"
-                                android:textColor="#5F48E6"
-                                android:textStyle="bold"
-                                android:text="6 min read"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="75dp"
-                    android:id="@+id/sample3"
-                    android:background="@drawable/homepageicons"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="66dp"
-                        android:src="@drawable/scrollimg1"
-                        android:padding="3sp"
-                        android:layout_marginTop="5dp"
-                        />
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/homepageicons"
-
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#101623"
-                            android:layout_marginTop="15dp"
-                            android:textStyle="bold"
-                            android:textSize="15dp"
-                            android:text="Beauty Tips For Face: 10 Dos and Don'ts for Naturally Beautiful Skin"/>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:textColor="#151921"
-                                android:text="June 12,2021 ."/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:layout_marginLeft="2dp"
-                                android:textColor="#5F48E6"
-                                android:textStyle="bold"
-                                android:text="4 min read"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="75dp"
-                    android:id="@+id/sample4"
-                    android:background="@drawable/homepageicons"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
-                    >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="66dp"
-                        android:src="@drawable/scrollimg1"
-                        android:padding="3sp"
-                        android:layout_marginTop="5dp"
-                        />
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/homepageicons"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#101623"
-                            android:layout_marginTop="15dp"
-                            android:textStyle="bold"
-                            android:textSize="15dp"
-                            android:text="Traditional Herbal Medicine Treatments for COVID-19"/>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:textColor="#151921"
-                                android:text="June 12,2021 ."/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="2dp"
-                                android:textColor="#5F48E6"
-                                android:text="5 min read"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </ScrollView>
-
-
-    </RelativeLayout>
-</ScrollView>
+</RelativeLayout>
 

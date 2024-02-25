@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D7D0FF"
+        android:background="@drawable/homepageboxgradient"
         tools:context=".Onboard1Activity">
 
         <androidx.constraintlayout.widget.Guideline
@@ -51,7 +51,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView1"
             app:layout_constraintVertical_bias="0.01999998"
-            app:srcCompat="@drawable/doc1" />
+            app:srcCompat="@drawable/onboarddoc1" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -62,7 +62,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:srcCompat="@drawable/onbrd_white_bg" />
+            app:srcCompat="@drawable/onboarrd_white_bg" />
 
         <TextView
             android:id="@+id/textView"
@@ -88,7 +88,7 @@
             app:layout_constraintStart_toStartOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="@+id/textView"
             app:layout_constraintVertical_bias="0.75"
-            app:srcCompat="@drawable/forward_button" />
+            app:srcCompat="@drawable/onboard_forward_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

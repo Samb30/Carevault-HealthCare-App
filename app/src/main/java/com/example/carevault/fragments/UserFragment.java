@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.carevault.profile.AppFeedbackActivity;
 import com.example.carevault.profile.AppSettingsActivity;
@@ -31,7 +32,7 @@ public class UserFragment extends Fragment {
         View view =inflater.inflate(R.layout.fragment_user, container, false);
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
-        TextView EditButton = view.findViewById(R.id.my_profile13);
+        ImageView EditButton = view.findViewById(R.id.my_profile13);
         ImageButton forButton1 = view.findViewById(R.id.imageButton2);
         ImageButton forButton2 = view.findViewById(R.id.imageButton3);
         ImageButton forButton3 = view.findViewById(R.id.imageButton4);

@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D7D0FF"
+        android:background="#ffffff"
         tools:context=".profile.EditProfileActivity">
 
         <TextView
@@ -19,7 +19,7 @@
             android:layout_height="65dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="500dp"
-            android:background="@drawable/rect_1"
+            android:background="@drawable/selected_background"
             android:fontFamily="@font/latobold"
             android:gravity="center"
             android:text="Update"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="29dp"
-            android:background="@drawable/backbuttom"
+            android:background="@drawable/backbutton"
             android:contentDescription="TODO"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -105,7 +105,7 @@
             android:layout_width="355dp"
             android:layout_height="220dp"
             android:layout_margin="8dp"
-            android:background="@drawable/rounded_bg"
+            android:background="@drawable/selected_background"
             android:elevation="10dp"
             app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="parent"

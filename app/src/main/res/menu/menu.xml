@@ -15,13 +15,13 @@
         android:id="@+id/doc"
         android:icon="@drawable/baseline_people_24"/>
     <item
-        android:title="Alarm"
+        android:title="Article"
         android:id="@+id/hom3"
-        android:icon="@drawable/baseline_calendar_month_24"
+        android:icon="@drawable/articleicon"
         />
     <item
-        android:title="User"
+        android:title="Profile"
         android:id="@+id/memo"
-        android:icon="@drawable/baseline_supervised_user_circle_24"
+        android:icon="@drawable/profileicon"
         />
 </menu>

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D7D0FF"
+    android:background="#ffffff"
     android:fillViewport="true"
     tools:context=".authentication.LoginWithNumberActivity">
 
@@ -40,8 +40,8 @@
         android:layout_height="65dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="248dp"
-        android:background="@drawable/rect3"
-        android:drawableStart="@drawable/call2"
+        android:background="@drawable/logintextareafield"
+        android:drawableStart="@drawable/call2icon"
         android:drawablePadding="15dp"
         android:fontFamily="@font/latoregular"
         android:hint="Enter mobile number"
@@ -62,7 +62,7 @@
         android:layout_height="65dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="352dp"
-        android:background="@drawable/rect_1"
+        android:background="@drawable/selected_background"
         android:fontFamily="@font/latobold"
         android:gravity="center"
         android:text="Generate OTP"
@@ -96,7 +96,7 @@
         android:lineSpacingExtra="3sp"
         android:text="Enter your Mobile Number"
         android:textColor="#1D212D"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="29dp"
-        android:background="@drawable/backbuttom"
+        android:background="@drawable/backbutton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

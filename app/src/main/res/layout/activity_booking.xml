@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#fffcfc"
+    android:background="#ffffff"
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -39,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="Review Summary"
+                android:fontFamily="@font/latoheavy"
                 android:textColor="#1D212D"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -59,7 +60,7 @@
                 android:id="@+id/head2"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="@drawable/verticalscroll"
+                android:background="@drawable/selected_background"
                 android:orientation="horizontal">
 
                 <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -82,8 +83,9 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="15dp"
                         android:text="Dr.Marcus Horizon"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:fontFamily="@font/latobold"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -91,8 +93,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
+                        android:fontFamily="@font/latobold"
                         android:text="Dentist"
-                        android:textColor="#151921"
+                        android:textColor="#ffffff"
                         android:textSize="15dp" />
 
                 </LinearLayout>
@@ -135,7 +138,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Patient"
-                        android:textColor="#b2b8c2"
+                        android:fontFamily="@font/latobold"
+                        android:textColor="#000000"
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:layout_gravity="center_horizontal"/>
@@ -166,7 +170,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tenure"
-                        android:textColor="#b2b8c2"
+                        android:fontFamily="@font/latobold"
+                        android:textColor="#000000"
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:layout_gravity="center_horizontal"/>
@@ -198,8 +203,8 @@
                         android:layout_height="wrap_content"
                         android:text="Rating"
                         android:textStyle="bold"
-
-                        android:textColor="#b2b8c2"
+                        android:fontFamily="@font/latobold"
+                        android:textColor="#000000"
                         android:textSize="16sp"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
@@ -233,6 +238,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
+                android:fontFamily="@font/latobold"
                 android:text="Clinic Details"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -255,6 +261,7 @@
                 android:layout_alignParentStart="true"
                 android:text="Appointment Details"
                 android:textColor="@color/black"
+                android:fontFamily="@font/latobold"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -291,6 +298,7 @@
                     android:text="Monday-Friday"
                     android:textSize="16sp"
                     android:textColor="#000000"
+                    android:fontFamily="@font/latobold"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="8dp"/>
 
@@ -310,6 +318,7 @@
                     android:layout_height="wrap_content"
                     android:text="9:00 AM-21:00 PM"
                     android:textSize="16sp"
+                    android:fontFamily="@font/latobold"
                     android:textColor="#000000"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="8dp"/>
@@ -341,6 +350,7 @@
                 android:text="Payment Details"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/latobold"
                 android:textColor="#1D212D"
                 android:layout_alignParentStart="true"/>
         </RelativeLayout>
@@ -358,6 +368,7 @@
                 android:layout_height="25sp"
                 android:text="Consulation"
                 android:textColor="#1D212D"
+                android:fontFamily="@font/latobold"
                 android:layout_alignParentStart="true"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -365,6 +376,7 @@
                 android:text="$60.00"
                 android:textColor="#1D212D"
                 android:textStyle="bold"
+                android:fontFamily="@font/latobold"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="15dp"
                 />
@@ -382,11 +394,13 @@
                 android:layout_height="25sp"
                 android:text="Admin Fee"
                 android:textColor="#1D212D"
+                android:fontFamily="@font/latobold"
                 android:layout_alignParentLeft="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="25sp"
                 android:text="$60.00"
+                android:fontFamily="@font/latobold"
                 android:textColor="#1D212D"
                 android:textStyle="bold"
                 android:layout_alignParentEnd="true"
@@ -406,6 +420,7 @@
                 android:layout_height="25sp"
                 android:text="Additional Discount"
                 android:textColor="#1D212D"
+                android:fontFamily="@font/latobold"
                 android:layout_alignParentLeft="true"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -413,6 +428,7 @@
                 android:text="-"
                 android:textColor="#1D212D"
                 android:textStyle="bold"
+                android:fontFamily="@font/latobold"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="15dp"
                 />
@@ -429,6 +445,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25sp"
                 android:text="Total"
+                android:fontFamily="@font/latobold"
                 android:textColor="#1D212D"
                 android:layout_alignParentLeft="true"/>
             <TextView
@@ -437,6 +454,7 @@
                 android:text="$60.00"
                 android:textColor="#199A8E"
                 android:textStyle="bold"
+                android:fontFamily="@font/latobold"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="15dp"
                 />
@@ -464,6 +482,7 @@
                 android:layout_height="25sp"
                 android:text="Payment Mode"
                 android:textStyle="bold"
+                android:fontFamily="@font/latobold"
                 android:textSize="18sp"
                 android:textColor="#1D212D"
                 android:layout_alignParentLeft="true"/>
@@ -493,6 +512,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Cash"
+                    android:fontFamily="@font/latobold"
                     android:textColor="#1D212D"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -501,6 +521,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Change"
+                android:fontFamily="@font/latobold"
                 android:textColor="#1D212D"
                 android:layout_alignParentEnd="true"
                 android:textSize="16sp" />
@@ -536,6 +557,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="8dp"
                     android:text="Give the link of Location"
+                    android:fontFamily="@font/latoregular"
                     android:textColor="#000000"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -550,7 +572,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="28dp"
             android:layout_marginTop="45dp"
-            android:background="@drawable/rect_1"
+            android:background="@drawable/selected_background"
             android:fontFamily="@font/latobold"
             android:gravity="center"
             android:text="Pay Now"

@@ -35,7 +35,7 @@
                             android:offset="0"
                             />
                         <item
-                            android:color="#000000"
+                            android:color="#ffffff"
                             android:offset="1"
                             />
                     </gradient>

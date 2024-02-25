@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#D7D0FF"
+    android:background="#ffffff"
     android:padding="8dp"
     tools:context=".fragments.CalenderFragment">
     <RelativeLayout
@@ -19,8 +19,11 @@
             android:layout_marginLeft="10dp"
             android:gravity="left"
             android:text="Alarms"
+            android:layout_marginStart="10dp"
             android:textColor="#1D212D"
-            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/latoheavy"
+            android:textSize="26sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
@@ -36,7 +39,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/notebuton"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="#CFD4F1"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:src="@drawable/baseline_add_24"/>

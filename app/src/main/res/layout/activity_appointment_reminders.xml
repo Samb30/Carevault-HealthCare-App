@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E6E6F9"
+    android:background="#ffffff"
     android:padding="12dp"
     tools:context=".Alarms.AppointmentReminders">
 
@@ -20,7 +20,7 @@
             android:layout_alignParentEnd="false"
             app:tint="@color/black"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/baseline_arrow_back_ios_24"/>
+            android:src="@drawable/backbutton"/>
         <TextView
             android:id="@+id/hello"
             android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
             android:layout_marginTop="5dp"
             android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/latoheavy"
             android:text="Add Alarm"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -48,10 +48,11 @@
         android:text="Description"
         android:layout_marginTop="14dp"
         android:textSize="17sp"
-        android:layout_marginLeft="7dp"
-        android:textColor="#454545"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000000"
         android:gravity="left"
         android:textStyle="bold"
+        android:fontFamily="@font/latoregular"
         android:id="@+id/descr"
         android:layout_below="@id/titlebar"/>
     <EditText
@@ -61,9 +62,11 @@
         android:layout_height="50dp"
         android:maxLines="10"
         android:layout_below="@id/descr"
+        android:textColor="#000000"
+        android:layout_marginStart="5dp"
         android:hint="Type here"
         android:padding="12dp"
-        android:background="@drawable/rounded_edittext"
+        android:background="@drawable/logintextareafield"
         android:inputType="text" />
     <TextView
         android:layout_width="match_parent"
@@ -72,8 +75,9 @@
         android:textSize="17sp"
         android:layout_marginLeft="7dp"
         android:layout_marginTop="25dp"
-        android:textColor="#454545"
+        android:textColor="#000000"
         android:gravity="left"
+        android:fontFamily="@font/latobold"
         android:textStyle="bold"
         android:id="@+id/dateText"
         android:layout_below="@id/titleET"/>
@@ -106,7 +110,6 @@
             android:layout_gravity="center"
             android:scaleY="0.7"
             android:scaleX="0.7"
-
             android:layout_marginLeft="-30dp"
             android:layout_marginRight="-30dp"
             />
@@ -129,18 +132,19 @@
         android:layout_height="25dp"
         android:text="Silent"
         android:textSize="17sp"
-        android:layout_marginLeft="7dp"
-        android:textColor="#454545"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000000"
         android:gravity="left"
         android:layout_marginTop="25dp"
         android:textStyle="bold"
         android:id="@+id/text35"
+        android:fontFamily="@font/latobold"
         android:layout_below="@id/ll"/>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:padding="10dp"
-        android:background="@drawable/rounded_edittext"
+        android:background="@drawable/logintextareafield"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/text35"
         android:id="@+id/permissions">
@@ -148,6 +152,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
+            android:fontFamily="@font/latoregular"
+            android:layout_marginTop="5dp"
             android:text="Vibrate when alarm Sounds "
             android:textSize="18sp"
             android:layout_alignParentEnd="false"
@@ -157,6 +163,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:switchMinWidth="56dp"
+            android:layout_marginTop="4dp"
             android:checked="true"
             android:layout_alignParentEnd="true"
             android:textOff="OFF"
@@ -193,40 +200,44 @@
         android:layout_height="25dp"
         android:text="Ringtone"
         android:textSize="17sp"
-        android:layout_marginLeft="7dp"
-        android:textColor="#454545"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000000"
         android:gravity="left"
         android:layout_marginTop="25dp"
         android:textStyle="bold"
+        android:fontFamily="@font/latobold"
         android:id="@+id/text34"
         android:layout_below="@id/permissions1"/>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:id="@+id/text3"
         android:padding="10dp"
         android:layout_below="@+id/text34"
-        android:background="@drawable/rounded_edittext">
+        android:background="@drawable/logintextareafield">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:layout_marginTop="5dp"
         android:text="Alarm ringtone"
         android:textSize="18sp"
+        android:fontFamily="@font/latoregular"
         android:textColor="@color/black"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:layout_marginTop="5dp"
         android:text="Default"
+        android:fontFamily="@font/latoregular"
         android:textColor="@color/black"
         android:gravity="end"
         android:drawablePadding="6dp"
-        android:drawableEnd="@drawable/baseline_arrow_forward_ios_24"
         android:textSize="17sp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:id="@+id/text4"
-        />
+        app:drawableEndCompat="@drawable/forwardbutton" />
 </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
@@ -236,21 +247,24 @@
         android:textSize="17sp"
         android:layout_marginLeft="7dp"
         android:layout_marginTop="25dp"
-        android:textColor="#454545"
+        android:textColor="#000000"
         android:gravity="left"
         android:textStyle="bold"
+        android:fontFamily="@font/latobold"
         android:id="@+id/text87"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/logintextareafield"
         android:layout_below="@id/text87">
 
         <TextView
             android:layout_width="40dp"
             android:layout_height="35dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="7dp"
             android:text="M"
             android:layout_marginLeft="20dp"
             android:id="@+id/temp"
@@ -259,8 +273,9 @@
         <TextView
             android:layout_width="40dp"
             android:layout_height="35dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="T"
+            android:layout_marginTop="7dp"
             android:layout_marginLeft="10dp"
             android:id="@+id/temp2"
             android:gravity="center"
@@ -268,8 +283,9 @@
         <TextView
             android:layout_width="40dp"
             android:layout_height="35dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="W"
+            android:layout_marginTop="7dp"
             android:layout_marginLeft="10dp"
             android:id="@+id/temp3"
             android:gravity="center"
@@ -277,38 +293,42 @@
         <TextView
             android:layout_width="40dp"
             android:layout_height="35dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="T"
             android:layout_marginLeft="10dp"
             android:id="@+id/temp4"
+            android:layout_marginTop="7dp"
             android:gravity="center"
             android:background="@drawable/circle"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="35dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="F"
             android:layout_marginLeft="10dp"
             android:id="@+id/temp5"
             android:gravity="center"
+            android:layout_marginTop="7dp"
             android:background="@drawable/circle"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="35dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="S"
             android:layout_marginLeft="10dp"
             android:id="@+id/temp6"
             android:gravity="center"
+            android:layout_marginTop="7dp"
             android:background="@drawable/circle"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="35dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="S"
             android:layout_marginLeft="10dp"
             android:id="@+id/temp7"
             android:gravity="center"
+            android:layout_marginTop="7dp"
             android:background="@drawable/circle"/>
     </LinearLayout>
     <Spinner
@@ -394,20 +414,23 @@
         android:visibility="gone"
         android:textSize="18sp"
         android:text="Saturday"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/checkBox6"
-        android:layout_height="match_parent">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="603dp">
 
         <Button
             android:id="@+id/cancelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:visibility="gone"
             android:layout_centerInParent="true"
             android:text="Cancel Alarms"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:visibility="visible"/>
     </RelativeLayout>
 
 </RelativeLayout>

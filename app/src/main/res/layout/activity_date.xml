@@ -11,9 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:text="Book Appointement"
+        android:fontFamily="@font/latoheavy"
         android:layout_marginTop="10dp"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:gravity="center"
         android:textStyle="bold"
         android:id="@+id/text"/>
@@ -26,14 +27,13 @@
         android:contentDescription="notify"
         android:layout_alignParentStart="true"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/baseline_arrow_back_ios_24"
+        android:src="@drawable/backbutton"
         app:tint="#000000" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text"
-        android:backgroundTint="#EFF7FE"
-        android:background="@drawable/rounded"
+        android:background="@drawable/selected_background"
         android:layout_marginTop="20dp"
         android:id="@+id/profile"
         android:orientation="horizontal">
@@ -51,7 +51,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:text="DR Willium Smith"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
+                android:fontFamily="@font/latobold"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:layout_marginLeft="10dp"
@@ -66,8 +67,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:text="Dentist"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="15sp"
+                    android:fontFamily="@font/latobold"
                     android:layout_marginLeft="10dp"
                     android:id="@+id/textViewName"/>
                 <TextView
@@ -76,7 +78,8 @@
                     android:text="AIIMS"
                     android:textSize="15sp"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/black"
+                    android:fontFamily="@font/latobold"
+                    android:textColor="@color/white"
                     android:id="@+id/hospital"/>
             </LinearLayout>
             <LinearLayout
@@ -92,7 +95,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:text="Dentist"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/latobold"
                     android:textSize="15sp"
                     android:layout_marginLeft="4dp"
                     android:id="@+id/location"/>
@@ -114,6 +118,7 @@
             android:text="Select Day"
             android:id="@+id/date"
             android:textColor="@color/black"
+            android:fontFamily="@font/latobold"
             android:padding="1dp"
             android:textStyle="bold"
             android:textSize="18sp"
@@ -124,7 +129,7 @@
             android:background="@drawable/rounded"
             android:theme="@style/CalenderViewCustom"
             android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
-            android:backgroundTint="#EFF7FE"
+            android:backgroundTint="#E6E6F9"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:firstDayOfWeek="2"/>
@@ -144,6 +149,7 @@
         android:id="@+id/time"
         android:layout_below="@+id/written"
         android:textColor="@color/black"
+        android:fontFamily="@font/latobold"
         android:padding="1dp"
         android:textStyle="bold"
         android:textSize="18sp"

@@ -8,5 +8,5 @@
     android:layout_marginLeft="23dp"
     android:layout_alignParentTop="true"
     android:layout_marginTop="204dp"
-    android:background="@drawable/pop_up"
+    android:background="@drawable/selected_background"
     />

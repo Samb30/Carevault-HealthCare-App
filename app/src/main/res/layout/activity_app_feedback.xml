@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D7D0FF"
+        android:background="#fafaff"
         tools:context=".profile.AppFeedbackActivity">
 
         <androidx.constraintlayout.widget.Guideline
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="29dp"
-            android:background="@drawable/backbuttom"
+            android:background="@drawable/backbutton"
             android:contentDescription="TODO"
             app:layout_constraintEnd_toStartOf="@+id/headline2"
             app:layout_constraintHorizontal_bias="0.259"
@@ -73,7 +73,10 @@
             android:id="@+id/textView11116"
             android:layout_width="355dp"
             android:layout_height="67dp"
-            android:background="@drawable/rect3"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="197dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/logintextareafield"
             android:drawablePadding="15dp"
             android:fontFamily="@font/latoregular"
             android:hint="Write feedback"
@@ -83,16 +86,16 @@
             android:textAlignment="textStart"
             android:textColor="#1D212D"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView5ss"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/headline2" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView5ss"
             android:layout_width="355dp"
             android:layout_height="65dp"
-            android:background="@drawable/rect_1"
+            android:layout_marginTop="395dp"
+            android:background="@drawable/loginsolidrect"
             android:fontFamily="@font/latobold"
             android:gravity="center"
             android:text="Submit Feedback"
@@ -103,7 +106,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.465" />
+            app:layout_constraintVertical_bias="0.013" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
