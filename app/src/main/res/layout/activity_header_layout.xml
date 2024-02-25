@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:padding="14dp"
+    android:gravity="bottom"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/articleicon"
+        android:contentDescription="headerimg"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CareVault"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="@font/latoheavy"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="subcontent"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="@font/latoregular"/>
+</LinearLayout>
