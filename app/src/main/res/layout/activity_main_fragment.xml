@@ -17,7 +17,7 @@
         android:layout_gravity="start"
         android:id="@+id/navigationview"
         app:headerLayout="@layout/activity_header_layout"
-        app:menu="@menu/navigation_items"/>
+        app:menu="@menu/navigation_item"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -73,6 +73,6 @@
         app:itemIconTint="#a2b1fd"
         app:itemTextColor="#0BAB7C"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/menu" />
+        app:menu="@menu/menu_bottom" />
     </RelativeLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

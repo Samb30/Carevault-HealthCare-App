@@ -58,7 +58,7 @@ public class Adapter extends FirestoreRecyclerAdapter<Note1,Adapter.NoteViewhold
     @NonNull
     @Override
     public NoteViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.recycleralarm,parent,false);
         return new NoteViewholder(view);
     }
 

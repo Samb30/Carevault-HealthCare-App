@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffffff"
-    android:padding="8dp"
     tools:context=".fragments.CalenderFragment">
+
     <RelativeLayout
+        android:id="@+id/indexArticles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/indexArticles">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="#e9edff"
+        android:padding="12dp">
 
         <TextView
             android:id="@+id/pagetitle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:gravity="left"
-            android:text="Alarms"
-            android:layout_marginStart="10dp"
-            android:textColor="#1D212D"
-            android:layout_marginTop="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="50dp"
             android:fontFamily="@font/latoheavy"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:gravity="center_horizontal"
+            android:text="Alarms"
+            android:textColor="#1D212D"
+            android:textSize="22sp" />
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
         android:layout_height="match_parent"
         android:layout_below="@+id/indexArticles"
-        tools:listitem="@layout/recycler"
-        android:id="@+id/recyclerview"/>
+        android:layout_marginTop="20dp"
+        tools:listitem="@layout/recycleralarm" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/notebuton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/notebuton"
-        android:backgroundTint="#CFD4F1"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/baseline_add_24"/>
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#CFD4F1"
+        android:contentDescription="TODO"
+        android:src="@drawable/baseline_add_24" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie"
         app.lottie_autoplay="true"
         app.lottie_loop="true"
         android:layout_width="383dp"
-        android:visibility="gone"
         android:layout_height="383dp"
         android:layout_centerInParent="true"
-        app:lottie_rawRes="@raw/empty"/>
+        android:visibility="gone"
+        app:lottie_rawRes="@raw/empty" />
 
 </RelativeLayout>

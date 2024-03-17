@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="330sp"
     android:layout_height="420sp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
-    android:padding="4dp"
-    android:backgroundTint="#FFFFFF"
-    android:background="@drawable/popupbox">
+    android:background="@drawable/popupbox"
+    android:backgroundTint="#eff1ff"
+    android:padding="4dp">
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie"
         app.lottie_autoplay="true"
         app.lottie_loop="true"
         android:layout_width="300dp"
         android:layout_height="250dp"
-        android:layout_marginTop="18sp"
         android:layout_centerHorizontal="true"
-        app:lottie_rawRes="@raw/wrong"/>
+        android:layout_marginTop="18sp"
+        app:lottie_rawRes="@raw/wrong" />
+
     <TextView
         android:id="@+id/paydisc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lottie"
-        android:padding="5sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/latobold"
         android:gravity="center"
-        android:layout_marginTop="18dp"
+        android:padding="5sp"
         android:text="Looks like Slot is not available for the date you selected. Please choose another slot."
-        android:textSize="18sp"
         android:textColor="@color/black"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="18sp" />
+
     <Button
-        android:layout_width="150sp"
         android:id="@+id/doneb"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:layout_below="@id/paydisc"
         android:layout_centerHorizontal="true"
-        android:text="Ok"
         android:layout_marginTop="15dp"
-        android:background="@drawable/roundedcorner"
-        />
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/selected_background"
+        android:text="Ok"
+        android:textSize="14sp" />
 </RelativeLayout>

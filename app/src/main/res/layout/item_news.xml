@@ -1,69 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/articlesrounded"
-        android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="7dp"
+        android:backgroundTint="#e9edfe"
+        android:elevation="10dp"
         android:padding="16dp"
         tools:ignore="MissingConstraints">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="430dp"
-        android:layout_marginTop="-5dp"
-        android:layout_height="209dp"
-        android:scaleType="centerCrop"/>
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="430dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="TODO"
+            android:elevation="10dp"
+            android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_below="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLines="2"
-        android:ellipsize="end"
-        android:layout_marginTop="12dp"
-        android:textSize="15sp"
-        android:textColor="#212121"/>
-
-    <TextView
-        android:id="@+id/author"
-        android:layout_below="@+id/title"
-        android:layout_width="wrap_content"
-        android:maxLength="25"
-        android:textSize="11sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"/>
         <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            android:layout_marginTop="15dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/latoregular"
+            android:maxLines="2"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
-            android:layout_toRightOf="@+id/author"
-            android:layout_marginLeft="10dp"
-            android:maxLength="10"
-            android:textSize="9sp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/latobold"
+            android:maxLength="25"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
             android:id="@+id/date"
-            android:textColor="#0BAB7C"
-            android:textStyle="bold"
-            android:layout_marginTop="8dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/author"
+            android:fontFamily="@font/latobold"
+            android:maxLength="10"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
         <ImageButton
-            android:layout_width="25dp"
-            android:layout_height="23dp"
             android:id="@+id/share"
-            android:src="@drawable/baseline_share_24"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/title"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="0dp"
-            android:layout_toLeftOf="@+id/date"
-            />
+            android:layout_marginTop="15dp"
+            android:layout_toStartOf="@+id/date"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/baseline_share_24" />
     </RelativeLayout>
-
 
 </RelativeLayout>

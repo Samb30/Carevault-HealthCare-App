@@ -8,16 +8,18 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class Myadapter1(private val userlist:ArrayList<User>):RecyclerView.Adapter<Myadapter1.Myholder>() {
-    class Myholder(itemView: View):RecyclerView.ViewHolder(itemView){
-        val Name:TextView=itemView.findViewById(R.id.tvname)
-        val Date:TextView=itemView.findViewById(R.id.tvname2)
+class Myadapter1(private val userlist: ArrayList<User>) :
+    RecyclerView.Adapter<Myadapter1.Myholder>() {
+    class Myholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val Name: TextView = itemView.findViewById(R.id.tvname)
+        val Date: TextView = itemView.findViewById(R.id.tvname2)
         val Image: ImageView = itemView.findViewById(R.id.imshow)
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Myholder {
-        val itemView=LayoutInflater.from(parent.context).inflate(R.layout.list_item,parent,false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
         return Myholder(itemView)
     }
 
@@ -26,8 +28,8 @@ class Myadapter1(private val userlist:ArrayList<User>):RecyclerView.Adapter<Myad
     }
 
     override fun onBindViewHolder(holder: Myholder, position: Int) {
-        holder.Date.text=userlist[position].date
-        holder.Name.text=userlist[position].name
+        holder.Date.text = userlist[position].date
+        holder.Name.text = userlist[position].name
         Picasso.get()
             .load(userlist[position].imageUrl)
             .into(holder.Image)

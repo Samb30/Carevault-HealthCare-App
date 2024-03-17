@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D7D0FF"
+    android:background="#ffffff"
     android:fillViewport="true"
     tools:context=".authentication.NumberVerifyOtpActivity">
 
@@ -54,7 +54,7 @@
         android:layout_height="65dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="318dp"
-        android:background="@drawable/signinrect"
+        android:background="@drawable/logintextareafield"
         android:drawableStart="@drawable/lockicon"
         android:drawablePadding="15dp"
         android:fontFamily="@font/latoregular"
@@ -92,7 +92,7 @@
         android:layout_height="65dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="415dp"
-        android:background="@drawable/welcome_solidrect_1"
+        android:background="@drawable/selected_background"
         android:fontFamily="@font/latobold"
         android:gravity="center"
         android:text="Verify OTP"

@@ -256,6 +256,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:id="@+id/box1"
         android:layout_marginTop="10dp"
         android:background="@drawable/logintextareafield"
         android:layout_below="@id/text87">
@@ -418,9 +419,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/checkBox6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="603dp">
+        android:layout_below="@id/box1"
+        android:layout_centerHorizontal="true">
 
         <Button
             android:id="@+id/cancelButton"
@@ -430,7 +430,7 @@
             android:layout_centerInParent="true"
             android:text="Cancel Alarms"
             android:textColor="@color/black"
-            android:visibility="visible"/>
+            android:visibility="visible" />
     </RelativeLayout>
 
 </RelativeLayout>

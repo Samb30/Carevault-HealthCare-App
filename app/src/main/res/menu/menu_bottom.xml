@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home1"
+        android:icon="@drawable/homeicon"
+        android:title="Home" />
+    <item
+        android:id="@+id/home2"
+        android:icon="@drawable/alarmicon"
+        android:title="Alarms" />
+    <item
+        android:id="@+id/doc"
+        android:icon="@drawable/appointicon"
+        android:title="Appointment" />
+    <item
+        android:id="@+id/hom3"
+        android:icon="@drawable/articleicons"
+        android:title="Articles" />
+    <item
+        android:id="@+id/memo"
+        android:icon="@drawable/profileicon"
+        android:title="Profile" />
+</menu>

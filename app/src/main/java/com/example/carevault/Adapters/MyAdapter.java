@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.carevault.R;
 
@@ -46,7 +44,7 @@ public class MyAdapter extends BaseAdapter {
 
         if (convertView == null) {
             gridView = new View(mContext);
-            gridView = inflater.inflate(R.layout.grid_item, null);
+            gridView = inflater.inflate(R.layout.grid_item_categories, null);
 
             ImageView imageView = gridView.findViewById(R.id.imageView);
             TextView textViewName = gridView.findViewById(R.id.textViewName);

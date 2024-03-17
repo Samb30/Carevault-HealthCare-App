@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.carevault.Articles.Covid;
 import com.example.carevault.Articles.Diet;
@@ -21,7 +22,8 @@ import com.example.carevault.Articles.Health;
 import com.example.carevault.R;
 
 public class ArticleFragment extends Fragment {
-    Button trend,covid,seeall,diet,fitness;
+    Button covid,diet,fitness;
+    TextView trend, seeall;
     LinearLayout sample1,sample2,sample3,sample4,sample5,sample6,sample7,sample8;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

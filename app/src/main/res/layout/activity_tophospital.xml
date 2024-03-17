@@ -6,24 +6,27 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:ignore="HardcodedText">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#D7D0FF"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
         android:padding="12dp"
         tools:context=".TophospitalActivity">
+
         <RelativeLayout
+            android:id="@+id/head"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/head">
+            android:layout_height="wrap_content">
+
             <ImageButton
                 android:id="@+id/backbutton4"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:contentDescription="notify"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="notify"
                 android:src="@drawable/baseline_arrow_back_ios_24"
                 app:tint="#000000" />
 
@@ -32,87 +35,76 @@
                 android:id="@+id/pagetitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-
                 android:layout_centerInParent="true"
+                android:fontFamily="@font/latobold"
                 android:text="Top Hospital"
                 android:textColor="#1D212D"
                 android:textSize="25sp"
                 android:textStyle="bold" />
-
-            <ImageButton
-                android:id="@+id/savebutton"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:contentDescription="notify"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/baseline_view_headline_24"
-                app:tint="#000000" />
-
-
-
         </RelativeLayout>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_below="@+id/head"
+
+        <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollbarrelated"
-            android:layout_marginTop="32dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:layout_below="@+id/head"
+            android:layout_marginTop="32dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:background="@drawable/verticalscroll"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="140dp"
                         android:layout_height="140dp"
-                        android:src="@drawable/dctr1"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="5dp"
-                        />
+                        android:src="@drawable/dctr1" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Dr.Marcus Horizon"
                             android:textColor="@color/black"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="20dp"
-                            android:textStyle="bold"
                             android:textSize="19dp"
-                            android:text="Dr.Marcus Horizon"/>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:layout_marginLeft="20dp"
-                                android:textColor="#151921"
-                                android:text="June 12,2021 ."/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="11dp"
+                            android:textStyle="bold" />
 
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="June 12,2021 ."
+                                android:textColor="#151921"
+                                android:textSize="11dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginLeft="2dp"
+
+                                android:text="5 min read"
                                 android:textColor="#5F48E6"
-                                android:textStyle="bold"
-                                android:text="5 min read"/>
+                                android:textSize="11dp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -120,207 +112,226 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="@drawable/verticalscroll"
-                    android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    >
+                    android:background="@drawable/verticalscroll"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="140dp"
                         android:layout_height="140dp"
-                        android:src="@drawable/dctr2"
                         android:layout_marginLeft="8dp"
                         android:layout_marginTop="5dp"
-                        />
+                        android:src="@drawable/dctr2" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/verticalscroll"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="#101623"
-                            android:layout_marginTop="15dp"
                             android:layout_marginLeft="20dp"
-                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:text="Dr.Maria Elena"
+                            android:textColor="#101623"
                             android:textSize="19dp"
-                            android:text="Dr.Maria Elena"/>
+                            android:textStyle="bold" />
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="11dp"
                                 android:layout_marginLeft="20dp"
+                                android:text="June 12,2021 ."
                                 android:textColor="#151921"
-                                android:text="June 12,2021 ."/>
+                                android:textSize="11dp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="11dp"
                                 android:layout_marginLeft="2dp"
+                                android:text="6 min read"
                                 android:textColor="#5F48E6"
-                                android:textStyle="bold"
-                                android:text="6 min read"/>
+                                android:textSize="11dp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="@drawable/verticalscroll"
-                    android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    >
+                    android:background="@drawable/verticalscroll"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="140dp"
                         android:layout_height="140dp"
-                        android:src="@drawable/dctr3"
                         android:layout_marginLeft="8dp"
                         android:layout_marginTop="5dp"
-                        />
+                        android:src="@drawable/dctr3" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/verticalscroll"
 
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="#101623"
-                            android:layout_marginTop="15dp"
                             android:layout_marginLeft="20dp"
-                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:text="Dr.Stefi Jessi"
+                            android:textColor="#101623"
                             android:textSize="19dp"
-                            android:text="Dr.Stefi Jessi"/>
+                            android:textStyle="bold" />
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="11dp"
                                 android:layout_marginLeft="20dp"
+                                android:text="June 12,2021 ."
                                 android:textColor="#151921"
-                                android:text="June 12,2021 ."/>
+                                android:textSize="11dp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="11dp"
                                 android:layout_marginLeft="2dp"
+                                android:text="4 min read"
                                 android:textColor="#5F48E6"
-                                android:textStyle="bold"
-                                android:text="4 min read"/>
+                                android:textSize="11dp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="@drawable/verticalscroll"
                     android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
-                    >
+                    android:background="@drawable/verticalscroll"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="140dp"
                         android:layout_height="140dp"
-                        android:src="@drawable/dctr4"
                         android:layout_marginLeft="8dp"
                         android:layout_marginTop="5dp"
-                        />
+                        android:src="@drawable/dctr4" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/verticalscroll"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="#101623"
-                            android:layout_marginTop="15dp"
                             android:layout_marginLeft="20dp"
-                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:text="Dr.Gerty Cori"
+                            android:textColor="#101623"
                             android:textSize="19dp"
-                            android:text="Dr.Gerty Cori"/>
+                            android:textStyle="bold" />
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="11dp"
                                 android:layout_marginLeft="20dp"
+                                android:text="June 12,2021 ."
                                 android:textColor="#151921"
-                                android:text="June 12,2021 ."/>
+                                android:textSize="11dp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:textStyle="bold"
                                 android:layout_marginLeft="2dp"
+                                android:text="5 min read"
                                 android:textColor="#5F48E6"
-                                android:text="5 min read"/>
+                                android:textSize="11dp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="@drawable/verticalscroll"
                     android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
-                    >
+                    android:background="@drawable/verticalscroll"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="140dp"
                         android:layout_height="140dp"
-                        android:src="@drawable/dctr5"
                         android:layout_marginLeft="8dp"
                         android:layout_marginTop="5dp"
-                        />
+                        android:src="@drawable/dctr5" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/verticalscroll"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="#101623"
-                            android:layout_marginTop="15dp"
-                            android:textStyle="bold"
-                            android:textSize="19dp"
                             android:layout_marginLeft="20dp"
-                            android:text="Dr.Diandra"/>
+                            android:layout_marginTop="15dp"
+                            android:text="Dr.Diandra"
+                            android:textColor="#101623"
+                            android:textSize="19dp"
+                            android:textStyle="bold" />
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="11dp"
                                 android:layout_marginLeft="20dp"
+                                android:text="June 12,2021 ."
                                 android:textColor="#151921"
-                                android:text="June 12,2021 ."/>
+                                android:textSize="11dp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="11dp"
-                                android:textStyle="bold"
                                 android:layout_marginLeft="2dp"
+                                android:text="5 min read"
                                 android:textColor="#5F48E6"
-                                android:text="5 min read"/>
+                                android:textSize="11dp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
     </RelativeLayout>
 </ScrollView>

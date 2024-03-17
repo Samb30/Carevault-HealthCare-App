@@ -13,5 +13,6 @@
         <item>Select Gender</item>
         <item>Male</item>
         <item>Female</item>
+        <item>Others</item>
     </string-array>
 </resources>

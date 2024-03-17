@@ -205,7 +205,7 @@ public class AppointmentReminders extends AppCompatActivity {
                 PopupMenu popupMenu = new PopupMenu(AppointmentReminders.this, textView);
 
                 // Inflating popup menu from popup_menu.xml file
-                popupMenu.getMenuInflater().inflate(R.menu.menu1, popupMenu.getMenu());
+                popupMenu.getMenuInflater().inflate(R.menu.menu_appoint, popupMenu.getMenu());
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {

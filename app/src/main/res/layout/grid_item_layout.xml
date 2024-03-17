@@ -2,15 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="#EFF7FE"
-    android:background="@drawable/rounded">
+    android:background="@drawable/rounded"
+    android:backgroundTint="#EFF7FE">
+
     <TextView
         android:id="@+id/grid_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textSize="16sp"
-        android:padding="8dp"
         android:gravity="center"
-        android:textColor="@android:color/black"/>
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
 </RelativeLayout>

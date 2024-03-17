@@ -4,55 +4,53 @@
     android:layout_width="350sp"
     android:layout_height="400sp"
     android:layout_gravity="center"
-    android:padding="4dp"
-    android:backgroundTint="#FFFFFF"
     android:background="@drawable/popupbox"
-    >
+    android:backgroundTint="#eff1ff"
+    android:padding="4dp">
+
     <ImageView
         android:id="@+id/tick"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18sp"
-        android:src="@drawable/paysymbol"/>
+        android:contentDescription="TODO"
+        android:src="@drawable/paysymbol" />
+
     <TextView
         android:id="@+id/payst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tick"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
         android:text="Payment success"
-        android:textSize="25sp"
         android:textColor="#1D212D"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/paydisc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/payst"
-        android:padding="5sp"
-        android:gravity="center"
-
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-
+        android:fontFamily="@font/latobold"
+        android:gravity="center"
+        android:padding="5sp"
         android:text="Your payment has been succesful, you can have a consultation session with your trusted doctor"
-        android:textSize="18sp"
-        android:textColor="#83848B"
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
-        android:layout_centerHorizontal="true"/>
     <Button
-        android:layout_width="150sp"
         android:id="@+id/doneb"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:layout_below="@id/paydisc"
         android:layout_centerHorizontal="true"
-        android:text="Done"
         android:layout_marginTop="15dp"
-
         android:background="@drawable/roundedcorner"
-        />
-
-
+        android:text="Done" />
 
 </RelativeLayout>

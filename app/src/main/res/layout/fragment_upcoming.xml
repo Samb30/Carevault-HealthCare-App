@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
+    android:padding="10dp"
     tools:context=".tab.UpcomingFragment">
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/bookingrecycler"
-        android:id="@+id/recyclerview"/>
+        tools:listitem="@layout/bookingrecycler" />
 
 </FrameLayout>
