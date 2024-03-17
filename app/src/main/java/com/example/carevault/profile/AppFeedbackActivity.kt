@@ -6,8 +6,8 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.carevault.authentication.RegisterActivity
 import com.example.carevault.R
+import com.example.carevault.authentication.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -31,7 +31,7 @@ class AppFeedbackActivity : AppCompatActivity() {
         val submitButton = findViewById<TextView>(R.id.textView5ss)
 
         backButton.setOnClickListener {
-            startActivity(Intent(this, ProfileActivity::class.java))
+            onBackPressed()
         }
 
         submitButton.setOnClickListener {
@@ -52,8 +52,6 @@ class AppFeedbackActivity : AppCompatActivity() {
                             "Feedback saved successfully",
                             Toast.LENGTH_SHORT
                         ).show()
-
-                        startActivity(Intent(this, ProfileActivity::class.java))
                         finish()
                     }
                     .addOnFailureListener { e ->

@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".Articles.Diet">
+
     <TextView
+        android:id="@+id/fixed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:textSize="20dp"
-        android:layout_marginTop="12dp"
         android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/black"
         android:fontFamily="@font/latobold"
-        android:textStyle="bold"
-        android:textColor="#0536C8"
-        android:text="Diet"
         android:gravity="center"
         android:padding="10dp"
-        android:id="@+id/fixed"/>
+        android:text="Diet"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:layout_below="@+id/fixed"
         android:id="@+id/swipe"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:layout_below="@+id/fixed">
+
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_below="@id/fixed"
-            android:layout_height="match_parent"
             android:id="@+id/recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/fixed"
             tools:listitem="@layout/item_news" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </RelativeLayout>

@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:ignore="HardcodedText">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#D7D0FF"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
         android:padding="12dp"
+        android:id="@+id/h1"
         tools:context=".TopambulanceActivity">
+
         <RelativeLayout
+            android:id="@+id/head"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/head">
+            android:layout_height="wrap_content">
+
             <ImageButton
                 android:id="@+id/backbutton3"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:contentDescription="notify"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="notify"
                 android:src="@drawable/baseline_arrow_back_ios_24"
                 app:tint="#000000" />
 
@@ -32,86 +36,31 @@
                 android:id="@+id/pagetitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-
                 android:layout_centerInParent="true"
                 android:text="Ambulance Nearby"
                 android:textColor="#1D212D"
+                android:fontFamily="@font/latobold"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
-            <ImageButton
-                android:id="@+id/savebutton"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:contentDescription="notify"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/baseline_view_headline_24"
-                app:tint="#000000" />
-
-
-
-
         </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
+
+        <ScrollView
+            android:id="@+id/scrollbarrelated"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/head2"
-            android:layout_below="@+id/head">
+            android:layout_below="@+id/head"
+            android:layout_marginTop="28dp">
 
-
-            <EditText
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Search doctor,drugs,articles"
-                android:layout_marginTop="19dp"
-                android:textSize="20dp"
-                android:textColor="#1D212D"
-                android:textStyle="bold"
-                android:id="@+id/ambulancename"/>
-            <ImageButton
-                android:id="@+id/searchambulance"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:contentDescription="notify"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/baseline_search_24"
-                app:tint="#000000" />
-
-        </RelativeLayout>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_below="@+id/head2"
-            android:id="@+id/scrollbarrelated"
-            android:layout_marginTop="32dp"
-            android:layout_height="wrap_content"
-            >
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/recycler"
-
-                    tools:listitem="@layout/list_item"
-
-
-
-
-                    />
-
-
-
-
+                tools:listitem="@layout/list_item"
+                />
         </ScrollView>
-
-
-
     </RelativeLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
 
 
 

@@ -10,16 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_marginTop="12dp"
         android:layout_marginHorizontal="8dp"
         android:textStyle="bold"
         android:fontFamily="@font/latobold"
-        android:textColor="#0536C8"
+        android:textColor="#000000"
         android:text="Fitness"
         android:gravity="center"
         android:padding="10dp"
         android:id="@+id/fixed"/>
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_below="@+id/fixed"
         android:id="@+id/swipe"

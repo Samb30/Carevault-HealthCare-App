@@ -5,8 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Articles.Health">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:textSize="25sp"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="8dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/latobold"
+        android:textColor="#000000"
+        android:text="Health"
+        android:gravity="center"
+        android:padding="10dp"
+        android:id="@+id/fixed"/>
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe"
+        android:layout_below="@+id/fixed"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >

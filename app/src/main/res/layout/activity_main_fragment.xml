@@ -51,27 +51,18 @@
             android:background="#e9edff"
             android:contentDescription="Sidebar" />
     </RelativeLayout>
-<!--    <ImageButton-->
-<!--        android:id="@+id/notifyb"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:contentDescription="notify"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
-<!--        android:src="@drawable/baseline_notifications_none_24"-->
-<!--        />-->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnview"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="2dp"
         android:layout_marginBottom="0dp"
-        android:background="#FAF9F6"
-        app:itemPaddingTop="4dp"
+        android:background="#e9edfe"
+        app:itemPaddingTop="5dp"
         app:itemIconTint="#a2b1fd"
-        app:itemTextColor="#0BAB7C"
+        app:itemTextColor="#000000"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_bottom" />
     </RelativeLayout>

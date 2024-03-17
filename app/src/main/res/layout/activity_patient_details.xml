@@ -4,22 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="12dp"
-    android:fillViewport="true"
     android:background="#FFFFFF"
+    android:fillViewport="true"
+    android:padding="12dp"
     tools:context=".Booking.PatientDetails">
+
     <RelativeLayout
+        android:id="@+id/head"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/head">
+        android:layout_height="wrap_content">
+
         <ImageButton
             android:id="@+id/backpatient"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:contentDescription="notify"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="notify"
             android:src="@drawable/backbutton"
             app:tint="#000000" />
 
@@ -28,195 +30,198 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Patient Detail"
             android:fontFamily="@font/latoheavy"
+            android:text="Patient Detail"
             android:textColor="#1D212D"
             android:textSize="25sp"
             android:textStyle="bold" />
     </RelativeLayout>
+
     <LinearLayout
+        android:id="@+id/temp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/head"
-        android:id="@+id/temp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
+
         <Switch
             android:id="@+id/switch2"
+            style="@style/SwitchTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:switchMinWidth="56dp"
             android:checked="true"
+            android:switchMinWidth="56dp"
             android:textOff="OFF"
-            style="@style/SwitchTheme"
-            android:textOn="ON"/>
+            android:textOn="ON" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:text="For Self"
-            android:textSize="18sp"
-            android:fontFamily="@font/latobold"
-            android:textColor="@color/black"
             android:layout_marginLeft="10dp"
-            android:textStyle="bold"
-            />
+            android:fontFamily="@font/latobold"
+            android:text="For Self"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/containerFullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/temp"
-        android:background="@drawable/logintextareafield"
-        android:orientation="vertical"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp">
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/logintextareafield"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textViewFullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Full Name"
-            android:fontFamily="@font/latobold"
             android:layout_margin="10dp"
+            android:fontFamily="@font/latobold"
+            android:text="Full Name"
             android:textColor="#000000"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/editTextFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Name"
             android:layout_margin="3dp"
+            android:backgroundTint="@android:color/transparent"
             android:fontFamily="@font/latoregular"
+            android:hint="Enter Name"
+            android:padding="10dp"
             android:textColor="#000000"
             android:textSize="16sp"
-            android:padding="10dp"
-            android:backgroundTint="@android:color/transparent"
 
             />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/agebox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/containerFullName"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/logintextareafield"
-        android:orientation="vertical"
-        android:layout_marginBottom="15dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/agetext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your Age"
             android:layout_margin="10dp"
-            android:textColor="#000000"
             android:fontFamily="@font/latobold"
             android:inputType="number"
-            android:textSize="16sp"/>
+            android:text="Your Age"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:backgroundTint="@android:color/transparent"
             android:fontFamily="@font/latoregular"
             android:hint="20"
-            android:layout_margin="3dp"
+            android:padding="10dp"
             android:textColor="#000000"
             android:textSize="16sp"
-            android:padding="10dp"
-            android:backgroundTint="@android:color/transparent"
 
             />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/genderLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/agebox"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/logintextareafield"
-        android:orientation="vertical"
-        android:layout_marginBottom="15dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/genderLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gender"
-            android:fontFamily="@font/latobold"
             android:layout_margin="10dp"
+            android:fontFamily="@font/latobold"
+            android:text="Gender"
             android:textColor="#000000"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/genderSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:textColor="@color/black"
             android:entries="@array/gender_options"
-            android:textSize="16sp"
             android:padding="10dp"
-            />
+            android:textColor="@color/black"
+            android:textSize="16sp" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/problemsaid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/genderLayout"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/logintextareafield"
-        android:orientation="vertical"
-        android:layout_marginBottom="30dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/prob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your Problem"
             android:layout_margin="10dp"
-            android:textColor="#000000"
             android:fontFamily="@font/latobold"
-            android:textSize="16sp"/>
+            android:text="Your Problem"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/problemgiven"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="I am having glossophobia "
             android:layout_margin="3dp"
+            android:backgroundTint="@android:color/transparent"
             android:fontFamily="@font/latoregular"
+            android:hint="Describe the problem"
+            android:padding="10dp"
             android:textColor="#000000"
             android:textSize="16sp"
-            android:padding="10dp"
-            android:backgroundTint="@android:color/transparent"
-
             />
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/loader"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/loader"
-        android:gravity="center"
+        android:layout_below="@id/problemsaid"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
-        android:layout_below="@id/problemsaid"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <ProgressBar
+            android:id="@+id/pbar"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:id="@+id/pbar"
-            android:visibility="gone"
-            />
-
+            android:visibility="gone" />
     </LinearLayout>
 
     <Button
         android:id="@+id/nextButton1"
-        android:layout_below="@id/loader"
         android:layout_width="match_parent"
-        android:fontFamily="@font/latoheavy"
         android:layout_height="wrap_content"
+        android:layout_below="@id/loader"
         android:background="@drawable/selected_background"
-        android:text="Next"/>
-
+        android:fontFamily="@font/latoheavy"
+        android:text="Next" />
 </RelativeLayout>

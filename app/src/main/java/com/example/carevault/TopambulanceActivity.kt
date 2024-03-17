@@ -35,8 +35,6 @@ class TopambulanceActivity : AppCompatActivity() {
 //        binding=ActivityTopambulanceBinding.inflate(layoutInflater)
 //        setContentView(binding.root)
         val back1: ImageButton = findViewById(R.id.backbutton3)
-        val searchb: ImageButton = findViewById(R.id.searchambulance)
-         ambulance = findViewById(R.id.ambulancename)
 
         rv=findViewById(R.id.recycler)
         rv.layoutManager=LinearLayoutManager(this)
