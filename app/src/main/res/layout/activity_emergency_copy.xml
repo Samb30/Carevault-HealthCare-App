@@ -201,7 +201,7 @@
             android:background="@drawable/loginsolidrect"
             android:fontFamily="@font/latoheavy"
             android:gravity="center"
-            android:text="Exit"
+            android:text="Back"
             android:textColor="#ffffff"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,10 +1,11 @@
 package com.example.carevault.Articles
 
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +31,10 @@ class Fitness : AppCompatActivity(), NewsClicked {
         val fitness = findViewById<TextView>(R.id.fixed)
         val swipe=findViewById<SwipeRefreshLayout>(R.id.swipe)
         val layoutManager= LinearLayoutManager(this)
+        val back = findViewById<ImageButton>(R.id.imageButton112)
+        back.setOnClickListener {
+            onBackPressed()
+        }
         getNews()
         swipe.setOnRefreshListener {
             getNews()

@@ -34,7 +34,7 @@
             android:ellipsize="end"
             android:fontFamily="@font/latoregular"
             android:maxLines="2"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
@@ -58,7 +58,7 @@
             android:layout_toEndOf="@+id/author"
             android:fontFamily="@font/latobold"
             android:maxLength="10"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:textSize="12sp"
             android:textStyle="bold" />
 

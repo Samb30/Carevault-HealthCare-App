@@ -10,7 +10,6 @@ import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import com.example.carevault.R
-import com.example.carevault.WelcomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class EmergencyActivityCopy : AppCompatActivity() {
@@ -79,9 +78,7 @@ class EmergencyActivityCopy : AppCompatActivity() {
         }
 
         exitButton.setOnClickListener {
-            val intent = Intent(this@EmergencyActivityCopy, WelcomeActivity::class.java)
-            startActivity(intent)
-            finish()
+            onBackPressed()
         }
     }
 

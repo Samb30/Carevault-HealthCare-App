@@ -32,7 +32,7 @@ public class UserFragment extends Fragment {
         View view =inflater.inflate(R.layout.fragment_user, container, false);
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
-        ImageView EditButton = view.findViewById(R.id.my_profile13);
+        ImageButton EditButton = view.findViewById(R.id.ib2);
         ImageButton forButton1 = view.findViewById(R.id.imageButton2);
         ImageButton forButton2 = view.findViewById(R.id.imageButton3);
         ImageButton forButton3 = view.findViewById(R.id.imageButton4);

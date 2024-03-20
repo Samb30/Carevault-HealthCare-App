@@ -73,13 +73,13 @@
             android:name=".Articles.Fitness"
             android:exported="false" />
         <activity
-            android:name=".Articles.Disease"
+            android:name=".Articles.RelatedArticles"
             android:exported="false" />
         <activity
             android:name=".Articles.Covid"
             android:exported="false" />
         <activity
-            android:name=".Articles.Health"
+            android:name=".Articles.TrendArticle"
             android:exported="false" />
         <activity
             android:name=".MainFragment"

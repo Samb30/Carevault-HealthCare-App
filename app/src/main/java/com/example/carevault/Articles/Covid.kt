@@ -1,10 +1,11 @@
 package com.example.carevault.Articles
 
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +14,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.carevault.Adapters.NewsClicked
 import com.example.carevault.Adapters.NewwsAdapter
 import com.example.carevault.NewsService
-import com.example.carevault.NewsService1
 import com.example.carevault.NewsService2
 import com.example.carevault.R
 import com.example.carevault.news1
@@ -31,10 +31,15 @@ class Covid : AppCompatActivity(), NewsClicked {
         val fitness = findViewById<TextView>(R.id.fixed)
         val swipe=findViewById<SwipeRefreshLayout>(R.id.swipe)
         val layoutManager= LinearLayoutManager(this)
+        val back = findViewById<ImageButton>(R.id.imageButton112)
         getNews()
         swipe.setOnRefreshListener {
             getNews()
             swipe.isRefreshing=false
+        }
+
+        back.setOnClickListener {
+            onBackPressed()
         }
     }
     private fun getNews() {

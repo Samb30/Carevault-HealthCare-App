@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Articles.Health">
+    android:background="@color/white"
+    tools:context=".Articles.TrendArticle">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
         android:textSize="25sp"
         android:layout_marginTop="12dp"
         android:layout_marginHorizontal="8dp"
         android:textStyle="bold"
+        android:backgroundTint="@color/black"
         android:fontFamily="@font/latobold"
         android:textColor="#000000"
-        android:text="Health"
+        android:text="Trending Articles"
         android:gravity="center"
         android:padding="10dp"
         android:id="@+id/fixed"/>
+
+    <ImageButton
+        android:id="@+id/imageButton112"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/backbutton"
+        android:contentDescription="TODO" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe"

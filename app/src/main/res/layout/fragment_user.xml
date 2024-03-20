@@ -80,18 +80,13 @@
                     android:textColor="#1D212D"
                     android:textSize="18sp" />
 
-                <ImageView
-                    android:id="@+id/my_profile13"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="320dp"
+                <ImageButton
+                    android:id="@+id/ib2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="300dp"
                     android:layout_marginTop="30dp"
-                    android:contentDescription="TODO"
-                    android:fontFamily="@font/latoheavy"
-                    android:gravity="center"
-                    android:src="@drawable/editbuttonicon" />
+                    android:background="@drawable/forwardbutton" />
 
                 <TextView
                     android:id="@+id/my_profile12"

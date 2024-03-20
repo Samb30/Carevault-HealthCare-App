@@ -105,19 +105,6 @@
                         android:textColor="@color/white"
                         android:textSize="15sp" />
 
-                    <Button
-                        android:layout_width="150dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/selected_background"
-                        android:backgroundTint="#9DCEFF"
-                        android:fontFamily="@font/latoregular"
-                        android:gravity="center"
-                        android:text="Covid-19"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="15sp" />
-
                 </LinearLayout>
             </HorizontalScrollView>
 

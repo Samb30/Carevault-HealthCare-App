@@ -1,10 +1,11 @@
 package com.example.carevault.Articles
 
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +21,7 @@ import com.example.carevault.news2
 import retrofit2.Call
 import retrofit2.Callback
 
-class Disease : AppCompatActivity(), NewsClicked {
+class RelatedArticles : AppCompatActivity(), NewsClicked {
     private lateinit var mAdapter: NewwsAdapter
     lateinit var recyclerview: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +31,12 @@ class Disease : AppCompatActivity(), NewsClicked {
         val fitness = findViewById<TextView>(R.id.fixed)
         val swipe=findViewById<SwipeRefreshLayout>(R.id.swipe)
         val layoutManager= LinearLayoutManager(this)
+        val back = findViewById<ImageButton>(R.id.imageButton112)
+        back.setOnClickListener {
+            onBackPressed()
+        }
+
+        getNews()
         getNews()
         swipe.setOnRefreshListener {
             getNews()
@@ -66,10 +73,10 @@ class Disease : AppCompatActivity(), NewsClicked {
                 val news=response.body()
                 if(news!=null){
                     Log.d("news",news.toString())
-                    val layoutManager= LinearLayoutManager(this@Disease)
+                    val layoutManager= LinearLayoutManager(this@RelatedArticles)
                     recyclerview.layoutManager = layoutManager
                     recyclerview.addItemDecoration(DividerItemDecoration(baseContext,layoutManager.orientation))
-                    mAdapter = NewwsAdapter(this@Disease,this@Disease, news.articles)
+                    mAdapter = NewwsAdapter(this@RelatedArticles,this@RelatedArticles, news.articles)
                     recyclerview.adapter = mAdapter
                 }
             }

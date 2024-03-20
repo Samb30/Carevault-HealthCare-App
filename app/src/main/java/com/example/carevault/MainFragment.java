@@ -56,10 +56,10 @@ public class MainFragment extends AppCompatActivity {
                                 fragment = new HomeFragment();
                                 break;
                             case R.id.home2:
-                                fragment = new ArticleFragment();
+                                fragment = new CalenderFragment();
                                 break;
                             case R.id.hom3:
-                                fragment = new CalenderFragment();
+                                fragment = new ArticleFragment();
                                 break;
                             case R.id.memo:
                                 fragment = new UserFragment();

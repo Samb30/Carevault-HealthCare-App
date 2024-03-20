@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="country_array">
+        <item>Select Country</item>
         <item>India</item>
         <item>USA</item>
         <item>UK</item>

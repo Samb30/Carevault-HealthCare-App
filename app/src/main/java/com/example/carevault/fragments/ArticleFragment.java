@@ -16,9 +16,9 @@ import android.widget.TextView;
 
 import com.example.carevault.Articles.Covid;
 import com.example.carevault.Articles.Diet;
-import com.example.carevault.Articles.Disease;
+import com.example.carevault.Articles.RelatedArticles;
 import com.example.carevault.Articles.Fitness;
-import com.example.carevault.Articles.Health;
+import com.example.carevault.Articles.TrendArticle;
 import com.example.carevault.R;
 
 public class ArticleFragment extends Fragment {
@@ -46,7 +46,7 @@ public class ArticleFragment extends Fragment {
         trend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(requireContext(), Health.class);
+                Intent intent = new Intent(requireContext(), TrendArticle.class);
                 startActivity(intent);
             }
         });
@@ -74,7 +74,7 @@ public class ArticleFragment extends Fragment {
         seeall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(requireContext(), Disease.class);
+                Intent intent = new Intent(requireContext(), RelatedArticles.class);
                 startActivity(intent);
             }
         });

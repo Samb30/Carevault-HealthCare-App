@@ -1,9 +1,10 @@
 package com.example.carevault.Articles
 
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,16 +19,21 @@ import com.example.carevault.news2
 import retrofit2.Call
 import retrofit2.Callback
 
-class Health : AppCompatActivity(), NewsClicked {
+class TrendArticle : AppCompatActivity(), NewsClicked {
     private lateinit var mAdapter: NewwsAdapter
     lateinit var recyclerview: RecyclerView
     lateinit var swipe: SwipeRefreshLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_health)
+        setContentView(R.layout.activity_trendingarticles)
         swipe=findViewById<SwipeRefreshLayout>(R.id.swipe)
         recyclerview=findViewById<RecyclerView>(R.id.recycleview)
         recyclerview.layoutManager = LinearLayoutManager(this)
+
+        val back = findViewById<ImageButton>(R.id.imageButton112)
+        back.setOnClickListener {
+            onBackPressed()
+        }
 
         getNews()
 
@@ -43,10 +49,10 @@ class Health : AppCompatActivity(), NewsClicked {
                 val news = response.body()
                 if (news != null) {
                     Log.d("news", news.toString())
-                    val layoutManager = LinearLayoutManager(this@Health)
+                    val layoutManager = LinearLayoutManager(this@TrendArticle)
                     recyclerview.layoutManager = layoutManager
-                    recyclerview.addItemDecoration(DividerItemDecoration(this@Health, layoutManager.orientation))
-                    mAdapter = NewwsAdapter(this@Health, this@Health, news.articles)
+                    recyclerview.addItemDecoration(DividerItemDecoration(this@TrendArticle, layoutManager.orientation))
+                    mAdapter = NewwsAdapter(this@TrendArticle, this@TrendArticle, news.articles)
                     recyclerview.adapter = mAdapter
                 }
             }

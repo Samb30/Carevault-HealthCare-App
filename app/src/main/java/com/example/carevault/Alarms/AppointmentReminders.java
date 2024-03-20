@@ -48,6 +48,7 @@ import com.example.carevault.Adapters.Note1;
 import com.example.carevault.MainFragment;
 import com.example.carevault.R;
 import com.example.carevault.Utility;
+import com.example.carevault.fragments.CalenderFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -256,13 +257,10 @@ public class AppointmentReminders extends AppCompatActivity {
                 }
             }
         });
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(AppointmentReminders.this, MainFragment.class);
-                startActivity(i);
-                finish();
-            }
+        back.setOnClickListener(view -> {
+            Intent i=new Intent(AppointmentReminders.this, MainFragment.class);
+            startActivity(i);
+            finish();
         });
     }
     private void setTextViewClickListener(final TextView textView) {

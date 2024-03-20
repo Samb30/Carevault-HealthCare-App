@@ -2,7 +2,10 @@ package com.example.carevault.authentication
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
+import android.view.MotionEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -28,6 +31,19 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        val passwordEditText = findViewById<EditText>(R.id.textView3)
+
+        passwordEditText.setOnTouchListener { _, event ->
+            val DRAWABLE_RIGHT = 2
+            if (event.action == MotionEvent.ACTION_UP) {
+                if (event.rawX >= passwordEditText.right - passwordEditText.compoundDrawables[DRAWABLE_RIGHT].bounds.width()) {
+                    togglePasswordVisibility(passwordEditText)
+                    return@setOnTouchListener true
+                }
+            }
+            false
+        }
+
         val spinner: Spinner = findViewById(R.id.textView14)
         val adapter = ArrayAdapter.createFromResource(
             this,
@@ -37,6 +53,7 @@ class RegisterActivity : AppCompatActivity() {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
+        spinner.setSelection(0)
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -157,6 +174,11 @@ class RegisterActivity : AppCompatActivity() {
             return false
         }
 
+        if (mobileNumber.length < 10) {
+            mobileNumberEditText.error = "Phone Number must be at least 10 digits long"
+            return false
+        }
+
         if (!checkBox.isChecked) {
             Toast.makeText(applicationContext, "Please agree to the terms", Toast.LENGTH_SHORT)
                 .show()
@@ -164,5 +186,15 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         return true
+    }
+
+    private fun togglePasswordVisibility(editText: EditText) {
+        val selection = editText.selectionEnd
+        if (editText.transformationMethod == PasswordTransformationMethod.getInstance()) {
+            editText.transformationMethod = HideReturnsTransformationMethod.getInstance()
+        } else {
+            editText.transformationMethod = PasswordTransformationMethod.getInstance()
+        }
+        editText.setSelection(selection)
     }
 }

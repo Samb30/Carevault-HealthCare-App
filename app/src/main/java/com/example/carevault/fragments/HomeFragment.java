@@ -15,6 +15,7 @@ import com.example.carevault.R;
 import com.example.carevault.TopambulanceActivity;
 import com.example.carevault.TophospitalActivity;
 import com.example.carevault.emergency.EmergencyActivity;
+import com.example.carevault.emergency.EmergencyActivityCopy;
 
 public class HomeFragment extends Fragment {
     private GridView gridView;
@@ -57,11 +58,16 @@ public class HomeFragment extends Fragment {
         });
 
         emergency.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), EmergencyActivity.class);
+            Intent intent = new Intent(getContext(), EmergencyActivityCopy.class);
             startActivity(intent);
         });
 
 //        see1.setOnClickListener(v -> {
+//            Intent intent = new Intent(getContext(), DoctorsFragment.class);
+//            startActivity(intent);
+//        });
+//
+//        see3.setOnClickListener(v -> {
 //            Intent intent = new Intent(getContext(), DoctorsFragment.class);
 //            startActivity(intent);
 //        });

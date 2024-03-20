@@ -1,20 +1,18 @@
 package com.example.carevault.Booking;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.carevault.DoctorsActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.carevault.Adapters.ModelDoc;
 import com.example.carevault.Adapters.MyAdapter;
+import com.example.carevault.DoctorsActivity;
 import com.example.carevault.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,75 +22,34 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 
 public class Categories extends AppCompatActivity {
+    ImageButton back;
     private GridView mGridView;
     private MyAdapter mAdapter;
-    ImageButton back;
-    private String[] mNames = {"Dentist", "Heart Disease", "Cancer", "Diabetes","Asthma",
-            "Arthritis",
-            "Obesity",
-            "Stroke",
-            "Osteoporosis",
-            "Epilepsy"}; // Example names
-    private int[] mImages = {R.drawable.tooth, R.drawable.heart, R.drawable.cancer, R.drawable.diabetes,
-            R.drawable.asthma, R.drawable.arthritis, R.drawable.obesity, R.drawable.stroke
-    ,R.drawable.osteoporosis, R.drawable.epilepsy}; // Example images
+    private final String[] mNames = {"General", "Dentist", "Otology", "Heart", "Intestine", "Eye", "Pediatric", "Herbal", "Cancer", "Diabetes", "Asthma", "Ortho"};
+    private final int[] mImages = {R.drawable.general, R.drawable.dentist, R.drawable.otology, R.drawable.hearticon, R.drawable.intestine, R.drawable.optho, R.drawable.pediatric, R.drawable.herbal, R.drawable.cancericon, R.drawable.diabetesicon, R.drawable.lungicon, R.drawable.orthoicon}; // Example images
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
         mGridView = findViewById(R.id.grid_view);
-        back=findViewById(R.id.back);
+        back = findViewById(R.id.back);
         mAdapter = new MyAdapter(this, mNames, mImages);
         mGridView.setAdapter(mAdapter);
-        TextView text=findViewById(R.id.text);
-        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedSeat = mNames[position];
-                Toast.makeText(Categories.this, "="+selectedSeat, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Categories.this, DoctorsActivity.class);
-                intent.putExtra("category",selectedSeat);
-                startActivity(intent);
+        TextView text = findViewById(R.id.text);
+        mGridView.setOnItemClickListener((parent, view, position, id) -> {
+            String selectedSeat = mNames[position];
+            Toast.makeText(Categories.this, "=" + selectedSeat, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Categories.this, DoctorsActivity.class);
+            intent.putExtra("category", selectedSeat);
+            startActivity(intent);
 
-            }
         });
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
-//        text.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ModelCategory modelCategory=new ModelCategory();
-//                for(int i=0;i<mNames.length;i++){
-//                    modelCategory.setName("Will Smith");
-//                    modelCategory.setCategory(mNames[i]);
-//                    modelCategory.setHospital("Asan Medical Center (AMC)");
-//                    modelCategory.setLocation("Seoul");
-//                    DocumentReference documentReference;
-//                    String s=mNames[i];
-//                    documentReference=Utility.getDoctorDetails().document();
-//                    documentReference.set(modelCategory).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<Void> task) {
-//                            if(task.isSuccessful()){
-//                                String documentId = documentReference.getId();
-//                                solve(documentId,s);
-//                                Toast.makeText(Categories.this, "Note added", Toast.LENGTH_SHORT).show();
-//                            }
-//                            else{
-//                                Toast.makeText(Categories.this, "Failed", Toast.LENGTH_SHORT).show();
-//                            }
-//                        }
-//                    });
-//                }
-//            }
-//        });
+        back.setOnClickListener(view -> onBackPressed());
     }
-    void solve(String docId,String category){
-        ModelDoc modelDoc=new ModelDoc();
+
+    void solve(String docId, String category) {
+        ModelDoc modelDoc = new ModelDoc();
         modelDoc.setName("Matt Henry");
         modelDoc.setDate("2024-2-25");
         modelDoc.setClinic("Asan Medical Center (AMC)");
@@ -107,19 +64,18 @@ public class Categories extends AppCompatActivity {
         }
         modelDoc.setTimes(timeSlotsMap);
         DocumentReference documentReference;
-        documentReference= FirebaseFirestore.getInstance().collection("Doctors")
-                .document(docId).collection("Date").document();
+        documentReference = FirebaseFirestore.getInstance().collection("Doctors").document(docId).collection("Date").document();
         documentReference.set(modelDoc).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                }
-                else{
+                if (task.isSuccessful()) {
+                } else {
                     Toast.makeText(Categories.this, "Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
