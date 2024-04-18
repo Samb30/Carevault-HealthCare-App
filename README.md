@@ -24,6 +24,18 @@ Welcome to CareVault, your premier HealthCare Application. Seamlessly book docto
 - OTP Verification: Implements mobile number-based OTP verification for user validation.
 
 **Screenshots -** 
+<div style="display: flex;">
+  <img src="[image1.jpg](https://github.com/Samb30/Carevault-HealthCare-App/assets/117346153/c411f71e-5616-4569-a432-6c3201bdc695)" alt="Image 1" style="flex: 33.33%; padding: 5px;">
+  <img src="[image2.jpg](https://github.com/Samb30/Carevault-HealthCare-App/assets/117346153/e24dd0a0-0097-4915-9bb6-236d8ad0c89e)" alt="Image 2" style="flex: 33.33%; padding: 5px;">
+  <img src="image3.jpg" alt="Image 3" style="flex: 33.33%; padding: 5px;">
+</div>
+
+<div style="display: flex;">
+  <img src="image1.jpg" alt="Image 1" style="flex: 33.33%; padding: 5px;">
+  <img src="image2.jpg" alt="Image 2" style="flex: 33.33%; padding: 5px;">
+  <img src="image3.jpg" alt="Image 3" style="flex: 33.33%; padding: 5px;">
+</div>
+
 
 ![WhatsApp Image 2024-04-18 at 22 18 26_05eaa29d](https://github.com/Samb30/Carevault-HealthCare-App/assets/117346153/c411f71e-5616-4569-a432-6c3201bdc695)
 ![WhatsApp Image 2024-04-18 at 22 18 25_d5cf851b](https://github.com/Samb30/Carevault-HealthCare-App/assets/117346153/e24dd0a0-0097-4915-9bb6-236d8ad0c89e)
